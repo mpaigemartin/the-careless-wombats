@@ -1,27 +1,39 @@
 {
   "name": "the-careless-wombats",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "^3.9.2",
-    "contentful": "^7.5.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8"
-  },
+  "version": "1.0.0",
+  "description": "An application to help users find local restaurant and food deals, such as happy hour and trivia nights",
+  "main": "server.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "server.js",
+    "start": "node server.js",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpaigemartin/the-careless-wombats.git"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "keywords": [
+    "MongoDB",
+    "Node",
+    "React",
+    "Express"
+  ],
+  "author": "The Careless Wombats: Barry Rollan, Nihit Tiwari, Nathan Sierra, Paige Martin, Harrison Turner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpaigemartin/the-careless-wombats/issues"
+  },
+  "homepage": "https://github.com/mpaigemartin/the-careless-wombats#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcrypt": "^3.0.5",
+    "bootstrap": "^4.3.1",
+    "classnames": "^2.2.6",
+    "express": "^4.16.4",
+    "react": "^16.8.4",
+    "react-bootstrap": "^1.0.0-beta.6"
+  }
 }
