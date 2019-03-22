@@ -1,0 +1,17 @@
+body {
+   margin: 0 2% 0 2%;
+}
+
+#appBar {
+    width: 105%;
+    margin-bottom: 5%;
+}
+
+#toolbarTypo {
+    text-align: center;
+}
+
+.MuiGrid-item-81 {
+    width: 100%;
+}
+
