@@ -1,6 +1,7 @@
 
 #header {
   grid-area: header;
+  visibility: hidden;
 }
 
 #title {
@@ -12,29 +13,34 @@
 }
 
 .businessPaper {
-
     width: 100%;
 }
 
 .BusinessDirectory-root-152 {
-    position: relative;
+    /* position: relative; */
     overflow: hidden;
-    padding: 0.25em;
+    padding: 0.5em;
     text-align: center;
 }
 
 #search {
   grid-area: search;
+  max-height: 40px;
 }
 
 #filter {
     grid-area: filter;
 }
 
+#openModal {
+    grid-area: button;
+}
+
 #locationOption,
 #dayOption,
 #typeOption {
     margin-right: 2%;
+    float: left;
 }
 
 
@@ -48,7 +54,7 @@
     content: "";
     clear: both;
     display: table;
-  }
+}
 
 .container {
   display: grid;
@@ -58,11 +64,12 @@
     "header header header header header header"
     "...... ...... ...... ...... ...... ......"
     "...... sidebar ..... search search ......"
-    "...... sidebar ..... filter ...... ......"
+    "...... sidebar ..... filter button ......"
     "...... sidebar ..... map map ............";
 }
 
-@media only screen and (max-width: 740px) {
+@media only screen and (max-width: 980px) {
+
     .container {
         display: grid;
         grid-template-columns: 1fr 85% 5% 1fr;
@@ -74,5 +81,15 @@
           "...... filter filter ......"
           "...... map map ............"
           "...... sidebar sidebar ....";
+      }
+
+      #search {
+          justify-self: center;
+      }
+
+      #filter {
+          display: flex;
+          align-items: center;
+          justify-content: center;
       }
   }

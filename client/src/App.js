@@ -5,11 +5,22 @@ import SearchBar from './component/SearchBar';
 import FilterButtonRow from './component/FilterButtonRow';
 // import MapBox from './component/MapBox';
 import GoogleMap from './component/GoogleMap';
+import BusinessModal from './component/BusinessModal';
+import Button from '@material-ui/core/Button';
 import './App.css';
 
 
 
 class App extends Component {
+
+  state = {
+    open: false,
+  };
+
+  handleModalOpen = () => {
+    this.setState({ open: true });
+  };
+
   render() {
     return (
      <div className="container">
@@ -19,6 +30,8 @@ class App extends Component {
         <GoogleMap/>
         {/* <MapBox/> */}
         <BusinessDirectory/>
+        <Button onClick={this.handleModalOpen} id="modalOpen">Open Modal</Button>
+        <BusinessModal/>
      </div>
     );
   }

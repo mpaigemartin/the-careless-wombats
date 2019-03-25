@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 import "../component/Styles.css";
 
 const styles = theme => ({
@@ -53,17 +53,16 @@ class BusinessDirectory extends React.Component {
                   ut aliquip ex ea commodo consequat. Duis aute irure dolor in
                   reprehenderit in voluptate velit esse cillum dolore eu fugiat
                   nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id
-                  est laborum<Button
-                  variant="contained"
-                  color="secondary"
-                  className={classes.button}
-                  style={{position: "relative", float: "right"}}
-                >
-                  check us out!
-                </Button>{" "}
+                  proident
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    className={classes.button}
+                    style={{ position: "relative", float: "right", }}
+                  >
+                    check us out!
+                  </Button>{" "}
                 </Typography>
-                
               </Paper>
             </Grid>
             <Grid item className="businessPaper">
