@@ -1,7 +1,6 @@
 
 #header {
   grid-area: header;
-  visibility: hidden;
 }
 
 #title {
@@ -80,7 +79,7 @@
     "header header header header header header"
     "...... ...... ...... ...... ...... ......"
     "...... sidebar ..... search search ......"
-    "...... sidebar ..... filter button ......"
+    "...... sidebar ..... filter ...... ......"
     "...... sidebar ..... map map ............";
 }
 
