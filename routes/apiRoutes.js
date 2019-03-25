@@ -34,7 +34,6 @@ module.exports = function(app) {
 
 
   // Restaurant Model Routes
-
   // Get Route for viewing the restaurants
   app.get("/api/restaurant", function(req, res) {
     Restaurant.find()
