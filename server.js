@@ -8,10 +8,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-mongoose.connect('mongodb://localhost/', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/myDb', { useNewUrlParser: true });
 
-require('./routes/api-routes')(app);
-require('./routes/html-routes')(app);
+
+require('./routes/apiRoutes')(app);
+
 
 
 app.listen(PORT, function() {
