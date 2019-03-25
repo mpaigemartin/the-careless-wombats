@@ -54,9 +54,9 @@ class SimpleModal extends React.Component {
           aria-describedby="simple-modal-description"
           open={this.state.open}
           onClose={this.handleModalClose}
-          id="modal"
+         
         >
-          <div style={getModalStyle()} className={classes.paper}>
+          <div style={getModalStyle()} className={classes.paper}  id="modal">
             <Typography variant="h4" id="modal-title">
               thinking man tavern
             </Typography>
