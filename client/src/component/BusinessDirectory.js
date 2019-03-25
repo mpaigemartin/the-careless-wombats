@@ -55,6 +55,7 @@ class BusinessDirectory extends React.Component {
                   nulla pariatur. Excepteur sint occaecat cupidatat non
                   proident
                   <Button
+                    onClick={this.handleModalOpen}
                     variant="contained"
                     color="secondary"
                     className={classes.button}

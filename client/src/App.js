@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from './component/Header'
+import Header from './component/Header';
 import BusinessDirectory from './component/BusinessDirectory';
 import SearchBar from './component/SearchBar';
 import FilterButtonRow from './component/FilterButtonRow';
@@ -7,12 +7,9 @@ import GoogleMap from './component/GoogleMap';
 // import BusinessModal from './component/BusinessModal';
 import './App.css';
 
-
-
 class App extends Component {
-
   state = {
-    open: false,
+    open: false
   };
 
   handleModalOpen = () => {
@@ -20,18 +17,18 @@ class App extends Component {
   };
 
   handleModalClose = () => {
-    this.setState({ open: false})
+    this.setState({ open: false });
   };
 
   render() {
     return (
-     <div className="container">
-        <Header/>
-        <SearchBar/>
-        <FilterButtonRow/>
-        <GoogleMap/>
-        <BusinessDirectory/>
-     </div>
+      <div className="container">
+        <Header />
+        <SearchBar />
+        <FilterButtonRow />
+        <GoogleMap />
+        <BusinessDirectory />
+      </div>
     );
   }
 }
