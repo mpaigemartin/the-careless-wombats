@@ -4,7 +4,7 @@ import BusinessDirectory from './component/BusinessDirectory';
 import SearchBar from './component/SearchBar';
 import FilterButtonRow from './component/FilterButtonRow';
 import GoogleMap from './component/GoogleMap';
-import BusinessModal from './component/BusinessModal';
+// import BusinessModal from './component/BusinessModal';
 import './App.css';
 
 
@@ -31,7 +31,6 @@ class App extends Component {
         <FilterButtonRow/>
         <GoogleMap/>
         <BusinessDirectory/>
-        <BusinessModal/>
      </div>
     );
   }
