@@ -86,6 +86,21 @@ const restaurants = [
     address: "537 W Howard Ave, Decatur, GA 30030"
   },
   {
+    name: "Matador Mexican Cantina",
+    neighborhood: "Decatur",
+    address: "350 Mead Rd, Decatur, GA 30030"
+  },
+  {
+    name: "Mojo Pizza N' Pub",
+    neighborhood: "Decatur",
+    address: "657 E Lake Dr A, Decatur, GA 30030"
+  },
+  {
+    name: "The Imperial",
+    neighborhood: "Decatur",
+    address: "726 W College Ave, Decatur, GA 30030"
+  },
+  {
     name: "Atlanta Brewing Company",
     neighborhood: "West Midtown",
     address: "2207 Defoor Hills Rd NW, Atlanta, GA 30318"
@@ -152,6 +167,11 @@ const restaurants = [
     name: "JCT Bar",
     neighborhood: "West Midtown",
     address: "1198 Howell Mill Rd #18, Atlanta, GA 30318"
+  },
+  {
+    name: "Bone Lick BBQ",
+    neighborhood: "West Midtown",
+    address: "1133 Huff Rd NW, Atlanta, GA 30318"
   },
   {
     name: "Twisted Soul Cookhouse & Pours",
@@ -286,8 +306,8 @@ const restaurants = [
   }
 ];
 
-db.Events.deleteMany({})
-  .then(() => db.Events.collection.insertMany(events))
+db.Restaurants.deleteMany({})
+  .then(() => db.Restaurants.collection.insertMany(restaurants))
   .then(data => {
     console.log(data.insertedCount + " records inserted!");
     mongoose.connection.close();
