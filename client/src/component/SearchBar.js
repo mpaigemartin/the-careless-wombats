@@ -9,9 +9,8 @@ import SearchIcon from '@material-ui/icons/Search';
 
 const styles = {
   root: {
-    padding: '0.5em 2em',
+    padding: '0.5em 2%',
     display: 'flex',
-    alignItems: 'center',
     width: '75%',
   },
   input: {
