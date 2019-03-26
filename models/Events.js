@@ -7,7 +7,7 @@ var EventSchema = new Schema({
     trim: true
   },
   restaurant_id: {
-    type: Schema.type.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "Restaurant"
   },
   category: [
@@ -27,7 +27,7 @@ var EventSchema = new Schema({
     }
   ],
   isRecurring: {
-    type: boolean
+    type: Boolean
   },
   time: {
     type: String,
