@@ -1447,8 +1447,8 @@ const events = [
   }
 ];
 
-db.Events.deleteMany({})
-  .then(() => db.Events.collection.insertMany(events))
+db.Event.deleteMany({})
+  .then(() => db.Event.collection.insertMany(events))
   .then(data => {
     console.log(data.insertedCount + " records inserted!");
     mongoose.connection.close();

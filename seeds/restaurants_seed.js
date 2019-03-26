@@ -306,8 +306,8 @@ const restaurants = [
   }
 ];
 
-db.Restaurants.deleteMany({})
-  .then(() => db.Restaurants.collection.insertMany(restaurants))
+db.Restaurant.deleteMany({})
+  .then(() => db.Restaurant.collection.insertMany(restaurants))
   .then(data => {
     console.log(data.insertedCount + " records inserted!");
     mongoose.connection.close();

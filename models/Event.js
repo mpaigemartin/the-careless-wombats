@@ -6,10 +6,19 @@ var EventSchema = new Schema({
     type: String,
     trim: true
   },
+<<<<<<< HEAD:models/Events.js
   restaurant_id: {
     type: Schema.Type.ObjectId,
     ref: "Restaurant"
   },
+=======
+  restaurant_id: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Restaurant"
+    }
+  ],
+>>>>>>> 6cc742cfbece2cd6bbb6fe14f88a26a45b032eef:models/Event.js
   category: [
     {
       type: Array,
@@ -27,7 +36,7 @@ var EventSchema = new Schema({
     }
   ],
   isRecurring: {
-    type: boolean
+    type: Boolean
   },
   time: {
     type: String,
