@@ -501,8 +501,8 @@ const events = [
 
 ]
 
-db.Bars.deleteMany({})
-  .then(() => db.Bars.collection.insertMany(bars))
+db.Event.deleteMany({})
+  .then(() => db.Event.collection.insertMany(events))
   .then(data => {
     console.log(data.insertedCount + " records inserted!");
     process.exit(0);
