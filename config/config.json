@@ -3,21 +3,21 @@
     "development": {
       "username": "root",
       "password": "",
-      "database": "",
+      "database": "nightOwl",
       "host": "127.0.0.1",
       "port": 3306,
       "dialect": ""
     },
     "test": {
-      "username": "",
+      "username": "NightOwl",
       "password": null,
-      "database": "",
+      "database": "nightOwl",
       "host": "127.0.0.1",
       "dialect": ""
     },
     "production": {
-      "use_env_variable": "",
-      "dialect": ""
+      "use_env_variable": "MONGODB_URI",
+      "dialect": "mongodb"
     }
   }
   
