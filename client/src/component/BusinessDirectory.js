@@ -1,24 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import '../component/Styles.css';
-import Modal from '@material-ui/core/Modal';
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import "../../src/App.css";
+import Modal from "@material-ui/core/Modal";
 
 const styles = theme => ({
   root: {
     flexGrow: 1
   },
   paper: {
-    position: 'absolute',
+    position: "absolute",
     width: theme.spacing.unit * 50,
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
-    outline: 'none'
+    outline: "none"
   },
   control: {
     padding: theme.spacing.unit * 2
@@ -75,41 +75,35 @@ class BusinessDirectory extends React.Component {
                   Tuesday NasCar Trivia Night
                 </Typography>
                 <Typography component="p">
-                  Try our Possum Burger with a flight of moonshine. Lorem ipsum
-                  dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                  minim veniam, quis nostrud ullamco laboris nisi ut aliquip ex
-                  ea commodo consequat. Duis aute irure dolor in reprehenderit
-                  in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident
-                  {/* <Button
-                    variant="contained"
+                Drunk is when you feel sophisticated, but can't pronounce it.
+                  <Button
+                    onClick={this.handleOpen}
+                    // variant="contained"
                     color="secondary"
                     className={classes.button}
-                    style={{ position: "relative", float: "right", }}
                   >
-                    check us out!
-                  </Button>{" "} */}
-                  <Typography gutterBottom>
-                    Click to get the full Modal experience!
-                  </Typography>
-                  <Button onClick={this.handleOpen}>Open Modal</Button>
+                    check us out
+                  </Button>
                   <Modal
                     aria-labelledby="simple-modal-title"
                     aria-describedby="simple-modal-description"
                     open={this.state.open}
                     onClose={this.handleClose}
                   >
-                    <div style={getModalStyle()} className={classes.paper}>
+                    <div style={getModalStyle()} className={classes.paper} id="modal">
                       <Typography variant="h6" id="modal-title">
-                        Text in a modal
+                        The Fuzzy Mule
                       </Typography>
                       <Typography
                         variant="subtitle1"
                         id="simple-modal-description"
                       >
-                        Duis mollis, est non commodo luctus, nisi erat porttitor
-                        ligula.
+                        Drunk is when you feel sophisticated, but can't pronounce it.
+                      </Typography>
+                      <Button 
+                      id="modalLink" href="https://www.finestcall.com/vodka/fuzzy-mule/"></Button>
+                      <Typography variant="subtitle2">
+                        NasCar trivia every Monday from 4:30 to 9:00.  Half-price Pabst all weekend. Strip show/nacho bar every Thursday - kids eat free.
                       </Typography>
                     </div>
                   </Modal>
@@ -124,7 +118,7 @@ class BusinessDirectory extends React.Component {
                 <Typography component="p">
                   Whatever you do... tear it up
                 </Typography>
-              </Paper>{' '}
+              </Paper>{" "}
             </Grid>
 
             <Grid item className="businessPaper">
@@ -136,7 +130,7 @@ class BusinessDirectory extends React.Component {
                   Get pissed the English way
                 </Typography>
                 <Typography component="p">Bip Bip Cheerio</Typography>
-              </Paper>{' '}
+              </Paper>{" "}
             </Grid>
           </Grid>
         </Grid>
