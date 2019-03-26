@@ -1,5 +1,6 @@
 const User = require("../models/User.js");
 const Restaurant = require("../models/Restaurant");
+const Events = require("../models/Events");
 
 module.exports = function(app) {
   
@@ -36,8 +37,8 @@ module.exports = function(app) {
 
   // Event Model Route
   // Get Route for viewing the Events
-  app.get("/api/event", function(req, res) {
-    Event.find()
+  app.get("/api/events", function(req, res) {
+    EventSource.find()
       .then(function(data) {
         res.json(data);
       })
