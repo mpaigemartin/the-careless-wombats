@@ -1,22 +1,39 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom'
-import Home from './component/Home';
-import SearchPage from './component/SearchPage'
-import './App.css';
+import React, { Component } from "react";
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+// import ProtectedRoute from "./component/ProtectedRoute";
+import Login from "./component/Login";
+import Signup from "./component/Signup";
+import Home from "./component/Home";
+import SearchPage from "./component/SearchPage";
+// import UserContext from "./context/UserContext";
 
 class App extends Component {
 
+  state = {
+    user: null
+  }
+
+  setUser = (user) => {
+	  this.setState({ user });
+  }
+
   render() {
+	const {user} = this.state;
+	const setUser = this.setUser;
     return (
-      // <div>
-      //   <Home />
-      // </div>
-      <BrowserRouter>
-        <Route exact path="/" render={SearchPage} />
-        <Route exact path="/Home" render={Home} />
-        <Route path="*" render={Home} />
-      </BrowserRouter>
-    )
+		<Router>
+			<div>
+				{/* <UserContext.Provider value={{ setUser, user }}> */}
+					{/* <ProtectedRoute exact path="/" component={HomePage} /> */}
+          
+					<Route path="/" component={Signup} />
+          <Route path="/" component={Login} />
+          <Route exact path="/Search" component={SearchPage} />
+          <Route exact path="/Home" component={Home} />
+				{/* </UserContext.Provider> */}
+			</div>
+		</Router>
+    );
   }
 }
 
