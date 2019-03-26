@@ -1,14 +1,34 @@
-import React, { Component } from 'react';
-import Home from './component/Home';
-import './App.css';
+import React, { Component } from "react";
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+// import ProtectedRoute from "./component/ProtectedRoute";
+import Login from "./component/Login";
+import Signup from "./component/Signup";
+// import UserContext from "./context/UserContext";
 
 class App extends Component {
 
+  state = {
+    user: null
+  }
+
+  setUser = (user) => {
+	  this.setState({ user });
+  }
+
   render() {
+	const {user} = this.state;
+	const setUser = this.setUser;
     return (
-      <div>
-        <Home />
-      </div>
+		<Router>
+			<div>
+				{/* <UserContext.Provider value={{ setUser, user }}> */}
+					{/* <ProtectedRoute exact path="/" component={HomePage} /> */}
+          
+					<Route path="/" component={Signup} />
+          <Route path="/" component={Login} />
+				{/* </UserContext.Provider> */}
+			</div>
+		</Router>
     );
   }
 }

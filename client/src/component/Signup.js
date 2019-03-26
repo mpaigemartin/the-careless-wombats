@@ -1,9 +1,8 @@
 import React, {Component} from "react";
 import {withRouter} from "react-router-dom";
 import UserContext from './context/UserContext'
-import Auth from "../utils/Auth";
 
-class Login extends Component {
+class Signup extends Component {
 	static contextType = UserContext;
 
 	state = {
@@ -19,21 +18,13 @@ class Login extends Component {
 	submitHandler = (e) => {
     e.preventDefault();
     console.log('clicked');
-    console.log("This would be the click to the api route to login. It would use middleware with bcrypt to hash the password then compare.");
-		const {username, password} = this.state;
-		// if (username && password) {
-		// 	Auth.logIn(username, password, (response) => {
-		// 		this.context.setUser(response);
-		// 		this.props.history.push("/");
-			// });
-		// }
+    console.log("this is where you do logic to post to an api route that creates a user if the user doesn't already exist (server-side validation)")
 	}
 
 	render () {
 		return (
-
 			<form onSubmit={this.submitHandler}>
-				<input 
+				<input
 					type="text"
 					name="username"
 					value={this.state.username}
@@ -51,4 +42,4 @@ class Login extends Component {
 	}
 }
 
-export default withRouter(Login);
+export default withRouter(Signup);
