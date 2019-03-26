@@ -7,7 +7,7 @@ module.exports = function(app) {
   // Get Route to get user information (temporarily so that we can test)
   // and which restaurants they are saving
   app.get("/api/user", function(req, res) {
-    User.find({})
+    User.find({_id: req.id})
       .populate("Event")
       .then(function(data) {
         res.json(data);
@@ -24,7 +24,7 @@ module.exports = function(app) {
     //     address: req.address
     // };
 
-    User.find({_id: userID})
+    User.find({_id: req.id})
       .populate("favorites")
       .then(function(userData) {
         res.json(userData);
