@@ -16,5 +16,5 @@ require('./routes/apiRoutes')(app);
 
 
 app.listen(PORT, function() {
-    console.log(`You are now listening to your favortie pirate radio station, Port ${PORT}! Sail away, mateys!`)
+    console.log(`You are now listening to your favorite pirate radio station, Port ${PORT}! Sail away, mateys!`)
 })
