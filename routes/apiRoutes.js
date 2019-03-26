@@ -33,14 +33,9 @@ module.exports = function(app) {
 
   // Event Model Route
   // Get Route for viewing the Events
-<<<<<<< HEAD
-  app.get("/api/event", function(req, res) {
-    Event.find({})
-=======
 
   app.get("/api/event", function(req, res) {
     Event.find()
->>>>>>> a2119352e1697747023afff25dd7fc5bb5fd657d
       .then(function(data) {
         res.json(data);
       })
@@ -61,10 +56,17 @@ module.exports = function(app) {
       });
   });
 
-<<<<<<< HEAD
-=======
-
->>>>>>> a2119352e1697747023afff25dd7fc5bb5fd657d
+  // Restaurant Model Routes
+  // Get Route for viewing restaurant by name (space=%20)
+  app.get("/api/restaurant/:name", function(req, res) {
+    Restaurant.find({name: req.params.name})
+      .then(function(dbRestaurant) {
+        res.json(dbRestaurant);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
   // Post Route for saving a restaurant
 //   app.post("/api/restaurant", function(req, res) {
 //     const restaurant = {
@@ -106,10 +108,6 @@ module.exports = function(app) {
 			res.json({success:true});
 		});
 	});
-<<<<<<< HEAD
-=======
-
->>>>>>> a2119352e1697747023afff25dd7fc5bb5fd657d
 };
 
 
