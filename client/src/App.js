@@ -24,8 +24,8 @@ class App extends Component {
 				{/* <UserContext.Provider value={{ setUser, user }}> */}
 					{/* <ProtectedRoute exact path="/" component={HomePage} /> */}
           
-					<Route path="/" component={Signup} />
-          <Route path="/" component={Login} />
+					<Route exact path="/" component={Signup} />
+          <Route exact path="/" component={Login} />
 				{/* </UserContext.Provider> */}
 			</div>
 		</Router>
