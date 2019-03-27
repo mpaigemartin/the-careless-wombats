@@ -6,12 +6,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nightOwl", {
   useNewUrlParser: true
 });
 
-const mongoose = require("mongoose");
-const db = require("../models");
-mongoose.Promise = global.Promise;
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nightOwl");
-
 const restaurants = [
   {
     name: "Grindhouse Killer Burgers",
@@ -339,12 +333,6 @@ const restaurants = [
     address: "650 North Avenue NE, Atlanta, GA 30308"
   }
 ];
-
-const mongoose = require("mongoose");
-const db = require("../models");
-mongoose.Promise = global.Promise;
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nightOwl");
 
 const events = [
   {
@@ -1103,47 +1091,6 @@ const events = [
       "Tuesday means crab legs - all you can eat (until they run out) for $39.95 PER PERSON!",
     day: ["Tuesday"],
 
-    isRecuring: true,
-    time: "All Day"
-  },
-  {
-    name: "Punk & Metal Karaoke",
-    restaurant_id: {},
-    category: ["Karaoke"],
-    describes:
-      "A large selection of PUNK ROCK, HEAVY METAL, & NEW WAVE 80's songs to choose from.",
-    day: ["Wednesday"],
-    isRecuring: true,
-    time: "10"
-  },
-  {
-    name: "$6.66 Burgers",
-    restaurant_id: {},
-    category: ["Food Specials"],
-    describes: "$6.66 for any burger all day long",
-    day: ["Wednesday"],
-    isRecuring: true,
-    time: "All Day"
-  },
-
-  {
-    name: "Trivia",
-    restaurant_id: {},
-    category: ["Trivia"],
-    describes:
-      "Come play trivia on Sunday nights and walk away with valuable prizes and elevated self-esteem!",
-    day: ["Sunday"],
-    isRecuring: true,
-    time: "8"
-  },
-  {
-    name: "Live Music",
-    restaurant_id: {},
-    category: ["Live Music", "Drink Specials"],
-    describes: "Live Music and $7 glasses of wine",
-    day: ["Wednesday"],
-    isRecuring: true,
-=======
     isRecuring: true,
     time: "All Day"
   },
