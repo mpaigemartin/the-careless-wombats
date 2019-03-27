@@ -18,14 +18,16 @@ module.exports = function(app) {
   });
 
   app.get("/api/restaurant/:name", function(req, res) {
-    Restaurant.find({name: req.body.name})
+    Restaurant.find({name: req.params.name})
+      .populate("events")
       .then(function(dbRestaurant) {
-        res.json(dbRestaurant);
+        res.send(dbRestaurant);
       })
       .catch(function(err) {
         res.json(err);
       });
   });
+
 
   // Event Model Route
   // Get Route for viewing the Events
@@ -40,27 +42,6 @@ module.exports = function(app) {
       });
   });
 
-  app.post("/api/event", function(req, res) {
-    const userId = req.body.id;
-    const newEvent = {
-      body: req.body.body
-    };
-
-    Event.create(newEvent)
-      .then(function(eventData) {
-        return User.findOneAndUpdate(
-          { _id: userId },
-          { $push: { favorites: eventData._id } },
-          { new: true }
-        );
-      })
-      .then(function(userData) {
-        res.json(userData);
-      })
-      .catch(function(err) {
-        res.json(err);
-      });
-  });
 
   // User Model Routes
   // Get Route to get user information (temporarily so that we can test)
@@ -77,12 +58,24 @@ module.exports = function(app) {
       });
   });
 
+  app.post("/api/user/:id", function(req, res) {
+    User.findOneAndUpdate(
+        { _id: req.params.id },
+        { $push: { favorites: req.body } },
+        { new: true }
+      ).then(function(userData) {
+        res.json(userData);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+    })
+
   app.post("/api/user", function(req, res) {
     const newUser = {
       email: req.body.email,
       password: req.body.password
     };
-
     User.create(newUser)
       .then(function(userData) {
         res.json(userData);
