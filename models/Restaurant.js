@@ -13,7 +13,13 @@ var RestaurantSchema = new Schema({
   address: {
     type: String,
     trim: true
-  }
+  },
+  events: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Event"
+    }
+  ]
 });
 const Restaurant = mongoose.model("Restaurants", RestaurantSchema);
 
