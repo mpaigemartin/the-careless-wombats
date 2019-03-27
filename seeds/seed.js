@@ -6,12 +6,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nightOwl", {
   useNewUrlParser: true
 });
 
-const mongoose = require("mongoose");
-const db = require("../models");
-mongoose.Promise = global.Promise;
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nightOwl");
-
 const restaurants = [
   {
     name: "Grindhouse Killer Burgers",
@@ -337,12 +331,6 @@ const restaurants = [
     address: "650 North Avenue NE, Atlanta, GA 30308"
   }
 ];
-
-const mongoose = require("mongoose");
-const db = require("../models");
-mongoose.Promise = global.Promise;
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nightOwl");
 
 const events = [
   {
