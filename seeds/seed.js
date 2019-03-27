@@ -10,82 +10,98 @@ const restaurants = [
   {
     name: "Grindhouse Killer Burgers",
     neighborhood: "Decatur",
-    address: "433 N McDonough St, Decatur, GA 30030"
+    address: "433 N McDonough St, Decatur, GA 30030",
+    url: "http://www.grindhouseburgers.com/"
   },
   {
     name: "Victory Sandwich Bar",
     neighborhood: "Decatur",
-    address: "340 Church St, Decatur, GA 30030"
+    address: "340 Church St, Decatur, GA 30030",
+    url: "http://www.vicsandwich.com/"
   },
   {
     name: "The Iberian Pig",
     neighborhood: "Decatur",
-    address: "121 Sycamore St, Decatur, GA 30030"
+    address: "121 Sycamore St, Decatur, GA 30030",
+    url: "https://www.theiberianpigatl.com/#contemporary-spanish-tapas"
   },
   {
     name: "My Parent's Basement",
     neighborhood: "Decatur",
-    address: "22 N Avondale Rd, Avondale Estates, GA 30002"
+    address: "22 N Avondale Rd, Avondale Estates, GA 30002",
+    url: "www.myparentsbasementcbcb.com/"
   },
   {
     name: "Trackside Tavern",
     neighborhood: "Decatur",
-    address: "313 E College Ave, Decatur, GA 30030"
+    address: "313 E College Ave, Decatur, GA 30030",
+    url: "https://www.facebook.com/Trackside-Tavern-229206620473232/"
   },
   {
     name: "Kimball House",
     neighborhood: "Decatur",
-    address: "303 E Howard Ave, Decatur, GA 30030"
+    address: "303 E Howard Ave, Decatur, GA 30030",
+    url: "http://www.kimball-house.com/"
   },
   {
     name: "The Square Pub",
     neighborhood: "Decatur",
-    address: "115 Sycamore St, Decatur, GA 30030"
+    address: "115 Sycamore St, Decatur, GA 30030",
+    url: "http://www.squarepubdecatur.com/"
   },
   {
     name: "The Corner Pub",
     neighborhood: "Decatur",
-    address: "627 E College Ave D, Decatur, GA 300330"
+    address: "627 E College Ave D, Decatur, GA 300330",
+    url: "https://www.pubalicious.com/"
   },
   {
     name: "Mellow Mushroom",
     neighborhood: "Decatur",
-    address: "340 W Ponce de Leon Ave, Decatur, GA 30030"
+    address: "340 W Ponce de Leon Ave, Decatur, GA 30030",
+    url: "https://mellowmushroom.com/location/ga-decatur-340-west-ponce-de-leon-avenue-30030/"
   },
   {
     name: "Raging Burrito",
     neighborhood: "Decatur",
-    address: "141 Sycamore St, Decatur, GA 30030"
+    address: "141 Sycamore St, Decatur, GA 30030",
+    url: "http://ragingburrito.com/"
   },
   {
     name: "Twains Brewpub & Billiards",
     neighborhood: "Decatur",
-    address: "211 E Trinity Pl, Decatur, GA 30030"
+    address: "211 E Trinity Pl, Decatur, GA 30030",
+    url: "http://www.twains.net/"
   },
   {
     name: "The Pinewood",
     neighborhood: "Decatur",
-    address: "254 W Ponce de Leon Ave, Decatur, GA 30030"
+    address: "254 W Ponce de Leon Ave, Decatur, GA 30030",
+    url: "https://www.pinewoodtr.com/"
   },
   {
     name: "Taiyo Ramen",
     neighborhood: "Decatur",
-    address: "130 Clairemont Ave Suite 100, Decatur, GA 30030"
+    address: "130 Clairemont Ave Suite 100, Decatur, GA 30030",
+    url: "https://www.koreanwives.com/taiyo-ramen/"
   },
   {
     name: "Calle Latina",
     neighborhood: "Decatur",
-    address: "406 Church St, Decatur, GA 30030"
+    address: "406 Church St, Decatur, GA 30030",
+    url: "http://callelatinadecatur.com/"
   },
   {
     name: "Parkers on Ponce",
     neighborhood: "Decatur",
-    address: "116 E Ponce de Leon Ave, Decatur, GA 30030"
+    address: "116 E Ponce de Leon Ave, Decatur, GA 30030",
+    url: "https://www.parkersonponce.com/"
   },
   {
     name: "Thinking Man Tavern",
     neighborhood: "Decatur",
-    address: "537 W Howard Ave, Decatur, GA 30030"
+    address: "537 W Howard Ave, Decatur, GA 30030",
+    url: "http://www.thinkingmantavern.com/"
   },
   {
     name: "Matador Mexican Cantina",
@@ -103,79 +119,84 @@ const restaurants = [
     address: "726 W College Ave, Decatur, GA 30030"
   },
   {
-
-    name: "Wild Heaven Beer",
-    neighborhood: "Decatur",
-    address: "135 Maple St B, Avondale Estates, GA 30002"
-  },
-  {
-
     name: "Atlanta Brewing Company",
     neighborhood: "West Midtown",
-    address: "2207 Defoor Hills Rd NW, Atlanta, GA 30318"
+    address: "2323 Defoor Hills Rd NW, Atlanta, GA 30318",
+    url: "https://atlantabrewing.com/"
   },
   {
     name: "Verde Taqueria",
     neighborhood: "West Midtown",
-    address: "1193 Collier Rd NW, Atlanta, GA 30318"
+    address: "1193 Collier Rd NW, Atlanta, GA 30318",
+    url: "https://www.verdetacos.com/"
   },
 
   {
     name: "O-Ku",
     neighborhood: "West Midtown",
-    address: "1085 Howell Mill Rd NW A3, Atlanta, GA 30318"
+    address: "1085 Howell Mill Rd NW A3, Atlanta, GA 30318",
+    url: "https://www.o-kusushiatl.com/"
   },
 
   {
     name: "The Optimist",
     neighborhood: "West Midtown",
-    address: "914 Howell Mill Rd, Atlanta, GA 30318"
+    address: "914 Howell Mill Rd, Atlanta, GA 30318",
+    url: "http://theoptimistrestaurant.com/"
   },
 
   {
     name: "Pijiu Belly",
     neighborhood: "West Midtown",
-    address: "678 10th St NW, Atlanta, GA 30318"
+    address: "678 10th St NW, Atlanta, GA 30318",
+    url: "http://pijiubelly.com/"
   },
 
   {
     name: "Donetto",
     neighborhood: "West Midtown",
-    address: "976 Brady Ave NW Suite 110, Atlanta, GA 30318"
+    address: "976 Brady Ave NW Suite 110, Atlanta, GA 30318",
+    url: "https://www.donettoatlanta.com/"
   },
   {
     name: "Monday Night Brewing",
     neighborhood: "West Midtown",
-    address: "670 Trabert Ave NW, Atlanta, GA 30318"
+    address: "670 Trabert Ave NW, Atlanta, GA 30318",
+    url: "https://mondaynightbrewing.com/?gclid=CjwKCAjwm-fkBRBBEiwA966fZO4GrQwHyNQfKNIbq1mv2Yok9xt-27_cWfkY7_FSNP8lxzHlhTh30RoCtRQQAvD_BwE"
   },
 
   {
     name: "Barcelona Wine Bar",
     neighborhood: "West Midtown",
-    address: "1085 Howell Mill Rd, Atlanta, GA 30318"
+    address: "1085 Howell Mill Rd, Atlanta, GA 30318",
+    url: "https://www.barcelonawinebar.com/location/westside-ironworks/?utm_source=yext&utm_medium=localsearch&utm_campaign=landing-page&utm_content=westside-ironworks"
   },
 
   {
     name: "Cooks & Soliders",
     neighborhood: "West Midtown",
-    address: "691 14th St NW, Atlanta, GA 30318"
+    address: "691 14th St NW, Atlanta, GA 30318",
+    url: "http://cooksandsoldiers.com/"
   },
 
   {
     name: "FLIP Burger Boutique",
     neighborhood: "West Midtown",
-    address: "1587 Howell Mill Rd, Atlanta, GA 30318"
+    address: "1587 Howell Mill Rd, Atlanta, GA 30318",
+    url: "https://flipburgerboutique.com/"
   },
 
   {
     name: "Bocado",
     neighborhood: "West Midtown",
-    address: "887 Howell Mill Rd NW, Atlanta, GA 30318"
+    address: "887 Howell Mill Rd NW, Atlanta, GA 30318",
+    url: "https://www.bocadoatlanta.com/"
   },
   {
     name: "JCT Bar",
     neighborhood: "West Midtown",
-    address: "1198 Howell Mill Rd #18, Atlanta, GA 30318"
+    address: "1198 Howell Mill Rd #18, Atlanta, GA 30318",
+    url: "http://www.jctkitchen.com/"
   },
   {
     name: "Bone Lick BBQ",
@@ -185,159 +206,165 @@ const restaurants = [
   {
     name: "Twisted Soul Cookhouse & Pours",
     neighborhood: "West Midtown",
-    address: "1133 Huff Rd NW #D, Atlanta, GA 30318"
+    address: "1133 Huff Rd NW #D, Atlanta, GA 30318",
+    url: "https://www.twistedsoulcookhouseandpours.com/"
   },
   {
     name: "Little Trouble",
     neighborhood: "West Midtown",
-    address: "1170 Howell Mill Rd NW Suite P-10C, Atlanta, GA 30318"
+    address: "1170 Howell Mill Rd NW Suite P-10C, Atlanta, GA 30318",
+    url: "http://www.little-trouble.com/"
   },
   {
     name: "Marcel",
     neighborhood: "West Midtown",
-    address: "1170 Howell Mill Rd, Atlanta, GA 30318"
-  },
-  {
-    name: "Tin Tin",
-    neighborhood: "West Midtown",
-    address: "956 Brady Ave, Atlanta, 30318"
-  },
-  {
-    name: "Second Self Beer Company",
-    neighborhood: "West Midtown",
-    address: "1317 Logan Cir NW, Atlanta, GA 30318"
+    address: "1170 Howell Mill Rd, Atlanta, GA 30318",
+    url: "http://marcelatl.com/"
   },
   {
     name: "Cypress Street Pint & Plate",
     neighborhood: "Midtown",
-    address: "817 W Peachtree St Northwest E-125, Atlanta, GA 30308"
+    address: "817 W Peachtree St Northwest E-125, Atlanta, GA 30308",
+    url: "http://cypressbar.com/"
   },
   {
     name: "Eleventh Street Pub",
     neighborhood: "Midtown",
-    address: "1041 West Peachtree St Northwest, Atlanta, GA 30309"
+    address: "1041 West Peachtree St Northwest, Atlanta, GA 30309",
+    url: "http://www.eleventhstreetpub.com/"
   },
   {
     name: "The Highlander",
     neighborhood: "Midtown",
-    address: "931 Monroe Dr Ne ste c-101, Atlanta, GA 30308"
+    address: "931 Monroe Dr Ne ste c-101, Atlanta, GA 30308",
+    url: "http://www.thehighlanderatlanta.com/"
   },
   {
     name: "MidCity Cafe",
     neighborhood: "Midtown",
-    address: "845 Spring St NW D1, Atlanta, GA 30308"
+    address: "845 Spring St NW D1, Atlanta, GA 30308",
+    url: "https://www.facebook.com/midcitycafeatl/"
   },
   {
     name: "Senor Patron",
     neighborhood: "Midtown",
-    address: "860 Peachtree St NE, Atlanta, GA 30308"
+    address: "860 Peachtree St NE, Atlanta, GA 30308",
+    url: "http://www.senorpatronatl.com/"
   },
   {
     name: "Torched Hop",
     neighborhood: "Midtown",
-    address: "249 Ponce De Leon Ave NE, Atlanta, GA 30308"
+    address: "249 Ponce De Leon Ave NE, Atlanta, GA 30308",
+    url: "http://www.torchedhopbrewing.com/"
   },
   {
     name: "Henry's Midtown Tavern",
     neighborhood: "Midtown",
-    address: "132 10th St NE, Atlanta, GA, 30309"
+    address: "132 10th St NE, Atlanta, GA, 30309",
+    url: "http://www.henrysatl.com/"
   },
   {
     name: "The Nook on Piedmont Park",
     neighborhood: "Midtown",
-    address: "1144 Piedmont Ave NE, Atlanta, GA 30309"
+    address: "1144 Piedmont Ave NE, Atlanta, GA 30309",
+    url: "https://thenookatlanta.com/"
   },
   {
     name: "5Church Atlanta",
     neighborhood: "Midtown",
-    address: "1197 Peachtree St NE #528, Atlanta, GA 30361"
+    address: "1197 Peachtree St NE #528, Atlanta, GA 30361",
+    url: "http://5churchatlanta.com/"
   },
   {
     name: "Establishment",
     neighborhood: "Midtown",
-    address: "1197 Peachtree St NE #517, Atlanta, GA 30305"
+    address: "1197 Peachtree St NE #517, Atlanta, GA 30305",
+    url: "https://www.establishmentatlanta.com/"
   },
   {
     name: "Ri Ra Irish Pub",
     neighborhood: "Midtown",
-    address: "1080 Peachtree St NE #1, Atlanta, GA 30309"
+    address: "1080 Peachtree St NE #1, Atlanta, GA 30309",
+    url: "https://rira.com/atlanta/"
   },
   {
     name: "10th & Piedmont",
     neighborhood: "Midtown",
-    address: "991 Piedmont Ave NE, Atlanta, GA 30309"
+    address: "991 Piedmont Ave NE, Atlanta, GA 30309",
+    url: "http://www.10thandpiedmont.com/"
   },
   {
     name: "Zocalo Mexican Kitchen & Cantina",
     neighborhood: "Midtown",
-    address: "187 10th St NE, Atlanta, GA 30309"
+    address: "187 10th St NE, Atlanta, GA 30309",
+    url: "https://www.eatzocalo.com/"
   },
   {
     name: "Park Tavern",
     neighborhood: "Midtown",
-    address: "500 10th St NE, Atlanta, GA 30309"
+    address: "500 10th St NE, Atlanta, GA 30309",
+    url: "http://www.parktavern.com/"
   },
   {
     name: "The Canteen",
     neighborhood: "Midtown",
-    address: "75 5th St NW #170, Atlanta, GA 30308"
+    address: "75 5th St NW #170, Atlanta, GA 30308",
+    url: "http://www.thecanteenatl.com/"
   },
   {
     name: "Fado Irish Pub",
     neighborhood: "Midtown",
-    address: "933 Peachtree St NE, Atlanta, GA 30309"
+    address: "933 Peachtree St NE, Atlanta, GA 30309",
+    url: "https://fadoirishpub.com/atlanta-midtown/"
   },
   {
     name: "Hudson Grille",
     neighborhood: "Midtown",
-    address: "942 Peachtree St NE, Atlanta, GA 30309"
+    address: "942 Peachtree St NE, Atlanta, GA 30309",
+    url: "https://hudsongrille.com/"
   },
   {
     name: "Smith's Olde Bar",
     neighborhood: "Midtown",
-    address: "1578 Piedmont Ave NE, Atlanta, GA 303024"
+    address: "1578 Piedmont Ave NE, Atlanta, GA 303024",
+    url: "https://www.smithsoldebar.com/"
   },
   {
     name: "Takorea",
     neighborhood: "Midtown",
-    address: "818 Juniper St NE, Atlanta, GA 30308"
+    address: "818 Juniper St NE, Atlanta, GA 30308",
+    url: "http://www.mytakorea.com/"
   },
   {
     name: "HobNob Neighborhood Tavern",
     neighborhood: "Midtown",
-    address: "1551 Piedmont Ave NE, Atlanta, GA 30324"
+    address: "1551 Piedmont Ave NE, Atlanta, GA 30324",
+    url: "https://www.hobnobatlanta.com/"
   },
   {
     name: "Publik Draft House",
     neighborhood: "Midtown",
-    address: "654 Peachtree St NE, Atlanta, GA 30308"
+    address: "654 Peachtree St NE, Atlanta, GA 30308",
+    url: "https://www.publikatl.com/"
   },
   {
     name: "Deep End",
     neighborhood: "Midtown",
-    address: "621 North Avenue NE B100, Atlanta, GA 30308"
+    address: "621 North Avenue NE B100, Atlanta, GA 30308",
+    url: "https://www.deependatl.com/"
   },
   {
     name: "The Hideaway",
     neighborhood: "Midtown",
-    address: "1544 Piedmont Ave NE, Atlanta, GA 30324"
-  },
-  {
-    name: "Midtown Tavern",
-    neighborhood: "Midtown",
-    address: "554 Piedmont Ave NE, Atlanta, GA 30308"
-  },
-  {
-    name: "City Winery",
-    neighborhood: "Midtown",
-    address: "650 North Avenue NE, Atlanta, GA 30308"
+    address: "1544 Piedmont Ave NE, Atlanta, GA 30324",
+    url: "http://atlantahideaway.com/"
   }
 ];
 
 const events = [
   {
     name: "Dirty South Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes:
       "Our goal is to create a fun and competitive environment, not to stump you with ridiculously hard questions.",
@@ -347,7 +374,7 @@ const events = [
   },
   {
     name: "TWOSDAY",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Unique"],
     describes:
       "Ride in on your motorcycle and 1/2 off the nightly food special!",
@@ -357,7 +384,7 @@ const events = [
   },
   {
     name: "Jamon Happy Hour",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Happy Hour", "Food Specials"],
     describes:
       "Custom meat and cheese boards: Three Meats $22, Three Cheese $10",
@@ -367,7 +394,7 @@ const events = [
   },
   {
     name: "Drunk Bingo",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Bingo"],
     describes:
       "Come in and play classic bingo but with a twist, with the chance to win great prizes.",
@@ -377,7 +404,7 @@ const events = [
   },
   {
     name: "Drink & Draw",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Unique"],
     describes:
       "Come join us the 1st Monday every month for a casual drink and draw hosted by our own JJ Allen.",
@@ -387,7 +414,7 @@ const events = [
   },
   {
     name: "Nerd Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes:
       "Join us. This is the trivia you've been looking for. It's not a trap. ",
@@ -397,7 +424,7 @@ const events = [
   },
   {
     name: "Half Price Oysters",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials", "Happy Hour"],
     describes: "Enjoy 1/2 off oysters on the Raw Bar Menu",
     day: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -406,7 +433,7 @@ const events = [
   },
   {
     name: "$2 Highlife",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Enjoy $2 16oz cans of Miller Highlife.",
     day: ["Monday"],
@@ -415,7 +442,7 @@ const events = [
   },
   {
     name: "$5 Tecate & Tequila",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "$5 for a combo of an El Jimador shot and a 16oz can of Tecate.",
     day: ["Tuesday"],
@@ -424,7 +451,7 @@ const events = [
   },
   {
     name: "$3 Drafts and Well Drinks",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Enjoy a selection of drafts and well cocktails for only $3!",
     day: ["Wednesday"],
@@ -433,7 +460,7 @@ const events = [
   },
   {
     name: "$5 Local Draft Beers",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Get Georgia drafts for $5",
     day: ["Thursday"],
@@ -442,7 +469,7 @@ const events = [
   },
   {
     name: "Half Price Apps",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials", "Happy Hour"],
     describes: "Get 1/2 off apps after six pm.",
     day: ["Thursday"],
@@ -451,7 +478,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: { cor },
+    restaurant: { cor },
     category: ["Trivia"],
     describes: "Get your team together for a chance to win house cash!",
     day: ["Wednesday"],
@@ -460,7 +487,7 @@ const events = [
   },
   {
     name: "Sound Check Bingo ",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Bingo"],
     describes: "Decipher songs to fill out your bingo card!",
     day: ["Thursday"],
@@ -469,7 +496,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: { mel },
+    restaurant: { mel },
     category: ["Trivia"],
     describes: "Get your team together for a chance to win house cash!",
     day: ["Tuesday"],
@@ -478,7 +505,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: { bur },
+    restaurant: { bur },
     category: ["Trivia"],
     describes: "Get your team together for a chance to win house cash!",
     day: ["Thursday"],
@@ -487,7 +514,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes: "Get your team together for a chance to win house cash!",
     day: ["Monday"],
@@ -496,7 +523,7 @@ const events = [
   },
   {
     name: "Wings + Beer $10",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials", "Drink Specials"],
     describes:
       "Join us every Tuesday and get 8 Springer Mountain Chicken Wings and a 12oz house beer for $10",
@@ -506,7 +533,7 @@ const events = [
   },
   {
     name: "Burger + Beer $11",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials", "Drink Specials"],
     describes:
       "Enjoy a juicy Brasstown Farm huckburger, Springer Mountain Chicken burger, or our home-made smoked beet burger – add cheese if you’d like – along with a regular side, and choose a 12 oz. Twain’s ale to help wash it down.",
@@ -516,7 +543,7 @@ const events = [
   },
   {
     name: "Whiskey Wednesday",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials", "Happy Hour"],
     describes: "All whiskey cocktails are only $5",
     day: ["Wednesday"],
@@ -526,7 +553,7 @@ const events = [
 
   {
     name: "Bottomless Mimosas",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Brunch", "Drink Specials"],
     describes:
       "Brunch wouldn’t be the same without Bottomless Mimosas. Luckily, the brunch menu has you covered with both Bottomless Mimosas and Bloody Marys available for $15.",
@@ -536,7 +563,7 @@ const events = [
   },
   {
     name: "BOGO Ramen",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes: "Buy one Ramen bowl and get another free!",
     day: ["Monday"],
@@ -545,7 +572,7 @@ const events = [
   },
   {
     name: "$5 Cocktails",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Get all classic cocktails for only $5",
     day: ["Thursday"],
@@ -554,7 +581,7 @@ const events = [
   },
   {
     name: "Half Price Wine",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Select glasses of wine are half priced all day long",
     day: ["Monday"],
@@ -563,7 +590,7 @@ const events = [
   },
   {
     name: "$3 Sangria",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Enjoy yourself a glass of sangria from only $3!",
     day: ["Tuesday"],
@@ -573,7 +600,7 @@ const events = [
 
   {
     name: "$3 Draft Beers",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "16oz draft beers are only $3 all day.",
     day: ["Wednesday"],
@@ -582,7 +609,7 @@ const events = [
   },
   {
     name: "Bottomless Sangria",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials", "Brunch"],
     describes: "Bottomless Sangria is $12 for Saturday brunch.",
     day: ["Saturday"],
@@ -591,7 +618,7 @@ const events = [
   },
   {
     name: "Bottomless Mimosas",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials", "Brunch"],
     describes: "Bottomless Mimosas are $12 for Sunday brunch.",
     day: ["Sunday"],
@@ -600,7 +627,7 @@ const events = [
   },
   {
     name: "Half Price Wine",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "All bottles of wine are half off for parties of five or fewer",
     day: ["Monday"],
@@ -609,7 +636,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes: "Get your team together for a chance to win house cash!",
     day: ["Tuesday"],
@@ -618,7 +645,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes: "Get your team together for a chance to win house cash!",
     day: ["Thursday"],
@@ -627,7 +654,7 @@ const events = [
   },
   {
     name: "$10 Pitchers",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Get $10 Dos XX Pitchers all day long!",
     day: ["Saturday"],
@@ -636,7 +663,7 @@ const events = [
   },
   {
     name: "$2.50 Sangrias and Bloody Marys",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials", "Brunch"],
     describes: "$2.50 Sangrias and Bloody Marys",
     day: ["Sunday"],
@@ -645,7 +672,7 @@ const events = [
   },
   {
     name: "Sound Check Bingo",
-    restaurant_id: { mojo },
+    restaurant: { mojo },
     category: ["Bingo"],
     describes: "Decipher songs to fill out your bingo card!",
     day: ["Wednesday"],
@@ -654,7 +681,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: { imp },
+    restaurant: { imp },
     category: ["Trivia"],
     describes: "Get your team together for a chance to win house cash!",
     day: ["Monday"],
@@ -663,7 +690,7 @@ const events = [
   },
   {
     name: "Bend & Beer",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Unique", "Drink Specials"],
     describes:
       "We’re opening an hour early for yoga— attendees are invited to stay for a FREE beer after class on us.",
@@ -675,7 +702,7 @@ const events = [
   {
 
     name: "Wayback Wednesday",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Unique"],
     describes: "Enjoy a free retro movie while you sip on your beer.",
     day: ["Wednesday"],
@@ -684,7 +711,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes: "Get your team together for a chance to win house cash!",
     day: ["Thursday"],
@@ -694,7 +721,7 @@ const events = [
 
   {
     name: "Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes: "Get your team together for a chance to win house cash!",
     day: ["Thursday"],
@@ -703,7 +730,7 @@ const events = [
   },
   {
     name: "Half Price Sake",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Enjoy half priced sake bottles!",
     day: ["Tuesday"],
@@ -713,7 +740,7 @@ const events = [
 
   {
     name: "Half Price Wine",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Enjoy half priced wine bottles!",
     day: ["Sunday"],
@@ -722,7 +749,7 @@ const events = [
   },
   {
     name: "Half Price Sushi",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Happy Hour", "Food Specials"],
     describes: "Sushi rolls are 1/2 off",
     day: ["Monday", "Wednesday"],
@@ -731,7 +758,7 @@ const events = [
   },
   {
     name: "Late Night Sushi",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials", "Late Night"],
     describes: "Enjoy half priced sushi rolls after 11pm",
     day: ["Friday", "Saturday"],
@@ -740,7 +767,7 @@ const events = [
   },
   {
     name: "$1 oysters",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Happy Hour", "Food Specials"],
     describes: "Enjoy a selection of $1 oysters in the Oyster Bar",
     day: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -749,7 +776,7 @@ const events = [
   },
   {
     name: "$1 oysters",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Happy Hour", "Food Specials"],
     describes: "Enjoy a selection of $1 oysters in the Oyster Bar",
     day: ["Saturday", "Sunday"],
@@ -758,7 +785,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: [],
+    restaurant: [],
     category: ["Trivia"],
     describes: "Get your team together for a chance to win house cash!",
     day: ["Wednesday"],
@@ -767,7 +794,7 @@ const events = [
   },
   {
     name: "Bottomless Belinis",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials", "Brunch"],
     describes: "Bottomless Belinis are only $10 for brunch!",
     day: ["Sunday"],
@@ -776,7 +803,7 @@ const events = [
   },
   {
     name: "Half Price Wine",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials", "Happy Hour"],
     describes: "Half priced wine bottles available all day",
     day: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -785,7 +812,7 @@ const events = [
   },
   {
     name: "$4 Pint Night",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "$4 pint is for our core and rotator beers",
     day: ["Tuesday", "Wednesday"],
@@ -794,7 +821,7 @@ const events = [
   },
   {
     name: "Boards and Brews",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Unique"],
     describes:
       "Every Tuesday night, come join us and your board gaming friends.",
@@ -804,7 +831,7 @@ const events = [
   },
   {
     name: "Throwback Thursday",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Unique"],
     describes: "$12 gets you a brewery tour, a pint glass and 6 tastings.",
     day: ["Thursday"],
@@ -813,7 +840,7 @@ const events = [
   },
   {
     name: "Half Price Wine",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials", "Happy Hour"],
     describes: "Enjoy half priced wine bottles for happy hour!",
     day: ["Monday"],
@@ -822,7 +849,7 @@ const events = [
   },
   {
     name: "$5 Small Plates",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials", "Happy Hour"],
     describes: "Select small plates are onyl $5",
     day: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -831,7 +858,7 @@ const events = [
   },
   {
     name: "$4 Mojitos",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Enjoy $4 mojitos all day!",
     day: ["Monday"],
@@ -840,7 +867,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes: "Get your team together for a chance to win house cash!",
     day: ["Tuesday"],
@@ -849,7 +876,7 @@ const events = [
   },
   {
     name: "$4 Martinis",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Martinis are just $4 all day long",
     day: ["Wednesday"],
@@ -859,7 +886,7 @@ const events = [
 
   {
     name: "$4 Margaritas",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Margaritas are only $4 all day long",
     day: ["Thursday"],
@@ -868,7 +895,7 @@ const events = [
   },
   {
     name: "$4 Drafts & $3 Cans",
-    restaurant_id: [],
+    restaurant: [],
     category: ["Drink Specials"],
     describes:
       "Help FLIP clean out the beer basement! Drafts are $4, and craft cans are $3.",
@@ -878,7 +905,7 @@ const events = [
   },
   {
     name: "Burger + Beer $13",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials", "Drink Specials"],
     describes:
       "Grab a double-stack burger, fries and beer for $13 on Tuesday nights.",
@@ -888,7 +915,7 @@ const events = [
   },
   {
     name: "Live Music",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Live Music"],
     describes: "Live Music at the upstairs bar",
     day: ["Thursday"],
@@ -897,7 +924,7 @@ const events = [
   },
   {
     name: "Live Music",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Live Music"],
     describes: "Live Music at the upstairs bar",
     day: ["Friday"],
@@ -906,7 +933,7 @@ const events = [
   },
   {
     name: "Live DJ",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Live Music"],
     describes: "Live Music at the upstairs bar",
     day: ["Saturday"],
@@ -915,7 +942,7 @@ const events = [
   },
   {
     name: "Thirsty Thursdays",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes:
       "On Thursdays, get a $6 punch or cocktail of the day, $2.50 beers, or $6 glasses of wine ($24 for the entire bottle) at the upstairs bar at JCT.",
@@ -925,7 +952,7 @@ const events = [
   },
   {
     name: "$2 Tuesdays",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials", "Food Specials"],
     describes:
       "On $2 Tuesdays, get $2 Tecates and select shots, along with $2 sliders, boiled peanuts, and pork rinds.",
@@ -935,7 +962,7 @@ const events = [
   },
   {
     name: "$5 Small Plates",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials", "Happy Hour"],
     describes:
       "$5 for wings of the day, sliders, seafood cocktail, or fried green tomatoes",
@@ -945,7 +972,7 @@ const events = [
   },
   {
     name: "Wine Down Wednesday",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials", "Drink Specials"],
     describes: "1/2 price on select bottles and get a free charcuerie board!",
     day: ["Wednesday"],
@@ -954,7 +981,7 @@ const events = [
   },
   {
     name: "Live Music",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Live Music"],
     describes: "Enjoy local musicians every 1st and 3rd thursday",
     day: ["Thursday"],
@@ -963,7 +990,7 @@ const events = [
   },
   {
     name: "$5 Happy Hour",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Happy Hour", "Drink Specials", "Food Specials"],
     describes: "$5 Asian street bites and high-octane house drinks",
     day: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -972,7 +999,7 @@ const events = [
   },
   {
     name: "Late Night Deals",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes: "Get a special menu of $10 plates after 11:30pm",
     day: ["Friday", "Saturday"],
@@ -982,7 +1009,7 @@ const events = [
   {
 
     name: "Mussel Mondays",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials", "Happy Hour"],
     describes: "All you can eat mussels served with house cut fries, $29",
     day: ["Monday"],
@@ -991,7 +1018,7 @@ const events = [
   },
   {
     name: "Comedy Night",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Unique"],
     describes: "Enjoy a FREE comedy night every last Friday of the month",
     day: ["Friday"],
@@ -1001,7 +1028,7 @@ const events = [
   {
 
     name: "$2 Tacos",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes: "Rotating $2 tacos all day",
     day: ["Monday"],
@@ -1010,7 +1037,7 @@ const events = [
   },
   {
     name: "Beer Geek Tuesdays",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes:
       "Every tuesday, themed beer flights are hand curated to showcase specialty beers",
@@ -1020,7 +1047,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes: "Get your team together for a chance to win house cash!",
     day: ["Wednesday"],
@@ -1029,7 +1056,7 @@ const events = [
   },
   {
     name: "Half Price Wine",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Get all wine bottles half off",
     day: ["Thursday"],
@@ -1038,7 +1065,7 @@ const events = [
   },
   {
     name: "Half Price Apps",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Happy Hour", "Food Specials"],
     describes:
       "Pub Fries, Hummus, Fried Mushrooms, and Chicken Quesdilla are 1/2 off 5-7",
@@ -1048,7 +1075,7 @@ const events = [
   },
   {
     name: "Brunch",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Brunch"],
     describes: "$3 mimosas and special brunch menu",
     day: ["Saturday", "Sunday"],
@@ -1057,7 +1084,7 @@ const events = [
   },
   {
     name: "Rock Paper Scissors Tournament",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Unique"],
     describes: "FREE TO PLAY! Winner recieves $100 CASH!",
     day: ["Thursday"],
@@ -1066,7 +1093,7 @@ const events = [
   },
   {
     name: "$2 Tacos",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes: "Enjoy $2 tacos after 8pm",
     day: ["Thursday"],
@@ -1075,7 +1102,7 @@ const events = [
   },
   {
     name: "Drunk Bingo",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes:
       "Come in and play classic bingo but with a twist, with the chance to win great prizes.",
@@ -1085,7 +1112,7 @@ const events = [
   },
   {
     name: "All you can eat crab legs",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes:
       "Tuesday means crab legs - all you can eat (until they run out) for $39.95 PER PERSON!",
@@ -1096,7 +1123,7 @@ const events = [
   },
   {
     name: "Punk & Metal Karaoke",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Karaoke"],
     describes:
       "A large selection of PUNK ROCK, HEAVY METAL, & NEW WAVE 80's songs to choose from.",
@@ -1106,7 +1133,7 @@ const events = [
   },
   {
     name: "$6.66 Burgers",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes: "$6.66 for any burger all day long",
     day: ["Wednesday"],
@@ -1116,7 +1143,7 @@ const events = [
 
   {
     name: "Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes:
       "Come play trivia on Sunday nights and walk away with valuable prizes and elevated self-esteem!",
@@ -1126,7 +1153,7 @@ const events = [
   },
   {
     name: "Live Music",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Live Music", "Drink Specials"],
     describes: "Live Music and $7 glasses of wine",
     day: ["Wednesday"],
@@ -1136,7 +1163,7 @@ const events = [
   },
   {
     name: "Ladies Night",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials", "Live Music"],
     describes: "Half off craft cocktails and live DJ",
     day: ["Thursday"],
@@ -1145,7 +1172,7 @@ const events = [
   },
   {
     name: "$3 Margaritas",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes:
       "House margaritas are $3 for a 12oz, $7 for a 32oz, and only $15 for a whopping 60oz all day!",
@@ -1155,7 +1182,7 @@ const events = [
   },
   {
     name: "$3 Draft Beer",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes:
       "Draft Beers are on special all day long. A 16oz is $3, a 32oz draft is $5, and a 60oz pitcher is only $11.",
@@ -1165,7 +1192,7 @@ const events = [
   },
   {
     name: "$2 Bottled Beer",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Enjoy $2 bottled beer all day",
     day: ["Wednesday"],
@@ -1174,7 +1201,7 @@ const events = [
   },
   {
     name: "$5 Texas Margaritas",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Senor Patron’s signature Texas margaritas are only $5.",
     day: ["Thursday"],
@@ -1183,7 +1210,7 @@ const events = [
   },
   {
     name: "Sunday Funday",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "$4 mojitos all day long",
     day: ["Sunday"],
@@ -1192,7 +1219,7 @@ const events = [
   },
   {
     name: "Happy Hour",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Happy Hour", "Drink Specials"],
     describes: "House margaritas and draft beers are $3.50 for happy hour",
     day: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -1201,7 +1228,7 @@ const events = [
   },
   {
     name: "Burger Monday",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials", "Drink Specials"],
     describes:
       "Classic Double, fries and house draft for $10 plus Bocce Ball downstairs",
@@ -1211,7 +1238,7 @@ const events = [
   },
   {
     name: "Taco Tuesday",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes: "$3 tacos and Bocce Ball downstairs",
     day: ["Tuesday"],
@@ -1220,7 +1247,7 @@ const events = [
   },
   {
     name: "Wing Wednesday",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials", "Drink Specials"],
     describes: "12 wings and a house draft for $12, plus Bocce Ball downstairs",
     day: ["Wednesday"],
@@ -1229,7 +1256,7 @@ const events = [
   },
   {
     name: "$3 Miller Lite",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "$3 Miller lite tallboys",
     day: ["Wednesday"],
@@ -1238,7 +1265,7 @@ const events = [
   },
   {
     name: "Wing Wednesday",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes: "Get a pound of wings for $6 every hump day!",
     day: ["Wednesday"],
@@ -1247,7 +1274,7 @@ const events = [
   },
   {
     name: "Half Price Apps",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes: "Enjoy half price apps at the back bar only",
     day: ["Monday", "Tuesday", "Wednesday", "Thursday"],
@@ -1256,7 +1283,7 @@ const events = [
   },
   {
     name: "Half Price Wine",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Enjoy 1/2 off wine GLASSES all day",
     day: ["Monday"],
@@ -1265,7 +1292,7 @@ const events = [
   },
   {
     name: "Fried Chicken",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials", "Food Specials", "Happy Hour"],
     describes:
       "George’s Famous Fried Chicken with two sides and a craft beer for $18.",
@@ -1275,7 +1302,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes: "Get your team together for a chance to win house cash!",
     day: ["Wednesday"],
@@ -1284,7 +1311,7 @@ const events = [
   },
   {
     name: "BOGO Tachos",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Happy Hour", "Food Specials"],
     describes: "All tachos are buy one get one 5-7pm",
     day: ["Thursday"],
@@ -1293,7 +1320,7 @@ const events = [
   },
   {
     name: "$3 Mimosas",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Brunch", "Drink Specials"],
     describes: "Sunday Brunch means $3 mimosas and $15 carafes.",
     day: ["Sunday"],
@@ -1302,7 +1329,7 @@ const events = [
   },
   {
     name: "Live Music",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Live Music", "Drink Specials"],
     describes:
       "There is live music, $3 Fireball shots, $2 Hamm’s Tallboys, and $4 Miller Tallboys to finish off the weekend.",
@@ -1313,7 +1340,7 @@ const events = [
 
   {
     name: "Happy Hour",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Happy Hour", "Drink Specials", "Food Specials"],
     describes: "Apps are $8, wins is $6, and beer is $4",
     day: ["Monday", "Tuesday", "Wednesday", "Thursday"],
@@ -1322,7 +1349,7 @@ const events = [
   },
   {
     name: "$6 Cocktails",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Classic cocktails are only $6 from noon to close.",
     day: ["Monday"],
@@ -1331,7 +1358,7 @@ const events = [
   },
   {
     name: "Whiskey Wednesday",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "$8 Woodford reserve cocktails",
     day: ["Wednesday"],
@@ -1340,7 +1367,7 @@ const events = [
   },
   {
     name: "$4.50 Terrapin",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Rotating Terrapin cans are only $4.50",
     day: ["Thursday"],
@@ -1349,7 +1376,7 @@ const events = [
   },
   {
     name: "$5 Appetizers",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes: "Apps are $5",
     day: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -1358,7 +1385,7 @@ const events = [
   },
   {
     name: "Half Price Apps",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials", "Happy Hour"],
     describes: "Enjoy 1/2 price apps for Happy Hour",
     day: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -1367,7 +1394,7 @@ const events = [
   },
   {
     name: "$4 Beers",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials", "Happy Hour"],
     describes: "Select rotating beers are $4",
     day: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -1376,7 +1403,7 @@ const events = [
   },
   {
     name: "Half Price Cocktails",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "1/2 off any signature cocktails",
     day: ["Tuesday"],
@@ -1385,7 +1412,7 @@ const events = [
   },
   {
     name: "$3 Moonshine",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "$3 for any cocktail with moonshine!",
     day: ["Thursday"],
@@ -1394,7 +1421,7 @@ const events = [
   },
   {
     name: "Bottomless Mimosas",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Brunch", "Drink Specials"],
     describes: "Enjoy bottomless mimosas for brunch",
     day: ["Sunday"],
@@ -1403,7 +1430,7 @@ const events = [
   },
   {
     name: "$4 Well Drinks",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "$4 well drinks and shots all day",
     day: ["Monday"],
@@ -1412,7 +1439,7 @@ const events = [
   },
   {
     name: "$2 Tuesdays",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials", "Drink Specials"],
     describes: "All tacos are $2, as well as $2 Tecates and $4 moonshine",
     day: ["Tuesday"],
@@ -1421,7 +1448,7 @@ const events = [
   },
   {
     name: "$4 Mojitos",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink SPecials"],
     describes: "$4 Mojitos all day",
     day: ["Wednesday"],
@@ -1430,7 +1457,7 @@ const events = [
   },
   {
     name: "$5 Sangria",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "On Thursday only, sangria is $5 or $19 for a pitcher.",
     day: ["Thursday"],
@@ -1440,7 +1467,7 @@ const events = [
 
   {
     name: "$4 Margaritas",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "$4 house margaritas on the rocks",
     day: ["Friday"],
@@ -1449,7 +1476,7 @@ const events = [
   },
   {
     name: "Bottomless Drinks",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials", "Brunch"],
     describes: "2 time limit on bottomless margs, bloodys, and mimosas",
     day: ["Sunday"],
@@ -1458,7 +1485,7 @@ const events = [
   },
   {
     name: "Half Price Wine",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Half off wine bottles",
     day: ["Wednesday"],
@@ -1467,7 +1494,7 @@ const events = [
   },
   {
     name: "Beer Flights",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Selected beer flights are $5 everyday",
     day: [
@@ -1484,7 +1511,7 @@ const events = [
   },
   {
     name: "$10 Cheesesteaks",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes: "Fred's Cheesesteaks are $10 after 3pm",
     day: ["Tuesday"],
@@ -1493,7 +1520,7 @@ const events = [
   },
   {
     name: "Burger + Fries + Coke",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes:
       "Burger Stack + Small Fries + Canned Coke or Diet Coke from Fred's Meat & Bread, just $9.95, plus tax",
@@ -1503,7 +1530,7 @@ const events = [
   },
   {
     name: "Pita + Soda",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes:
       "Falafel Pita + Pickles + All Natural Housemade Soda from Yalla, just $8.95, plus tax",
@@ -1513,7 +1540,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes: "Usually Harry Potter themed!",
     day: ["Thursday"],
@@ -1522,7 +1549,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes: "Get your team together for a chance to win house cash!",
     day: ["Tuesday"],
@@ -1531,7 +1558,7 @@ const events = [
   },
   {
     name: "Bottomless Mules",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Bottomless Mules from 7-9 p.m. – $21 per person",
     day: ["Friday"],
@@ -1540,7 +1567,7 @@ const events = [
   },
   {
     name: "Happy Hour",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Happy Hour", "Drink Specials", "Food Specials"],
     describes:
       "Bar snacks are $6, select beer is $5, select wine and cocktails are $7.",
@@ -1550,7 +1577,7 @@ const events = [
   },
   {
     name: "BOGO Tacos",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes: "Buy one get one tacos",
     day: ["Friday"],
@@ -1559,7 +1586,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes: "Get your team together for a chance to win house cash!",
     day: ["Tuesday"],
@@ -1568,7 +1595,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes: "Get your team together for a chance to win house cash!",
     day: ["Wednesday"],
@@ -1577,7 +1604,7 @@ const events = [
   },
   {
     name: "$5 Off",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes: "$5 off big plates after 5pm",
     day: ["Sunday"],
@@ -1586,7 +1613,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes: "Get your team together for a chance to win house cash!",
     day: ["Thursday"],
@@ -1596,7 +1623,7 @@ const events = [
 
   {
     name: "$5 Burritos",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes: "Burritos are only avaiable on Mondays and they're $5!",
     day: ["Monday"],
@@ -1605,7 +1632,7 @@ const events = [
   },
   {
     name: "$4 Mojitos",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "Enjoy $4 mojitos all day",
     day: ["Monday"],
@@ -1614,7 +1641,7 @@ const events = [
   },
   {
     name: "Tako Tuesday",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes: "$2 classic tacos, $3 premium tacos",
     day: ["Tuesday"],
@@ -1623,7 +1650,7 @@ const events = [
   },
   {
     name: "Wine Wednesday",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "1/2 off bottles of wine",
     day: ["Wednesday"],
@@ -1632,7 +1659,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes: "Team Trivia and $10 buckets of beer",
     day: ["Thursday"],
@@ -1642,7 +1669,7 @@ const events = [
 
   {
     name: "$3 Drinks",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "$3 Hite and Miller Draft, $3 Shots",
     day: ["Friday"],
@@ -1651,7 +1678,7 @@ const events = [
   },
   {
     name: "Burger + Beer $10",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials", "Drink Specials"],
     describes: "Burger and 12oz pour = $10",
     day: ["Monday"],
@@ -1660,7 +1687,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes: "Team Trivia 8pm Play for $6000 Grand Prize",
     day: ["Tuesday"],
@@ -1669,7 +1696,7 @@ const events = [
   },
   {
     name: "Slider Night",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes: "$3.50 Sliders 5-10pm",
     day: ["Wednesday"],
@@ -1678,7 +1705,7 @@ const events = [
   },
   {
     name: "Whiskey Flights",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Drink Specials"],
     describes: "$15 Whiskey Flights",
     day: ["Thursday"],
@@ -1687,7 +1714,7 @@ const events = [
   },
   {
     name: "Live Music",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Live Music"],
     describes: "Live Music",
     day: ["Sunday"],
@@ -1696,7 +1723,7 @@ const events = [
   },
   {
     name: "Bottomless Mimosas",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Brunch", "Drink Specials"],
     describes: "Bottomless mimosas at brunch are only $17",
     day: ["Saturday", "Sunday"],
@@ -1705,7 +1732,7 @@ const events = [
   },
   {
     name: "Fried Chicken Night",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes: "100% All Natural Springer Mountain Chicken",
     day: ["Sunday"],
@@ -1714,7 +1741,7 @@ const events = [
   },
   {
     name: "$2 Tacos",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials"],
     describes: "$2 tacos after 6pm",
     day: ["Tuesday"],
@@ -1723,7 +1750,7 @@ const events = [
   },
   {
     name: "Free Apps",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials", "Happy Hour"],
     describes: "Free app with the purchase of a drink from 4-6",
     day: ["Friday"],
@@ -1732,7 +1759,7 @@ const events = [
   },
   {
     name: "Press Start",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Unique"],
     describes:
       "Lofi beats, video games from wall to wall, giveaways and awesome food.",
@@ -1742,7 +1769,7 @@ const events = [
   },
   {
     name: "Drag Queen Bingo",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Unique", "Bingo"],
     describes:
       "Leave your filters at the door because Tuesday nights at Deep End are now Drag Bingo hosted by Brent Star!",
@@ -1753,7 +1780,7 @@ const events = [
 
   {
     name: "$1 Tacos",
-    restaurant_id: {},
+    restaurant: {},
     category: [""],
     describes: "$1 tacos after 5pm as well as Dickel Tennesee Whiskey for $5",
     day: ["Tuesday"],
@@ -1762,7 +1789,7 @@ const events = [
   },
   {
     name: "ATL D&D",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Unique"],
     describes:
       "Join Atlanta Drunks & Dragons for a foray in the Dungeons and Dragons universe. ",
@@ -1772,7 +1799,7 @@ const events = [
   },
   {
     name: "Bottomless Drinks",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Brunch", "Drink Specials"],
     describes:
       "We're doing bottomless mimosas and bloody mary's every weekend from noon until 3pm.",
@@ -1782,7 +1809,7 @@ const events = [
   },
   {
     name: "Happiest Hours",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Happy Hour", "Drink Specials", "Food Specials"],
     describes: "$6 cocktails and buy one get one of your favorite appetizers!",
     day: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -1791,7 +1818,7 @@ const events = [
   },
   {
     name: "Trivia",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Trivia"],
     describes:
       "Fire up those brain cells, it’s time for Trivia Tuesdays with DeWayne Morgan. ",
@@ -1801,7 +1828,7 @@ const events = [
   },
   {
     name: "Drag Queen Bingo",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Bingo", "Unique"],
     describes:
       "The Hideaway is proud to present Birdcage Bingo, hosted by drag queen extraordinaire Ruby Redd.",
@@ -1812,7 +1839,7 @@ const events = [
   },
   {
     name: "Karaoke Night",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Karaoke"],
     describes: "Karaoke Night hosted by Sinnamen Success",
     day: ["Friday"],
@@ -1821,7 +1848,7 @@ const events = [
   },
   {
     name: "$2 Tuesdays",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Food Specials", "Drink Specials", "Happy Hour"],
     describes:
       "$2 drinks, tacos, shots, beers, & hookah specials all night long",
@@ -1831,7 +1858,7 @@ const events = [
   },
   {
     name: "Wine Down Weekends",
-    restaurant_id: {},
+    restaurant: {},
     category: ["Live Music"],
     describes:
       "While attending a free concert, you can order food from the City Winery menu, sip wine from the 315-bottle selection, and enjoy craft beer or a signature cocktail.",
