@@ -4,10 +4,50 @@ const Event = require("../models/Event");
 const jwt = require('jsonwebtoken');
 
 module.exports = function(app) {
-  
+
+  // Restaurant Model Routes
+  // Get Route for viewing the restaurants
+
+  app.get("/api/restaurant", function(req, res) {
+    Restaurant.find({})
+      .then(function(dbRestaurant) {
+        res.json(dbRestaurant);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
+
+  app.get("/api/restaurant/:name", function(req, res) {
+    Restaurant.find({name: req.params.name})
+      .populate("events")
+      .then(function(dbRestaurant) {
+        res.send(dbRestaurant);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
+
+
+  // Event Model Route
+  // Get Route for viewing the Events
+
+  app.get("/api/event", function(req, res) {
+    Event.find({})
+      .then(function(data) {
+        res.json(data);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
+
+
   // User Model Routes
   // Get Route to get user information (temporarily so that we can test)
   // and which restaurants they are saving
+
   app.get("/api/user", function(req, res) {
     User.find({})
       .populate("favorites")
@@ -19,44 +59,18 @@ module.exports = function(app) {
       });
   });
 
-  app.post("/api/user", function(req, res) {
-    let id = req.params.id;
-
-    User.find(id)
-      .populate("favorites")
-      .then(function(userData) {
+  app.post("/api/user/:id", function(req, res) {
+    User.findOneAndUpdate(
+        { _id: req.params.id },
+        { $push: { favorites: req.body } },
+        { new: true }
+      ).then(function(userData) {
         res.json(userData);
       })
       .catch(function(err) {
         res.json(err);
       });
-  });
-
-  // Event Model Route
-  // Get Route for viewing the Events
-
-  app.get("/api/event", function(req, res) {
-    Event.find()
-      .then(function(data) {
-        res.json(data);
-      })
-      .catch(function(err) {
-        res.json(err);
-      });
-  });
-
-  // Restaurant Model Routes
-  // Get Route for viewing the restaurants
-  app.get("/api/restaurant", function(req, res) {
-    Restaurant.find({})
-      .then(function(dbRestaurant) {
-        res.json(dbRestaurant);
-      })
-      .catch(function(err) {
-        res.json(err);
-      });
-  });
-
+    })
 
   app.post("/api/authenticate", function (req, res) {
 		const {username, password} = req.body;
@@ -96,7 +110,19 @@ module.exports = function(app) {
 		});
 	});
 
-};
+  app.post("/api/user", function(req, res) {
+    const newUser = {
+      email: req.body.email,
+      password: req.body.password
+    };
+    User.create(newUser)
+      .then(function(userData) {
+        res.json(userData);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
 
+  // Protected Routes
 
- 

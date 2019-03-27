@@ -86,6 +86,26 @@ const restaurants = [
     address: "537 W Howard Ave, Decatur, GA 30030"
   },
   {
+    name: "Matador Mexican Cantina",
+    neighborhood: "Decatur",
+    address: "350 Mead Rd, Decatur, GA 30030"
+  },
+  {
+    name: "Mojo Pizza N' Pub",
+    neighborhood: "Decatur",
+    address: "657 E Lake Dr A, Decatur, GA 30030"
+  },
+  {
+    name: "The Imperial",
+    neighborhood: "Decatur",
+    address: "726 W College Ave, Decatur, GA 30030"
+  },
+  {
+    name: "Wild Heaven Beer",
+    neighborhood: "Decatur",
+    address: "135 Maple St B, Avondale Estates, GA 30002"
+  },
+  {
     name: "Atlanta Brewing Company",
     neighborhood: "West Midtown",
     address: "2207 Defoor Hills Rd NW, Atlanta, GA 30318"
@@ -154,19 +174,34 @@ const restaurants = [
     address: "1198 Howell Mill Rd #18, Atlanta, GA 30318"
   },
   {
+    name: "Bone Lick BBQ",
+    neighborhood: "West Midtown",
+    address: "1133 Huff Rd NW, Atlanta, GA 30318"
+  },
+  {
     name: "Twisted Soul Cookhouse & Pours",
     neighborhood: "West Midtown",
     address: "1133 Huff Rd NW #D, Atlanta, GA 30318"
   },
   {
     name: "Little Trouble",
-    neighborhood: "1170 Howell Mill Rd NW Suite P-10C, Atlanta, GA 30318",
-    address: ""
+    neighborhood: "West Midtown",
+    address: "1170 Howell Mill Rd NW Suite P-10C, Atlanta, GA 30318"
   },
   {
     name: "Marcel",
     neighborhood: "West Midtown",
     address: "1170 Howell Mill Rd, Atlanta, GA 30318"
+  },
+  {
+    name: "Tin Tin",
+    neighborhood: "West Midtown",
+    address: "956 Brady Ave, Atlanta, 30318"
+  },
+  {
+    name: "Second Self Beer Company",
+    neighborhood: "West Midtown",
+    address: "1317 Logan Cir NW, Atlanta, GA 30318"
   },
   {
     name: "Cypress Street Pint & Plate",
@@ -253,7 +288,6 @@ const restaurants = [
     neighborhood: "Midtown",
     address: "942 Peachtree St NE, Atlanta, GA 30309"
   },
-
   {
     name: "Smith's Olde Bar",
     neighborhood: "Midtown",
@@ -283,6 +317,16 @@ const restaurants = [
     name: "The Hideaway",
     neighborhood: "Midtown",
     address: "1544 Piedmont Ave NE, Atlanta, GA 30324"
+  },
+  {
+    name: "Midtown Tavern",
+    neighborhood: "Midtown",
+    address: "554 Piedmont Ave NE, Atlanta, GA 30308"
+  },
+  {
+    name: "City Winery",
+    neighborhood: "Midtown",
+    address: "650 North Avenue NE, Atlanta, GA 30308"
   }
 ];
 
