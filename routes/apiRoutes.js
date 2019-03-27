@@ -72,6 +72,9 @@ module.exports = function(app) {
       });
     })
 
+
+  // Protected Routes
+
   app.post("/api/authenticate", function (req, res) {
 		const {username, password} = req.body;
 		User.findOne({ username: username })
@@ -124,5 +127,4 @@ module.exports = function(app) {
       });
   });
 
-  // Protected Routes
-
+}
