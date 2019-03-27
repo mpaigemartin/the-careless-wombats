@@ -332,6 +332,17 @@ const events = [
     time: "8:30"
   },
   {
+    name: "Bend & Beer",
+    restaurant_id: {},
+    category: ["Unique", "Drink Specials"],
+    describes:
+      "We’re opening an hour early for yoga— attendees are invited to stay for a FREE beer after class on us.",
+    day: ["Sunday"],
+    isRecuring: true,
+    time: "12"
+  },
+
+  {
     name: "Wayback Wednesday",
     restaurant_id: {},
     category: ["Unique"],
@@ -636,6 +647,24 @@ const events = [
     day: ["Friday", "Saturday"],
     isRecuring: true,
     time: "11:30-2"
+  },
+  {
+    name: "Mussel Mondays",
+    restaurant_id: {},
+    category: ["Food Specials", "Happy Hour"],
+    describes: "All you can eat mussels served with house cut fries, $29",
+    day: ["Monday"],
+    isRecuring: true,
+    time: "4-10"
+  },
+  {
+    name: "Comedy Night",
+    restaurant_id: {},
+    category: ["Unique"],
+    describes: "Enjoy a FREE comedy night every last Friday of the month",
+    day: ["Friday"],
+    isRecuring: true,
+    time: "7"
   },
   {
     name: "$2 Tacos",
@@ -1444,6 +1473,35 @@ const events = [
     day: ["Wednesday"],
     isRecuring: true,
     time: "8:30"
+  },
+  {
+    name: "Karaoke Night",
+    restaurant_id: {},
+    category: ["Karaoke"],
+    describes: "Karaoke Night hosted by Sinnamen Success",
+    day: ["Friday"],
+    isRecuring: true,
+    time: "9"
+  },
+  {
+    name: "$2 Tuesdays",
+    restaurant_id: {},
+    category: ["Food Specials", "Drink Specials", "Happy Hour"],
+    describes:
+      "$2 drinks, tacos, shots, beers, & hookah specials all night long",
+    day: ["Tuesday"],
+    isRecuring: true,
+    time: "7-2am"
+  },
+  {
+    name: "Wine Down Weekends",
+    restaurant_id: {},
+    category: ["Live Music"],
+    describes:
+      "While attending a free concert, you can order food from the City Winery menu, sip wine from the 315-bottle selection, and enjoy craft beer or a signature cocktail.",
+    day: ["Friday", "Saturday"],
+    isRecuring: true,
+    time: "6:30"
   }
 ];
 
