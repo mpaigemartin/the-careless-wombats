@@ -6,7 +6,6 @@ import SearchBar from '../component/SearchBar';
 import FilterButtonRow from '../component/FilterButtonRow';
 import GoogleMap from '../component/GoogleMap';
 import '../../src/App.css';
-import restaurantList from '../utils/Variables';
 
 class Home extends Component {
 
@@ -52,7 +51,6 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    this.setState({restaurantList: restaurantList});
   //   this.createRestaurantList();
   }
 

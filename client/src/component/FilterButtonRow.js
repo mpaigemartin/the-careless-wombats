@@ -98,7 +98,7 @@ class FilterButtonRow extends React.Component {
           <NativeSelect
             value={this.state.location}
             onChange={this.handleLocationChange}
-            input={<BootstrapInput name="location" id="location-customized-native-simple" />}
+            input={<BootstrapInput name="location" className="option" id="location-customized-native-simple" />}
           >
             <option value="" label="all areas"/>
             <option value='midtown'>Midtown</option>
@@ -115,7 +115,7 @@ class FilterButtonRow extends React.Component {
           <NativeSelect
             value={this.state.type}
             onChange={this.handleTypeChange}
-            input={<BootstrapInput name="type" id="type-customized-native-simple" />}
+            input={<BootstrapInput name="type" className="option" id="type-customized-native-simple" />}
           >
             <option value="" label="all events"/>
             <option value='karaoke'>Karaoke</option>
@@ -132,9 +132,9 @@ class FilterButtonRow extends React.Component {
           <NativeSelect
             value={this.state.day}
             onChange={this.handleDayChange}
-            input={<BootstrapInput name="day" id="day-customized-native-simple" />}
+            input={<BootstrapInput name="day" className="option" id="day-customized-native-simple" />}
           >
-            <option defaultValue="" label="all days" />
+            <option classname="option" defaultValue="" label="all days" />
             <option value='monday'>Monday</option>
             <option value='tuesday'>Tuesday</option>
             <option value='wednesday'>Wednesday</option>

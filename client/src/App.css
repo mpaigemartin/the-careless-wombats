@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+body {
+  /* background-color: #333; */
+}
+
+
 #header {
   grid-area: header;
 }
@@ -74,6 +79,7 @@
     position: absolute;
     z-index: -1;   
   }
+  
 
 .container {
   display: grid;

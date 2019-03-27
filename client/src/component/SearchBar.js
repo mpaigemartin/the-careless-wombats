@@ -15,40 +15,17 @@ let suggestions = [];
 axios
   .get('api/restaurant')
   .then(result => {
-    // const places = result.data; //these two lines return an array of strings=restaurant names only
-    // this.setState({ restaurantList: places.map(({ name }) => name)})
+
     const places = result.data;
     suggestions = places.map(item => {
       const container = {};  
       container.label = item.name;  
       return container;
   })
-    
-    console.log(suggestions);
-  })
-
-// const suggestions = [
-//   { label: 'Xanadu' },
-//   { label: 'Aland Islands' },
-//   { label: 'Albania' },
-//   { label: 'Algeria' },
-//   { label: 'American Samoa' },
-//   { label: 'Andorra' },
-//   { label: 'Angola' },
-//   { label: 'Anguilla' },
-//   { label: 'Antarctica' },
-//   { label: 'Antigua and Barbuda' },
-//   { label: 'Argentina' },
-//   { label: 'Armenia' },
-//   { label: 'Aruba' },
-//   { label: 'Australia' },
-//   { label: 'Austria' },
-//   { label: 'Azerbaijan' },
-// ];
+})
 
 function renderInputComponent(inputProps) {
   const { classes, inputRef = () => {}, ref, ...other } = inputProps;
-
   return (
     <TextField
       fullWidth
@@ -183,7 +160,7 @@ class SearchBar extends React.Component {
           {...autosuggestProps}
           inputProps={{
             classes,
-            placeholder: 'Search a country (start with a)',
+            placeholder: 'Search a bar/restaurant',
             value: this.state.single,
             onChange: this.handleChange('single'),
           }}
