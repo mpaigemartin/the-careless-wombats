@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 var EventSchema = new Schema({
@@ -6,15 +6,6 @@ var EventSchema = new Schema({
     type: String,
     trim: true
   },
-<<<<<<< HEAD
-  restaurant_id: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Restaurant"
-    }
-  ],
-=======
->>>>>>> ac5fce32b13086b2128e144da8a83cd6958d165c
   category: [
     {
       type: Array,
@@ -39,6 +30,6 @@ var EventSchema = new Schema({
     trim: true
   }
 });
-const Event = mongoose.model("Events", EventSchema);
+const Event = mongoose.model('Events', EventSchema);
 
 module.exports = Event;
