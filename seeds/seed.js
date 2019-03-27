@@ -296,7 +296,6 @@ const restaurants = [
     neighborhood: "Midtown",
     address: "942 Peachtree St NE, Atlanta, GA 30309"
   },
-
   {
     name: "Smith's Olde Bar",
     neighborhood: "Midtown",
