@@ -14,6 +14,10 @@ var RestaurantSchema = new Schema({
     type: String,
     trim: true
   },
+  url: {
+    type: String,
+    trim: true
+  },
   events: [
     {
       type: Schema.Types.ObjectId,
