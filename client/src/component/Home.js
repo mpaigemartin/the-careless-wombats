@@ -47,7 +47,7 @@ class Home extends Component {
   }; 
   searchClickHandler = event => {
     event.preventDefault();
-    this.searchResults();
+    this.setState({keywordSearch: searchResults});
   };
 
   componentDidMount() {

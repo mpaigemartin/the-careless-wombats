@@ -102,6 +102,21 @@ const restaurants = [
     url: "http://www.thinkingmantavern.com/"
   },
   {
+    name: "Matador Mexican Cantina",
+    neighborhood: "Decatur",
+    address: "350 Mead Rd, Decatur, GA 30030"
+  },
+  {
+    name: "Mojo Pizza N' Pub",
+    neighborhood: "Decatur",
+    address: "657 E Lake Dr A, Decatur, GA 30030"
+  },
+  {
+    name: "The Imperial",
+    neighborhood: "Decatur",
+    address: "726 W College Ave, Decatur, GA 30030"
+  },
+  {
     name: "Atlanta Brewing Company",
     neighborhood: "West Midtown",
     address: "2323 Defoor Hills Rd NW, Atlanta, GA 30318",
@@ -180,6 +195,11 @@ const restaurants = [
     neighborhood: "West Midtown",
     address: "1198 Howell Mill Rd #18, Atlanta, GA 30318",
     url: "http://www.jctkitchen.com/"
+  },
+  {
+    name: "Bone Lick BBQ",
+    neighborhood: "West Midtown",
+    address: "1133 Huff Rd NW, Atlanta, GA 30318"
   },
   {
     name: "Twisted Soul Cookhouse & Pours",
@@ -301,7 +321,6 @@ const restaurants = [
     address: "942 Peachtree St NE, Atlanta, GA 30309",
     url: "https://hudsongrille.com/"
   },
-
   {
     name: "Smith's Olde Bar",
     neighborhood: "Midtown",
