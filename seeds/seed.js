@@ -103,6 +103,13 @@ const restaurants = [
     address: "726 W College Ave, Decatur, GA 30030"
   },
   {
+
+    name: "Wild Heaven Beer",
+    neighborhood: "Decatur",
+    address: "135 Maple St B, Avondale Estates, GA 30002"
+  },
+  {
+
     name: "Atlanta Brewing Company",
     neighborhood: "West Midtown",
     address: "2207 Defoor Hills Rd NW, Atlanta, GA 30318"
@@ -182,13 +189,23 @@ const restaurants = [
   },
   {
     name: "Little Trouble",
-    neighborhood: "1170 Howell Mill Rd NW Suite P-10C, Atlanta, GA 30318",
-    address: ""
+    neighborhood: "West Midtown",
+    address: "1170 Howell Mill Rd NW Suite P-10C, Atlanta, GA 30318"
   },
   {
     name: "Marcel",
     neighborhood: "West Midtown",
     address: "1170 Howell Mill Rd, Atlanta, GA 30318"
+  },
+  {
+    name: "Tin Tin",
+    neighborhood: "West Midtown",
+    address: "956 Brady Ave, Atlanta, 30318"
+  },
+  {
+    name: "Second Self Beer Company",
+    neighborhood: "West Midtown",
+    address: "1317 Logan Cir NW, Atlanta, GA 30318"
   },
   {
     name: "Cypress Street Pint & Plate",
@@ -304,6 +321,16 @@ const restaurants = [
     name: "The Hideaway",
     neighborhood: "Midtown",
     address: "1544 Piedmont Ave NE, Atlanta, GA 30324"
+  },
+  {
+    name: "Midtown Tavern",
+    neighborhood: "Midtown",
+    address: "554 Piedmont Ave NE, Atlanta, GA 30308"
+  },
+  {
+    name: "City Winery",
+    neighborhood: "Midtown",
+    address: "650 North Avenue NE, Atlanta, GA 30308"
   }
 ];
 
@@ -635,6 +662,18 @@ const events = [
     time: "8:30"
   },
   {
+    name: "Bend & Beer",
+    restaurant_id: {},
+    category: ["Unique", "Drink Specials"],
+    describes:
+      "We’re opening an hour early for yoga— attendees are invited to stay for a FREE beer after class on us.",
+    day: ["Sunday"],
+    isRecuring: true,
+    time: "12"
+  },
+
+  {
+
     name: "Wayback Wednesday",
     restaurant_id: {},
     category: ["Unique"],
@@ -941,6 +980,26 @@ const events = [
     time: "11:30-2"
   },
   {
+
+    name: "Mussel Mondays",
+    restaurant_id: {},
+    category: ["Food Specials", "Happy Hour"],
+    describes: "All you can eat mussels served with house cut fries, $29",
+    day: ["Monday"],
+    isRecuring: true,
+    time: "4-10"
+  },
+  {
+    name: "Comedy Night",
+    restaurant_id: {},
+    category: ["Unique"],
+    describes: "Enjoy a FREE comedy night every last Friday of the month",
+    day: ["Friday"],
+    isRecuring: true,
+    time: "7"
+  },
+  {
+
     name: "$2 Tacos",
     restaurant_id: {},
     category: ["Food Specials"],
@@ -1031,6 +1090,7 @@ const events = [
     describes:
       "Tuesday means crab legs - all you can eat (until they run out) for $39.95 PER PERSON!",
     day: ["Tuesday"],
+
     isRecuring: true,
     time: "All Day"
   },
@@ -1071,6 +1131,7 @@ const events = [
     describes: "Live Music and $7 glasses of wine",
     day: ["Wednesday"],
     isRecuring: true,
+
     time: "7"
   },
   {
@@ -1747,6 +1808,37 @@ const events = [
     day: ["Wednesday"],
     isRecuring: true,
     time: "8:30"
+
+  },
+  {
+    name: "Karaoke Night",
+    restaurant_id: {},
+    category: ["Karaoke"],
+    describes: "Karaoke Night hosted by Sinnamen Success",
+    day: ["Friday"],
+    isRecuring: true,
+    time: "9"
+  },
+  {
+    name: "$2 Tuesdays",
+    restaurant_id: {},
+    category: ["Food Specials", "Drink Specials", "Happy Hour"],
+    describes:
+      "$2 drinks, tacos, shots, beers, & hookah specials all night long",
+    day: ["Tuesday"],
+    isRecuring: true,
+    time: "7-2am"
+  },
+  {
+    name: "Wine Down Weekends",
+    restaurant_id: {},
+    category: ["Live Music"],
+    describes:
+      "While attending a free concert, you can order food from the City Winery menu, sip wine from the 315-bottle selection, and enjoy craft beer or a signature cocktail.",
+    day: ["Friday", "Saturday"],
+    isRecuring: true,
+    time: "6:30"
+
   }
 ];
 
@@ -1760,17 +1852,17 @@ const users = [
 db.Restaurant.deleteMany({})
   .then(() => db.Restaurant.collection.insertMany(restaurants))
   .then(data => {
-    console.log(data.insertedCount + ' records inserted!');
+    console.log(data.insertedCount + " records inserted!");
   });
 db.Event.deleteMany({})
   .then(() => db.Event.collection.insertMany(events))
   .then(data => {
-    console.log(data.insertedCount + ' records inserted!');
+    console.log(data.insertedCount + " records inserted!");
   });
 db.User.deleteMany({})
   .then(() => db.User.collection.insertMany(users))
   .then(data => {
-    console.log(data.insertedCount + ' records inserted!');
+    console.log(data.insertedCount + " records inserted!");
     mongoose.connection.close();
   })
   .catch(err => {

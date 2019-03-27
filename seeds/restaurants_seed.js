@@ -117,6 +117,11 @@ const restaurants = [
     address: "726 W College Ave, Decatur, GA 30030"
   },
   {
+    name: "Wild Heaven Beer",
+    neighborhood: "Decatur",
+    address: "135 Maple St B, Avondale Estates, GA 30002"
+  },
+  {
     name: "Atlanta Brewing Company",
     neighborhood: "West Midtown",
     address: "2323 Defoor Hills Rd NW, Atlanta, GA 30318",
@@ -210,14 +215,28 @@ const restaurants = [
   {
     name: "Little Trouble",
     neighborhood: "West Midtown",
+<<<<<<< HEAD
     address: "1170 Howell Mill Rd NW Suite P-10C, Atlanta, GA 30318",
     url: "http://www.little-trouble.com/"
+=======
+    address: "1170 Howell Mill Rd NW Suite P-10C, Atlanta, GA 30318"
+>>>>>>> ac5fce32b13086b2128e144da8a83cd6958d165c
   },
   {
     name: "Marcel",
     neighborhood: "West Midtown",
     address: "1170 Howell Mill Rd, Atlanta, GA 30318",
     url: "http://marcelatl.com/"
+  },
+  {
+    name: "Tin Tin",
+    neighborhood: "West Midtown",
+    address: "956 Brady Ave, Atlanta, 30318"
+  },
+  {
+    name: "Second Self Beer Company",
+    neighborhood: "West Midtown",
+    address: "1317 Logan Cir NW, Atlanta, GA 30318"
   },
   {
     name: "Cypress Street Pint & Plate",
@@ -354,8 +373,22 @@ const restaurants = [
   {
     name: "The Hideaway",
     neighborhood: "Midtown",
+<<<<<<< HEAD
     address: "1544 Piedmont Ave NE, Atlanta, GA 30324",
     url: "http://atlantahideaway.com/"
+=======
+    address: "1544 Piedmont Ave NE, Atlanta, GA 30324"
+  },
+  {
+    name: "Midtown Tavern",
+    neighborhood: "Midtown",
+    address: "554 Piedmont Ave NE, Atlanta, GA 30308"
+  },
+  {
+    name: "City Winery",
+    neighborhood: "Midtown",
+    address: "650 North Avenue NE, Atlanta, GA 30308"
+>>>>>>> ac5fce32b13086b2128e144da8a83cd6958d165c
   }
 ];
 

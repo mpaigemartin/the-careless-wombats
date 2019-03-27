@@ -6,12 +6,15 @@ var EventSchema = new Schema({
     type: String,
     trim: true
   },
+<<<<<<< HEAD
   restaurant_id: [
     {
       type: Schema.Types.ObjectId,
       ref: "Restaurant"
     }
   ],
+=======
+>>>>>>> ac5fce32b13086b2128e144da8a83cd6958d165c
   category: [
     {
       type: Array,

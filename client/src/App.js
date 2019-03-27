@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
-// import ProtectedRoute from "./component/ProtectedRoute";
+import ProtectedRoute from "./component/ProtectedRoute";
 import Login from "./component/Login";
 import Signup from "./component/Signup";
+<<<<<<< HEAD
 import Home from "./component/Home";
 import SearchPage from "./component/SearchPage";
 // import UserContext from "./context/UserContext";
@@ -25,6 +26,10 @@ import { createMuiTheme } from '@material-ui/core/styles';
 //     // error: will use the default color
 //   },
 // });
+=======
+import UserContext from "./context/UserContext";
+import SearchBar from "./component/SearchBar";
+>>>>>>> ac5fce32b13086b2128e144da8a83cd6958d165c
 
 class App extends Component {
 
@@ -42,14 +47,20 @@ class App extends Component {
     return (
 		<Router>
 			<div>
-				{/* <UserContext.Provider value={{ setUser, user }}> */}
-					{/* <ProtectedRoute exact path="/" component={HomePage} /> */}
+				<UserContext.Provider value={{ setUser, user }}>
+					<ProtectedRoute exact path="/" component={SearchBar} />
           
+<<<<<<< HEAD
 					<Route path="/" component={Signup} />
           <Route path="/" component={Login} />
           <Route exact path="/Search" component={SearchPage} />
           <Route exact path="/Home" component={Home} />
 				{/* </UserContext.Provider> */}
+=======
+					<Route exact path="/login" component={Signup} />
+          <Route exact path="/login" component={Login} />
+				</UserContext.Provider>
+>>>>>>> ac5fce32b13086b2128e144da8a83cd6958d165c
 			</div>
 		</Router>
     );
