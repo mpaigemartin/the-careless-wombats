@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {withRouter} from "react-router-dom";
-import UserContext from './context/UserContext'
+import UserContext from "../context/UserContext"
 import Auth from "../utils/Auth";
 
 class Login extends Component {
