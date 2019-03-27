@@ -1,6 +1,7 @@
 const User = require("../models/User");
 const Restaurant = require("../models/Restaurant");
 const Event = require("../models/Event");
+const jwt = require('jsonwebtoken');
 
 module.exports = function(app) {
   
@@ -57,33 +58,20 @@ module.exports = function(app) {
   });
 
 
-  // Post Route for saving a restaurant
-//   app.post("/api/restaurant", function(req, res) {
-//     const restaurant = {
-//         name: req.name,
-//         neighborhood: req.neighborhood,
-//         address: req.address
-//     };
-
-  Restaurant.create(restaurant)
-    .then(function(userData) {
-      res.json(userData);
-    })
-    .catch(function(err) {
-      res.json(err);
-    });
- 
-
   app.post("/api/authenticate", function (req, res) {
 		const {username, password} = req.body;
 		User.findOne({ username: username })
 			.then(function (user) {
-				const isValidPass = user.comparePassword(password);
+        const isValidPass = user.comparePassword(password);
+        console.log(isValidPass);
 				if (isValidPass) {
-					// NOTE: the secret should ultimately come from an environment variable and not be hard coded into the site
-					const token = jwt.sign({ data: user.id }, "superSecretKey");
+          console.log('isvalid');
+          console.log(user.id)
+          console.log(user);
+          const token = jwt.sign({ data: user._id }, process.env.SECRET_KEY);
+          console.log(token);
 					res.json({
-						id: user.id,
+						id: user._id,
 						username: user.username,
 						token: token
 					});
@@ -92,7 +80,7 @@ module.exports = function(app) {
 				}
 			})
 			.catch(function (err) {
-				res.status(404).json({ message: "Incorrect username or password." });
+				res.status(404).json({err: err });
 			});
 	});
 
@@ -103,6 +91,7 @@ module.exports = function(app) {
 		};
 
 		User.create(userData).then(function(dbUser){
+      console.log(dbUser);
 			res.json({success:true});
 		});
 	});

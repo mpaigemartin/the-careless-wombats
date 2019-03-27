@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
-// import ProtectedRoute from "./component/ProtectedRoute";
+import ProtectedRoute from "./component/ProtectedRoute";
 import Login from "./component/Login";
 import Signup from "./component/Signup";
-// import UserContext from "./context/UserContext";
+import UserContext from "./context/UserContext";
+import SearchBar from "./component/SearchBar";
 
 class App extends Component {
 
@@ -21,12 +22,12 @@ class App extends Component {
     return (
 		<Router>
 			<div>
-				{/* <UserContext.Provider value={{ setUser, user }}> */}
-					{/* <ProtectedRoute exact path="/" component={HomePage} /> */}
+				<UserContext.Provider value={{ setUser, user }}>
+					<ProtectedRoute exact path="/" component={SearchBar} />
           
-					<Route exact path="/" component={Signup} />
-          <Route exact path="/" component={Login} />
-				{/* </UserContext.Provider> */}
+					<Route exact path="/login" component={Signup} />
+          <Route exact path="/login" component={Login} />
+				</UserContext.Provider>
 			</div>
 		</Router>
     );

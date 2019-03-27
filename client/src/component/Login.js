@@ -21,12 +21,13 @@ class Login extends Component {
     console.log('clicked');
     console.log("This would be the click to the api route to login. It would use middleware with bcrypt to hash the password then compare.");
 		const {username, password} = this.state;
-		// if (username && password) {
-		// 	Auth.logIn(username, password, (response) => {
-		// 		this.context.setUser(response);
-		// 		this.props.history.push("/");
-			// });
-		// }
+		if (username && password) {
+			Auth.logIn(username, password, (response) => {
+				console.log(response);
+				this.context.setUser(response);
+				this.props.history.push("/");
+			});
+		}
 	}
 
 	render () {
