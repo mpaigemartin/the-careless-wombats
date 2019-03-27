@@ -31,20 +31,18 @@
     "url": "https://github.com/mpaigemartin/the-careless-wombats/issues"
   },
   "homepage": "https://github.com/mpaigemartin/the-careless-wombats#readme",
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "bcrypt": "^3.0.5",
     "bcryptjs": "^2.4.3",
-    "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
-    "concurrently": "^4.1.0",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.4.19",
-    "react": "^16.8.4",
-    "react-autocomplete": "^1.8.1",
-    "react-bootstrap": "^1.0.0-beta.6",
-    "react-router-dom": "^5.0.0"
+    "mongoose": "^5.4.19"
   }
 }

@@ -8,15 +8,12 @@ import GoogleMap from '../component/GoogleMap';
 import '../../src/App.css';
 
 class Home extends Component {
-
   state = {
-    restaurantList: [], 
+    restaurantList: [],
     keywordSearch: '',
     searchResults: [],
-    single: '',
-  }
-
-  
+    single: ''
+  };
 
   // createRestaurantList = () => {
   //   axios
@@ -30,38 +27,36 @@ class Home extends Component {
   //     })
   // };
 
-  searchResults = event => {
-    axios
-      .get(`/api/restaurant/${this.state.keywordSearch}`)
-      .then(result => {
-        this.setState({ searchResults: result.body });
-        console.log(this.state.searchResults);
-      });
-  };  
+  searchResults = () => {
+    axios.get(`/api/restaurant/${this.state.keywordSearch}`).then(result => {
+      this.setState({ searchResults: result.body });
+      console.log(this.state.searchResults);
+    });
+  };
 
   searchChangeHandler = event => {
     event.preventDefault();
     const keywordSearch = event.target.value;
     this.setState({ keywordSearch: keywordSearch });
     console.log(this.state.keywordSearch);
-  }; 
-  searchClickHandler = event => {
-    event.preventDefault();
-    this.setState({keywordSearch: searchResults});
   };
+  // searchClickHandler = event => {
+  //   event.preventDefault();
+  //   this.setState({ keywordSearch: searchResults });
+  // };
 
   componentDidMount() {
-  //   this.createRestaurantList();
+    this.searchResults();
   }
 
   render() {
     return (
       <div className="container">
         <Header />
-        <SearchBar 
+        <SearchBar
           searchChangeHandler={this.searchChangeHandler}
           searchClickHandler={this.searchClickHandler}
-          />
+        />
         <FilterButtonRow />
         <GoogleMap />
         <BusinessDirectory />

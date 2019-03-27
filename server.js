@@ -7,15 +7,14 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static('public'));
 
 mongoose.connect('mongodb://localhost/nightOwl', { useNewUrlParser: true });
 
-
 require('./routes/apiRoutes')(app);
 
-
-
 app.listen(PORT, function() {
-    console.log(`You are now listening to your favorite pirate radio station, Port ${PORT}! Sail away, mateys!`)
-})
+  console.log(
+    `You are now listening to your favorite pirate radio station, Port ${PORT}! Sail away, mateys!`
+  );
+});

@@ -7,6 +7,10 @@ module.exports = function(app) {
   // Restaurant Model Routes
   // Get Route for viewing the restaurants
 
+  app.get('/test', function(req, req) {
+    console.log('test');
+  });
+
   app.get('/api/restaurant', function(req, res) {
     Restaurant.find({})
       .then(function(dbRestaurant) {
