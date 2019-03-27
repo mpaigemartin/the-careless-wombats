@@ -109,11 +109,13 @@ const restaurants = [
     address: "726 W College Ave, Decatur, GA 30030"
   },
   {
+
     name: "Wild Heaven Beer",
     neighborhood: "Decatur",
     address: "135 Maple St B, Avondale Estates, GA 30002"
   },
   {
+
     name: "Atlanta Brewing Company",
     neighborhood: "West Midtown",
     address: "2207 Defoor Hills Rd NW, Atlanta, GA 30318"
@@ -296,7 +298,6 @@ const restaurants = [
     neighborhood: "Midtown",
     address: "942 Peachtree St NE, Atlanta, GA 30309"
   },
-
   {
     name: "Smith's Olde Bar",
     neighborhood: "Midtown",
@@ -684,6 +685,7 @@ const events = [
   },
 
   {
+
     name: "Wayback Wednesday",
     restaurant_id: {},
     category: ["Unique"],
@@ -990,6 +992,7 @@ const events = [
     time: "11:30-2"
   },
   {
+
     name: "Mussel Mondays",
     restaurant_id: {},
     category: ["Food Specials", "Happy Hour"],
@@ -1008,6 +1011,7 @@ const events = [
     time: "7"
   },
   {
+
     name: "$2 Tacos",
     restaurant_id: {},
     category: ["Food Specials"],
@@ -1098,6 +1102,7 @@ const events = [
     describes:
       "Tuesday means crab legs - all you can eat (until they run out) for $39.95 PER PERSON!",
     day: ["Tuesday"],
+
     isRecuring: true,
     time: "All Day"
   },
@@ -1138,6 +1143,48 @@ const events = [
     describes: "Live Music and $7 glasses of wine",
     day: ["Wednesday"],
     isRecuring: true,
+=======
+    isRecuring: true,
+    time: "All Day"
+  },
+  {
+    name: "Punk & Metal Karaoke",
+    restaurant_id: {},
+    category: ["Karaoke"],
+    describes:
+      "A large selection of PUNK ROCK, HEAVY METAL, & NEW WAVE 80's songs to choose from.",
+    day: ["Wednesday"],
+    isRecuring: true,
+    time: "10"
+  },
+  {
+    name: "$6.66 Burgers",
+    restaurant_id: {},
+    category: ["Food Specials"],
+    describes: "$6.66 for any burger all day long",
+    day: ["Wednesday"],
+    isRecuring: true,
+    time: "All Day"
+  },
+
+  {
+    name: "Trivia",
+    restaurant_id: {},
+    category: ["Trivia"],
+    describes:
+      "Come play trivia on Sunday nights and walk away with valuable prizes and elevated self-esteem!",
+    day: ["Sunday"],
+    isRecuring: true,
+    time: "8"
+  },
+  {
+    name: "Live Music",
+    restaurant_id: {},
+    category: ["Live Music", "Drink Specials"],
+    describes: "Live Music and $7 glasses of wine",
+    day: ["Wednesday"],
+    isRecuring: true,
+
     time: "7"
   },
   {
@@ -1814,6 +1861,7 @@ const events = [
     day: ["Wednesday"],
     isRecuring: true,
     time: "8:30"
+
   },
   {
     name: "Karaoke Night",
@@ -1843,6 +1891,7 @@ const events = [
     day: ["Friday", "Saturday"],
     isRecuring: true,
     time: "6:30"
+
   }
 ];
 
