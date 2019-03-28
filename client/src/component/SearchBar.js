@@ -9,10 +9,6 @@ import SearchIcon from '@material-ui/icons/Search';
 import axios from 'axios';
 
 const styles = {
-  
-  state: {
-    apiResponse: ""
-  },
 
   root: {
     padding: '0.5em 2%',
