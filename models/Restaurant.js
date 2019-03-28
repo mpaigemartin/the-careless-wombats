@@ -18,6 +18,10 @@ var RestaurantSchema = new Schema({
     type: String,
     trim: true
   },
+  tagline: {
+    type: String,
+    trim: true
+  },
   events: [
     {
       type: Schema.Types.ObjectId,
