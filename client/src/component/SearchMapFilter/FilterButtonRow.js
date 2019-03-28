@@ -87,10 +87,15 @@ class FilterButtonRow extends React.Component {
   };
 
   handleLocationChange = event => {
-    const chosenLoc = event.target.value
-    this.setState({ 
-      currentLat:event.target.latitude,
-      currentLon:event.target.longitude,
+    const { selectedIndex } = event.target;
+    const selectedOption = event.target[selectedIndex];
+    const cLat = selectedOption.getAttribute("latitude");
+    const clng = selectedOption.getAttribute("longitude");
+
+    console.log(cLat + "  " + clng );
+    this.setState({       
+      currentLat: cLat,
+      currentLon: clng,
     });
     // console.log("from FilterButtonRow: ", this.state.whichMap);
   };
@@ -126,8 +131,8 @@ class FilterButtonRow extends React.Component {
           >
             <option longitude={-84.36098} latitude={33.77463} zoom={12} value={this.atlanta}>Atlanta</option>
             <option longitude={2} latitude={80} zoom={13} value={this.midtown}>Midtown</option>
-            <option longitude={1} latitude={1}value={this.decatur}>Decatur</option>
-            <option longitude={1} latitude={1}value={this.westMidtown}>West Midtown</option>
+            <option longitude={1} latitude={1} value={this.decatur}>Decatur</option>
+            <option longitude={1} latitude={1} value={this.westMidtown}>West Midtown</option>
           </NativeSelect>
         </FormControl>
 

@@ -19,14 +19,14 @@ class AtlantaMap extends Component {
       <div style={{ height: '24em', width: '100%' }} id="mapEmbed">
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyDSI6lWAGiM5M4WzNSJB55KLUYzjwqX05k' }}
-          center={{lat: this.props.latitude, lng: this.props.longitude}}
+          center={{lat: parseFloat(this.props.latitude), lng: parseFloat(this.props.longitude)}}
           zoom={this.props.zoom}
         >
-          <AnyReactComponent
+          {/* <AnyReactComponent
             lat={this.props.latitude}
             lng={this.props.longitude}
             // text={'Atlanta'}
-          />
+          /> */}
         </GoogleMapReact>
       </div>
     );
