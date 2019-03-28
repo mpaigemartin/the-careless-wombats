@@ -8,6 +8,11 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 
 const styles = {
+  
+  state: {
+
+  },
+
   root: {
     padding: '0.5em 2%',
     display: 'flex',
