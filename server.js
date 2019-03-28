@@ -9,15 +9,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 
-<<<<<<< HEAD
-mongoose.connect('mongodb://localhost/nightOwl', { useNewUrlParser: true });
-
-require('./routes/apiRoutes')(app);
-=======
 mongoose.connect("mongodb://localhost/nightOwl", { useNewUrlParser: true });
 
 require("./routes/apiRoutes")(app);
->>>>>>> master
 
 app.listen(PORT, function() {
   console.log(
