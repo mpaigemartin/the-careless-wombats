@@ -12,7 +12,6 @@ module.exports = function (req, res, next) {
     const { authorization } = req.headers;
     if (!authorization) throw new Error();
     const token = authorization.replace("Bearer ", "");
-    //Example uses config.jwtSecret to add our secret, however we can probably use an environment variable
     const decoded = jwt.verify(token, process.env.SECRET_KEY);
     User.find({ id: decoded.data})
     //

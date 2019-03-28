@@ -1,7 +1,30 @@
 import React, {Component} from "react";
 import {withRouter} from "react-router-dom";
+import PropTypes from "prop-types";
 import UserContext from "../context/UserContext"
-import axios from "axios";
+import Auth from '../utils/Auth';
+import classNames from "classnames";
+import { withStyles } from "@material-ui/core/styles";
+import MenuItem from "@material-ui/core/MenuItem";
+import TextField from "@material-ui/core/TextField";
+
+const styles = theme => ({
+	container: {
+		display: "flex",
+		flexWrap: "wrap"
+	},
+	textField: {
+		marginLeft: theme.spacing.unit,
+		marginRight: theme.spacing.unit,
+		width: 200
+	},
+	dense: {
+		marginTop: 19
+	},
+	menu: {
+		width: 200
+	}
+});
 
 class Signup extends Component {
 	static contextType = UserContext;
@@ -18,38 +41,46 @@ class Signup extends Component {
 
 	submitHandler = (e) => {
     e.preventDefault();
-    console.log('clicked');
-		console.log("this is where you do logic to post to an api route that creates a user if the user doesn't already exist (server-side validation)")
 		const {username, password} = this.state;
 		if(username && password) {
-			axios.post("/api/signup", {
-				username: this.state.username,
-				password: this.state.password
-			}).then(res => {
-				console.log(res)
+			Auth.signUp(username, password, (response) =>{
+				console.log(response);
 			})
 		}
 	}
 
 	render () {
+		const { classes } = this.props;
+
 		return (
-			<form onSubmit={this.submitHandler}>
-				<input
+			<form className={classes.container} onSubmit={this.submitHandler}>
+				<TextField
+					id="usernameSignup"
+					label="username"
 					type="text"
 					name="username"
+					className={classes.textField}
 					value={this.state.username}
 					onChange={this.changeHandler}
+					margin="normal"
 				/>
-				<input
+				<TextField
+					id="passwordLogin"
+					label="password"
+					className={classes.textField}
 					type="password"
 					name="password" 
 					value={this.state.password}
 					onChange={this.changeHandler}
+					margin="normal"
 				/>
 				<button type="submit">Submit</button>
 			</form>
 		);
 	}
 }
+Signup.propTypes = {
+	classes: PropTypes.object.isRequired
+};
 
-export default withRouter(Signup);
+export default withRouter(withStyles(styles)(Signup))
