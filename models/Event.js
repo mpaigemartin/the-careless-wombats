@@ -6,12 +6,10 @@ var EventSchema = new Schema({
     type: String,
     trim: true
   },
-  restaurant: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Restaurant"
-    }
-  ],
+  restaurant: {
+    type: String,
+    trim: true
+  },
   category: [
     {
       type: Array,
