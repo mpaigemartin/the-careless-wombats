@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "../component/Header";
-import SearchBar from "../component/SearchBar";
+import SearchBar from "../component/SearchMapFilter/SearchBar";
 import "../../src/App.css";
 
 class SearchPage extends Component {

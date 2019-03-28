@@ -7,25 +7,7 @@ import Home from './component/Home';
 import SearchPage from './component/SearchPage';
 // import UserContext from "./context/UserContext";
 import UserContext from './context/UserContext';
-import SearchBar from './component/SearchBar';
-
-// const theme = createMuiTheme({
-//   palette: {
-//     primary: {
-//       // light: will be calculated from palette.primary.main,
-//       main: '#ff4400',
-//       // dark: will be calculated from palette.primary.main,
-//       // contrastText: will be calculated to contrast with palette.primary.main
-//     },
-//     secondary: {
-//       light: '#0066ff',
-//       main: '#0044ff',
-//       // dark: will be calculated from palette.secondary.main,
-//       contrastText: '#ffcc00',
-//     },
-//     // error: will use the default color
-//   },
-// });
+import SearchBar from './component/SearchMapFilter/SearchBar';
 
 class App extends Component {
   state = {

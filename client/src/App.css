@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-body {
-  /* background-color: #333; */
-}
-
-
 #header {
   grid-area: header;
 }
@@ -35,12 +30,12 @@ body {
   max-height: 40px;
 }
 
-#filter {
-    grid-area: filter;
+#searchBtn {
+  max-height: 40px;
 }
 
-#openModal {
-    grid-area: button;
+#filter {
+    grid-area: filter;
 }
 
 #locationOption,
@@ -83,7 +78,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 25% 1fr 55% 5% 1fr;
+  grid-template-columns: 1fr 25% 1fr 50% 10% 1fr;
   grid-template-rows: 65px 25px auto auto auto;
   grid-template-areas:
     "header header header header header header"
@@ -97,7 +92,7 @@ body {
 
     .container {
         display: grid;
-        grid-template-columns: 1fr 85% 5% 1fr;
+        grid-template-columns: 1fr 82% 8% 1fr;
         grid-template-rows: 65px 25px auto auto auto auto;
         grid-template-areas:
           "header header header header"
@@ -109,7 +104,8 @@ body {
       }
 
       #search {
-          justify-self: center;
+        justify-self: center;
+        width: 80%;
       }
 
       #filter {

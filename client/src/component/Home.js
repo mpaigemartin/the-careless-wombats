@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Header from '../component/Header';
 import BusinessDirectory from '../component/BusinessDirectory';
-import SearchBar from '../component/SearchBar';
-import FilterButtonRow from '../component/FilterButtonRow';
-import GoogleMap from '../component/GoogleMap';
+import SearchBar from './SearchMapFilter/SearchBar';
+import FilterButtonRow from './SearchMapFilter/FilterButtonRow';
+import AllAtlanta from './SearchMapFilter/Maps/AllAtlanta';
+import DecaturMap from './SearchMapFilter/Maps/DecaturMap';
+import MidtownMap from './SearchMapFilter/Maps/MidtownMap';
+import WestMidtownMap from './SearchMapFilter/Maps/WestMidtownMap';
 import '../../src/App.css';
 
 class Home extends Component {
@@ -12,20 +15,22 @@ class Home extends Component {
     restaurantList: [],
     keywordSearch: '',
     searchResults: [],
-    single: ''
+    single: '',
+    restaurantQuery: '',
+    whichMap: <WestMidtownMap />
   };
 
-  // createRestaurantList = () => {
-  //   axios
-  //     .get('api/restaurant')
-  //     .then(result => {
-  //       // const places = result.data; //these two lines return an array of strings=restaurant names only
-  //       // this.setState({ restaurantList: places.map(({ name }) => name)})
-  //       this.setState({restaurantList: result.data}) // this line returns an array of objects
-  //       console.log(this.state.restaurantList
-  //         );
-  //     })
-  // };
+  createRestaurantList = () => {
+    axios
+      .get('api/restaurant')
+      .then(result => {
+        // const places = result.data; //these two lines return an array of strings=restaurant names only
+        // this.setState({ restaurantList: places.map(({ name }) => name)})
+        this.setState({restaurantList: result.data}) // this line returns an array of objects
+        console.log(this.state.restaurantList
+          );
+      })
+  };
 
   searchResults = () => {
     axios.get(`/api/restaurant/${this.state.keywordSearch}`).then(result => {
@@ -40,13 +45,16 @@ class Home extends Component {
     this.setState({ keywordSearch: keywordSearch });
     console.log(this.state.keywordSearch);
   };
-  // searchClickHandler = event => {
-  //   event.preventDefault();
-  //   this.setState({ keywordSearch: searchResults });
-  // };
+
+  handleMap = event => {
+    event.preventDefault();
+    const mapMe = `<${event.target.value} />`;
+    this.setState({whichMap: mapMe});
+    console.log(this.whichMap);
+  }
 
   componentDidMount() {
-    this.searchResults();
+    // this.searchResults();
   }
 
   render() {
@@ -57,8 +65,8 @@ class Home extends Component {
           searchChangeHandler={this.searchChangeHandler}
           searchClickHandler={this.searchClickHandler}
         />
-        <FilterButtonRow />
-        <GoogleMap />
+        <FilterButtonRow onClick={this.handleMap}/>
+        {/* {this.state.whichMap} */}
         <BusinessDirectory />
       </div>
     );

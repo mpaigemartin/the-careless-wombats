@@ -3,13 +3,13 @@ import GoogleMapReact from 'google-map-react';
  
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
  
-class GoogleMap extends Component {
+class WestMidtownMap extends Component {
   static defaultProps = {
     center: {
-      lat: 33.774630,
-      lng: -84.36098
+      lat: 33.797919,
+      lng: -84.40458
     },
-    zoom: 12
+    zoom: 13
   };
  
   render() {
@@ -22,9 +22,9 @@ class GoogleMap extends Component {
           defaultZoom={this.props.zoom}
         >
           <AnyReactComponent
-            lat={33.774630}
-            lng={-84.36098}
-            text={'Atlanta'}
+            lat={33.794967}
+            lng={-84.414681}
+            text={'West Midtown Area'}
           />
         </GoogleMapReact>
       </div>
@@ -32,4 +32,4 @@ class GoogleMap extends Component {
   }
 }
  
-export default GoogleMap;
+export default WestMidtownMap;

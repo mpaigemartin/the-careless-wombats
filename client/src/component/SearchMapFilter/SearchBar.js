@@ -1,19 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import deburr from 'lodash/deburr';
-import Autosuggest from 'react-autosuggest';
-import match from 'autosuggest-highlight/match';
-import parse from 'autosuggest-highlight/parse';
-import TextField from '@material-ui/core/TextField';
-import Paper from '@material-ui/core/Paper';
-import MenuItem from '@material-ui/core/MenuItem';
-import { withStyles } from '@material-ui/core/styles';
-import axios from 'axios';
-import { Button } from '@material-ui/core';
+import React from "react";
+import PropTypes from "prop-types";
+import deburr from "lodash/deburr";
+import Autosuggest from "react-autosuggest";
+import match from "autosuggest-highlight/match";
+import parse from "autosuggest-highlight/parse";
+import TextField from "@material-ui/core/TextField";
+import Paper from "@material-ui/core/Paper";
+import MenuItem from "@material-ui/core/MenuItem";
+import { withStyles } from "@material-ui/core/styles";
+import axios from "axios";
+import Button from "@material-ui/core/Button";
 
 let suggestions = [];
 
-axios.get('api/restaurant').then(result => {
+axios.get("api/restaurant").then(result => { //creates a list of restaurants as an array of objects [{labe: <name>}, {label: <name>} etc...]
   const places = result.data;
   suggestions = places.map(item => {
     const container = {};
@@ -95,22 +95,22 @@ const styles = theme => ({
     flexGrow: 1
   },
   container: {
-    position: 'relative'
+    position: "relative"
   },
   suggestionsContainerOpen: {
-    position: 'absolute',
+    position: "absolute",
     zIndex: 1,
     marginTop: theme.spacing.unit,
     left: 0,
     right: 0
   },
   suggestion: {
-    display: 'block'
+    display: "block"
   },
   suggestionsList: {
     margin: 0,
     padding: 0,
-    listStyleType: 'none'
+    listStyleType: "none"
   },
   divider: {
     height: theme.spacing.unit * 2
@@ -119,9 +119,26 @@ const styles = theme => ({
 
 class SearchBar extends React.Component {
   state = {
-    single: '',
-    popper: '',
-    suggestions: []
+    single: "",
+    suggestions: [],
+    place: '',
+    address: '',
+    tagline: '',
+    url: '',
+  };
+
+  queryRestaurant = event => {
+    axios
+      .get(
+        `https:///api/restaurant/${this.state.single}`
+      )
+      .then(result => {
+        this.setState({ place: result.name });
+        this.setState({ address: result.address });
+        this.setState({ url: result.url });
+        this.setState({ tagline: result.tagline });
+        console.log(this.state.name + "at" + this.state.address + "www." + this.state.url + "    " + this.state.tagline);
+      });
   };
 
   handleSuggestionsFetchRequested = ({ value }) => {
@@ -143,10 +160,11 @@ class SearchBar extends React.Component {
   };
 
   handleClick = () => {
-    console.log(this.state.single);
     this.setState({
       result: this.state.single
     });
+    console.log(this.state.single);
+    this.queryRestaurant();
   };
 
   render() {
@@ -164,12 +182,13 @@ class SearchBar extends React.Component {
     return (
       <div className={classes.root} id="search">
         <Autosuggest
+          style={{ display: "inline" }}
           {...autosuggestProps}
           inputProps={{
             classes,
-            placeholder: 'Search a Local Resturant',
+            placeholder: "Search a Local Resturant",
             value: this.state.single,
-            onChange: this.handleChange('single')
+            onChange: this.handleChange("single")
           }}
           theme={{
             container: classes.container,
@@ -183,7 +202,16 @@ class SearchBar extends React.Component {
             </Paper>
           )}
         />
-        <button onClick={this.handleClick}>Click Me</button>
+        <Button
+          type="submit"
+          color="secondary"
+          className={classes.button}
+          onClick={this.handleClick}
+          style={{ display: "inline" }}
+          id="searchBtn"
+        >
+          view info
+        </Button>
       </div>
     );
   }

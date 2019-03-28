@@ -5,6 +5,11 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import InputBase from '@material-ui/core/InputBase';
+import AllAtlanta from './Maps/AllAtlanta';
+import DecaturMap from './Maps/DecaturMap';
+import MidtownMap from './Maps/MidtownMap';
+import WestMidtownMap from './Maps/WestMidtownMap';
+
 
 const BootstrapInput = withStyles(theme => ({
   root: {
@@ -66,13 +71,18 @@ const styles = theme => ({
 
 class FilterButtonRow extends React.Component {
   state = {
-    location: '',
+    whichMap: <AllAtlanta/>,
+    allAtlanta: <AllAtlanta/>,
+    decatur: <DecaturMap/>,
+    midtown: <MidtownMap/>,
+    westMidtown: <WestMidtownMap/>,
     day: '',
     type: ''
   };
 
   handleLocationChange = event => {
-    this.setState({ location: event.target.value });
+    this.setState({ whichMap: event.target.value });
+    console.log("from FilterButtonRow: " + this.state.whichMap)
   };
 
   handleDayChange = event => {
@@ -104,10 +114,10 @@ class FilterButtonRow extends React.Component {
               />
             }
           >
-            <option value="" label="all areas" />
-            <option value="midtown">Midtown</option>
-            <option value="decatur">Decatur</option>
-            <option value="midtownWest">Midtown West</option>
+            <option value={this.state.allAtlanta} label="All Atlanta" />
+            <option value={this.state.midtown}>Midtown</option>
+            <option value={this.state.decatur}>Decatur</option>
+            <option value={this.state.westMidtown}>West Midtown</option>
           </NativeSelect>
         </FormControl>
 
@@ -167,6 +177,7 @@ class FilterButtonRow extends React.Component {
             <option>choose date</option>
           </NativeSelect>
         </FormControl>
+        {this.state.whichMap}
       </form>
     );
   }
