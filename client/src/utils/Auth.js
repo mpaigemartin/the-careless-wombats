@@ -3,6 +3,16 @@ import axios from "axios";
 function Auth() {
   let loggedIn = false;
 
+  function signUp (username, password, cb) {
+    axios.post("/api/signup", {
+      username: username,
+      password: password
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+
   function logIn (username, password, cb) {
     axios.post("/api/authenticate", {username, password})
     .then(response => {
@@ -33,7 +43,8 @@ function Auth() {
     isLoggedIn,
     logIn,
     logOut,
-    getToken
+    getToken,
+    signUp
   }
 }
 

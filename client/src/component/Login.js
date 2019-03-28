@@ -1,8 +1,30 @@
 import React, {Component} from "react";
 import {withRouter} from "react-router-dom";
+import PropTypes from "prop-types";
 import UserContext from "../context/UserContext"
 import Auth from "../utils/Auth";
+import classNames from "classnames";
+import { withStyles } from "@material-ui/core/styles";
+import MenuItem from "@material-ui/core/MenuItem";
+import TextField from "@material-ui/core/TextField";
 
+const styles = theme => ({
+	container: {
+		display: "flex",
+		flexWrap: "wrap"
+	},
+	textField: {
+		marginLeft: theme.spacing.unit,
+		marginRight: theme.spacing.unit,
+		width: 200
+	},
+	dense: {
+		marginTop: 19
+	},
+	menu: {
+		width: 200
+	}
+});
 class Login extends Component {
 	static contextType = UserContext;
 
@@ -18,12 +40,9 @@ class Login extends Component {
 
 	submitHandler = (e) => {
     e.preventDefault();
-    console.log('clicked');
-    console.log("This would be the click to the api route to login. It would use middleware with bcrypt to hash the password then compare.");
 		const {username, password} = this.state;
 		if (username && password) {
 			Auth.logIn(username, password, (response) => {
-				console.log(response);
 				this.context.setUser(response);
 				this.props.history.push("/");
 			});
@@ -31,20 +50,29 @@ class Login extends Component {
 	}
 
 	render () {
+		const { classes } = this.props;
+		
 		return (
-
-			<form onSubmit={this.submitHandler}>
-				<input 
+			<form className={classes.container} onSubmit={this.submitHandler}>
+				<TextField
+					id="usernameLogin" 
+					label="username"
 					type="text"
 					name="username"
+					className={classes.textField}
 					value={this.state.username}
 					onChange={this.changeHandler}
+					margin="normal"
 				/>
-				<input
+				<TextField
+					id="passwordLogin"
+					label="password"
+					className={classes.textField}
 					type="password"
 					name="password" 
 					value={this.state.password}
 					onChange={this.changeHandler}
+					margin="normal"
 				/>
 				<button type="submit">Submit</button>
 			</form>
@@ -52,4 +80,8 @@ class Login extends Component {
 	}
 }
 
-export default withRouter(Login);
+	Login.propTypes = {
+		classes: PropTypes.object.isRequired
+};
+
+export default withRouter(withStyles(styles)(Login))
