@@ -6,6 +6,10 @@ var EventSchema = new Schema({
     type: String,
     trim: true
   },
+  restaurant: {
+    type: String,
+    trim: true
+  },
   category: [
     {
       type: Array,

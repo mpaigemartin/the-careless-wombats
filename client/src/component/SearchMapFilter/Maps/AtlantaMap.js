@@ -3,14 +3,15 @@ import GoogleMapReact from 'google-map-react';
  
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
  
-class AllAtlanta extends Component {
-  static defaultProps = {
+class AtlantaMap extends Component {
+  state = {
     center: {
       lat: 33.774630,
       lng: -84.36098
     },
     zoom: 12
-  };
+  }
+
  
   render() {
     return (
@@ -18,13 +19,13 @@ class AllAtlanta extends Component {
       <div style={{ height: '24em', width: '100%' }} id="mapEmbed">
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyDSI6lWAGiM5M4WzNSJB55KLUYzjwqX05k' }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
+          center={{lat: this.props.latitude, lng: this.props.longitude}}
+          zoom={this.props.zoom}
         >
           <AnyReactComponent
-            lat={33.774630}
-            lng={-84.36098}
-            text={'Atlanta'}
+            lat={this.props.latitude}
+            lng={this.props.longitude}
+            // text={'Atlanta'}
           />
         </GoogleMapReact>
       </div>
@@ -32,4 +33,4 @@ class AllAtlanta extends Component {
   }
 }
  
-export default AllAtlanta;
+export default AtlantaMap;

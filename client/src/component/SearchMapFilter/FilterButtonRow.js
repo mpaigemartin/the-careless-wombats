@@ -1,56 +1,53 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import NativeSelect from '@material-ui/core/NativeSelect';
-import InputBase from '@material-ui/core/InputBase';
-import AllAtlanta from './Maps/AllAtlanta';
-import DecaturMap from './Maps/DecaturMap';
-import MidtownMap from './Maps/MidtownMap';
-import WestMidtownMap from './Maps/WestMidtownMap';
-
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import InputLabel from "@material-ui/core/InputLabel";
+import FormControl from "@material-ui/core/FormControl";
+import NativeSelect from "@material-ui/core/NativeSelect";
+import InputBase from "@material-ui/core/InputBase";
+import AtlantaMap from "./Maps/AtlantaMap";
+import DecaturMap from "./Maps/DecaturMap";
 
 const BootstrapInput = withStyles(theme => ({
   root: {
-    'label + &': {
+    "label + &": {
       marginTop: theme.spacing.unit * 3
     }
   },
   input: {
     borderRadius: 4,
-    position: 'relative',
+    position: "relative",
     backgroundColor: theme.palette.background.paper,
-    border: '1px solid #ced4da',
+    border: "1px solid #ced4da",
     fontSize: 16,
-    width: 'auto',
-    padding: '10px 26px 10px 12px',
-    transition: theme.transitions.create(['border-color', 'box-shadow']),
+    width: "auto",
+    padding: "10px 26px 10px 12px",
+    transition: theme.transitions.create(["border-color", "box-shadow"]),
     // Use the system font instead of the default Roboto font.
     fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
+      "-apple-system",
+      "BlinkMacSystemFont",
       '"Segoe UI"',
-      'Roboto',
+      "Roboto",
       '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
+      "Arial",
+      "sans-serif",
       '"Apple Color Emoji"',
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"'
-    ].join(','),
-    '&:focus': {
+    ].join(","),
+    "&:focus": {
       borderRadius: 4,
-      borderColor: '#80bdff',
-      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)'
+      borderColor: "#80bdff",
+      boxShadow: "0 0 0 0.2rem rgba(0,123,255,.25)"
     }
   }
 }))(InputBase);
 
 const styles = theme => ({
   root: {
-    display: 'flex',
-    flexWrap: 'wrap'
+    display: "flex",
+    flexWrap: "wrap"
   },
   margin: {
     margin: theme.spacing.unit
@@ -59,8 +56,8 @@ const styles = theme => ({
     fontSize: 18
   },
   containerCal: {
-    display: 'flex',
-    flexWrap: 'wrap'
+    display: "flex",
+    flexWrap: "wrap"
   },
   textField: {
     marginLeft: theme.spacing.unit,
@@ -71,18 +68,31 @@ const styles = theme => ({
 
 class FilterButtonRow extends React.Component {
   state = {
-    whichMap: <AllAtlanta/>,
-    allAtlanta: <AllAtlanta/>,
-    decatur: <DecaturMap/>,
-    midtown: <MidtownMap/>,
-    westMidtown: <WestMidtownMap/>,
-    day: '',
-    type: ''
+    day: "",
+    type: "",
+    decaturMap: false,
+    center: {
+      lat: 0,
+      lng: 0
+    },
+    zoom: 12,
+    //////////////lat-------lng------zoom
+    allAtlanta: [33.77463, -84.36098, 12],
+    midtown: [33.789295, -84.375387, 13],
+    decatur: [33.774231, -84.299458, 13],
+    westMidtown: [33.797919, -84.40458, 13],
+    currentLat:33.77463,
+    currentLon:-84.36098,
+    currentZoom:12
   };
 
   handleLocationChange = event => {
-    this.setState({ whichMap: event.target.value });
-    console.log("from FilterButtonRow: " + this.state.whichMap)
+    const chosenLoc = event.target.value
+    this.setState({ 
+      currentLat:event.target.latitude,
+      currentLon:event.target.longitude,
+    });
+    // console.log("from FilterButtonRow: ", this.state.whichMap);
   };
 
   handleDayChange = event => {
@@ -114,10 +124,10 @@ class FilterButtonRow extends React.Component {
               />
             }
           >
-            <option value={this.state.allAtlanta} label="All Atlanta" />
-            <option value={this.state.midtown}>Midtown</option>
-            <option value={this.state.decatur}>Decatur</option>
-            <option value={this.state.westMidtown}>West Midtown</option>
+            <option longitude={-84.36098} latitude={33.77463} zoom={12} value={this.atlanta}>Atlanta</option>
+            <option longitude={2} latitude={80} zoom={13} value={this.midtown}>Midtown</option>
+            <option longitude={1} latitude={1}value={this.decatur}>Decatur</option>
+            <option longitude={1} latitude={1}value={this.westMidtown}>West Midtown</option>
           </NativeSelect>
         </FormControl>
 
@@ -177,7 +187,7 @@ class FilterButtonRow extends React.Component {
             <option>choose date</option>
           </NativeSelect>
         </FormControl>
-        {this.state.whichMap}
+        <AtlantaMap latitude={this.state.currentLat} longitude={this.state.currentLon} zoom={this.state.currentZoom} />
       </form>
     );
   }

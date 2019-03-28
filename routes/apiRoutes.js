@@ -1,7 +1,7 @@
-const User = require('../models/User');
-const Restaurant = require('../models/Restaurant');
-const Event = require('../models/Event');
-const jwt = require('jsonwebtoken');
+const User = require("../models/User");
+const Restaurant = require("../models/Restaurant");
+const Event = require("../models/Event");
+const jwt = require("jsonwebtoken");
 
 module.exports = function(app) {
   // Restaurant Model Routes
@@ -13,6 +13,8 @@ module.exports = function(app) {
 
   app.get('/api/restaurant', function(req, res) {
     Restaurant.find({})
+      .populate("Event")
+
       .then(function(dbRestaurant) {
         res.json(dbRestaurant);
       })
@@ -21,9 +23,9 @@ module.exports = function(app) {
       });
   });
 
-  app.get('/api/restaurant/:name', function(req, res) {
+  app.get("/api/restaurant/:name", function(req, res) {
     Restaurant.find({ name: req.params.name })
-      .populate('events')
+      .populate("Event")
       .then(function(dbRestaurant) {
         res.send(dbRestaurant);
       })
@@ -51,7 +53,7 @@ module.exports = function(app) {
 
   app.get('/api/user', function(req, res) {
     User.find({})
-      .populate('favorites')
+      .populate("Event")
       .then(function(data) {
         res.json(data);
       })
@@ -76,14 +78,14 @@ module.exports = function(app) {
 
   // Protected Routes
 
-  app.post('/api/authenticate', function(req, res) {
+  app.post("/api/authenticate", function(req, res) {
     const { username, password } = req.body;
     User.findOne({ username: username })
       .then(function(user) {
         const isValidPass = user.comparePassword(password);
         console.log(isValidPass);
         if (isValidPass) {
-          console.log('isvalid');
+          console.log("isvalid");
           console.log(user.id);
           console.log(user);
           const token = jwt.sign({ data: user._id }, process.env.SECRET_KEY);
@@ -94,7 +96,7 @@ module.exports = function(app) {
             token: token
           });
         } else {
-          res.status(404).json({ message: 'Incorrect username or password.' });
+          res.status(404).json({ message: "Incorrect username or password." });
         }
       })
       .catch(function(err) {
@@ -102,7 +104,7 @@ module.exports = function(app) {
       });
   });
 
-  app.post('/api/signup', function(req, res) {
+  app.post("/api/signup", function(req, res) {
     const userData = {
       username: req.body.username,
       password: req.body.password

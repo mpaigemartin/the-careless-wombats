@@ -4,7 +4,7 @@ import Header from '../component/Header';
 import BusinessDirectory from '../component/BusinessDirectory';
 import SearchBar from './SearchMapFilter/SearchBar';
 import FilterButtonRow from './SearchMapFilter/FilterButtonRow';
-import AllAtlanta from './SearchMapFilter/Maps/AllAtlanta';
+import AllAtlanta from './SearchMapFilter/Maps/AtlantaMap';
 import DecaturMap from './SearchMapFilter/Maps/DecaturMap';
 import MidtownMap from './SearchMapFilter/Maps/MidtownMap';
 import WestMidtownMap from './SearchMapFilter/Maps/WestMidtownMap';
@@ -17,7 +17,7 @@ class Home extends Component {
     searchResults: [],
     single: '',
     restaurantQuery: '',
-    whichMap: <WestMidtownMap />
+    whichMap: <AllAtlanta />
   };
 
   createRestaurantList = () => {
