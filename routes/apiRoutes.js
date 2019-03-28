@@ -62,7 +62,18 @@ module.exports = function(app) {
       });
   });
 
-  app.post('/api/user/:id', function(req, res) {
+  app.get("/api/user/:id", function(req, res) {
+    User.find(req.body.id)
+      .populate("Event")
+      .then(function(data) {
+        res.json(data);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
+
+  app.post("/api/user/:id", function(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.id },
       { $push: { favorites: req.body } },
@@ -96,11 +107,11 @@ module.exports = function(app) {
             token: token
           });
         } else {
-          res.status(404).json({ message: "Incorrect username or password." });
+          res.status(401).json({ message: "Incorrect username or password." });
         }
       })
       .catch(function(err) {
-        res.status(404).json({ err: err });
+        res.status(401).json({ err: err });
       });
   });
 
