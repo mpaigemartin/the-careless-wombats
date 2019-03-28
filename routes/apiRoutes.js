@@ -103,11 +103,11 @@ module.exports = function(app) {
             token: token
           });
         } else {
-          res.status(404).json({ message: "Incorrect username or password." });
+          res.status(401).json({ message: "Incorrect username or password." });
         }
       })
       .catch(function(err) {
-        res.status(404).json({ err: err });
+        res.status(401).json({ err: err });
       });
   });
 
