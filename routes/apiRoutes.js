@@ -58,6 +58,17 @@ module.exports = function(app) {
       });
   });
 
+  app.get("/api/user/:id", function(req, res) {
+    User.find(req.body.id)
+      .populate("Event")
+      .then(function(data) {
+        res.json(data);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
+
   app.post("/api/user/:id", function(req, res) {
     User.findOneAndUpdate(
       { _id: req.params.id },
