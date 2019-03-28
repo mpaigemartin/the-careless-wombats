@@ -62,9 +62,6 @@ module.exports = function(app) {
       });
   });
 
-<<<<<<< HEAD
-  app.post('/api/user/:id', function(req, res) {
-=======
   app.get("/api/user/:id", function(req, res) {
     User.find(req.body.id)
       .populate("Event")
@@ -77,7 +74,6 @@ module.exports = function(app) {
   });
 
   app.post("/api/user/:id", function(req, res) {
->>>>>>> master
     User.findOneAndUpdate(
       { _id: req.params.id },
       { $push: { favorites: req.body } },
