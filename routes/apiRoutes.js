@@ -35,7 +35,6 @@ module.exports = function(app) {
 
   app.get("/api/event", function(req, res) {
     Event.find({})
-      .populate("Restaurant")
       .then(function(data) {
         res.json(data);
       })
