@@ -8,6 +8,7 @@ import SearchPage from "./component/SearchPage";
 // import UserContext from "./context/UserContext";
 import UserContext from "./context/UserContext";
 import SearchBar from "./component/SearchMapFilter/SearchBar";
+import LoginAndSignup from "./component/LoginAndRegister";
 
 class App extends Component {
   state = {
@@ -28,8 +29,7 @@ class App extends Component {
             <ProtectedRoute exact path="/Search" component={SearchPage} />
             <Route exact path="/Home" component={Home} />
             {/* </UserContext.Provider> */}
-            <Route exact path="/login" component={Signup} />
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/" component={LoginAndSignup} />
           </UserContext.Provider>
         </div>
       </Router>
