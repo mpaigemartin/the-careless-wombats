@@ -12,7 +12,7 @@ class SearchPage extends Component {
           <h1 class="sentence">
             Find
             <div class="slidingVertical">
-              <span>Trivia</span>
+              <span href="">Trivia</span>
               <span>Karaoke</span>
               <span>Drinks</span>
               <span>Tacos</span>

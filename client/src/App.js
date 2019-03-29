@@ -25,9 +25,7 @@ class App extends Component {
       <Router>
         <div>
           <UserContext.Provider value={{ setUser, user }}>
-            <ProtectedRoute exact path="/" component={SearchPage} />
-
-            <Route exact path="/Search" component={SearchPage} />
+            <ProtectedRoute exact path="/Search" component={SearchPage} />
             <Route exact path="/Home" component={Home} />
             {/* </UserContext.Provider> */}
             <Route exact path="/login" component={Signup} />
