@@ -10,6 +10,20 @@ import MenuItem from "@material-ui/core/MenuItem";
 import { withStyles } from "@material-ui/core/styles";
 import axios from "axios";
 import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import Modal from "@material-ui/core/Modal";
+import "../../../src/App.css";
+
+function getModalStyle() {
+  const top = 50;
+  const left = 50;
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`
+  };
+}
 
 let suggestions = [];
 
@@ -125,6 +139,7 @@ class SearchBar extends React.Component {
     address: '',
     tagline: '',
     url: '',
+    open: false
   };
 
   queryRestaurant = event => {
@@ -212,6 +227,29 @@ class SearchBar extends React.Component {
         >
           view info
         </Button>
+        <Modal
+                    aria-labelledby="simple-modal-title"
+                    aria-describedby="simple-modal-description"
+                    open={this.state.open}
+                    onClose={this.handleClose}
+                  >
+                    <div style={getModalStyle()} className={classes.paper} id="modal">
+                      <Typography variant="h6" id="modal-title">
+                        The Fuzzy Mule
+                      </Typography>
+                      <Typography
+                        variant="subtitle1"
+                        id="simple-modal-description"
+                      >
+                        Drunk is when you feel sophisticated, but can't pronounce it.
+                      </Typography>
+                      <Button 
+                      id="modalLink" href="https://www.finestcall.com/vodka/fuzzy-mule/"></Button>
+                      <Typography variant="subtitle2">
+                        NasCar trivia every Monday from 4:30 to 9:00.  Half-price Pabst all weekend. Strip show/nacho bar every Thursday - kids eat free.
+                      </Typography>
+                    </div>
+                  </Modal>
       </div>
     );
   }
