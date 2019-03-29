@@ -4,31 +4,35 @@ import SearchBar from "../component/SearchMapFilter/SearchBar";
 import "../../src/App.css";
 
 class SearchPage extends Component {
-  render() {
-    return (
-      <div>
-        <Header />
+ render() {
+   return (
+     <div>
+       <Header />
        <section class="wrapper">
          <h1 class="sentence">
-           Find
+            Find
            <div class="slidingVertical">
-             <span href="">Trivia</span>
+             <span class="trivia">Trivia</span>
              <span>Karaoke</span>
-             <span>Drinks</span>
-             <span>Tacos</span>
-             <span>Bingo</span>
+             <span class="drinks">Drinks</span>
+             <span class="tacos">Tacos</span>
+             <span class="bingo">Bingo</span>
            </div>
          </h1>
-         <h1 class="sectence" id="2">
+         <h1 class="sentence" id="two">
            In
            <div class="slidingVertical">
              <span href="">Midtown</span>
              <span>West Midtown</span>
              <span>Decatur</span>
+             <span>Highlands</span>
+             <span>Atlanta</span>
            </div>
          </h1>
        </section>
-       <SearchBar />
+        <div id="barWrapper">
+          <SearchBar />
+        </div>
       </div>
     );
   }

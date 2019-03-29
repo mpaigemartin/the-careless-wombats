@@ -6,37 +6,44 @@
   grid-area: header;
 }
 
-sentence {
-  color: #222;
-  font-size: 30px;
+.sentence {
+  color: #222222;
+  font-size: 40;
   text-align: left;
-  margin-left: 30%;
+  /* margin-left: 30%; */
  }
  
- #2 {
+ /* #2 {
   font-size: 30px;
   margin-left: 50%;
   margin-top: -5%;
- }
+ } */
 
 .wrapper {
   background-color: #f5f5f5;
   font-family: "Raleway", sans-serif;
-  margin: 100px auto;
-  padding: 40px 40px;
+  font-size: 4vw;
+  margin: 5% auto;
+  padding: 3%;
   position: relative;
   width: 70%;
 }
 
+
 .slidingVertical {
-  display: inline;
   text-indent: 8px;
+}
+.trivia,
+.drinks,
+.tacos,
+.bingo {
+ margin-left: 1%;
 }
 .slidingVertical span {
   animation: topToBottom 12.5s linear infinite 0s;
   -ms-animation: topToBottom 12.5s linear infinite 0s;
   -webkit-animation: topToBottom 12.5s linear infinite 0s;
-  color: #4d12f1;
+  color: darkslateblue;
   opacity: 0;
   overflow: hidden;
   position: absolute;
@@ -147,6 +154,11 @@ sentence {
   }
 }
 
+#barWrapper {
+  width: 75%;
+  margin: 12%;
+}
+
 #title {
   margin: 0 auto;
 }
@@ -242,9 +254,13 @@ sentence {
       "...... sidebar sidebar ....";
   }
 
+  #barWrapper {
+    width: 100%;
+  }
+
   #search {
     justify-self: center;
-    width: 80%;
+    width: 75%;
   }
 
   #filter {
