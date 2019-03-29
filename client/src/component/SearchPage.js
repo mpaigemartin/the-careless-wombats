@@ -7,9 +7,21 @@ class SearchPage extends Component {
   render() {
     return (
       <div>
-       <Header />
-       <h1>Find near you</h1>
-       <SearchBar />
+        <Header />
+        <section class="wrapper">
+          <h1 class="sentence">
+            Find
+            <div class="slidingVertical">
+              <span href="">Trivia</span>
+              <span>Karaoke</span>
+              <span>Drinks</span>
+              <span>Tacos</span>
+              <span>Bingo</span>
+            </div>
+          </h1>
+          <h1 class="nearYou">Near You</h1>
+        </section>
+        <SearchBar />
       </div>
     );
   }
