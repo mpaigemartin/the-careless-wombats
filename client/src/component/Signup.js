@@ -7,6 +7,7 @@ import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
 	container: {
@@ -17,6 +18,9 @@ const styles = theme => ({
 		marginLeft: theme.spacing.unit,
 		marginRight: theme.spacing.unit,
 		width: 200
+	},
+	button: {
+		margin: theme.spacing.unit
 	},
 	dense: {
 		marginTop: 19
@@ -74,7 +78,8 @@ class Signup extends Component {
 					onChange={this.changeHandler}
 					margin="normal"
 				/>
-				<button type="submit">Submit</button>
+				<Button variant="contained" color="secondary"
+				className={classes.button} type="submit">Submit</Button>
 			</form>
 		);
 	}
