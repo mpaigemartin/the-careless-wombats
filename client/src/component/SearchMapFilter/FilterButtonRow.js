@@ -6,7 +6,6 @@ import FormControl from "@material-ui/core/FormControl";
 import NativeSelect from "@material-ui/core/NativeSelect";
 import InputBase from "@material-ui/core/InputBase";
 import AtlantaMap from "./Maps/AtlantaMap";
-import DecaturMap from "./Maps/DecaturMap";
 
 const BootstrapInput = withStyles(theme => ({
   root: {
@@ -83,7 +82,7 @@ class FilterButtonRow extends React.Component {
     westMidtown: [33.797919, -84.40458, 13],
     currentLat:33.77463,
     currentLon:-84.36098,
-    currentZoom:12
+    currentZoom: 11,
   };
 
   handleLocationChange = event => {
@@ -91,11 +90,14 @@ class FilterButtonRow extends React.Component {
     const selectedOption = event.target[selectedIndex];
     const cLat = selectedOption.getAttribute("latitude");
     const clng = selectedOption.getAttribute("longitude");
+    const czoom = parseInt(selectedOption.getAttribute("zoom"));
+    
 
     console.log(cLat + "  " + clng );
     this.setState({       
       currentLat: cLat,
       currentLon: clng,
+      currentZoom: czoom
     });
     // console.log("from FilterButtonRow: ", this.state.whichMap);
   };
@@ -129,10 +131,10 @@ class FilterButtonRow extends React.Component {
               />
             }
           >
-            <option longitude={-84.36098} latitude={33.77463} zoom={12} value={this.atlanta}>Atlanta</option>
-            <option longitude={2} latitude={80} zoom={13} value={this.midtown}>Midtown</option>
-            <option longitude={1} latitude={1} value={this.decatur}>Decatur</option>
-            <option longitude={1} latitude={1} value={this.westMidtown}>West Midtown</option>
+            <option longitude={-84.36098} latitude={33.77463} zoom={11}>Atlanta</option>
+            <option longitude={-84.375387} latitude={33.789295} zoom={14}>Midtown</option>
+            <option longitude={-84.299458} latitude={33.774231} zoom={14}>Decatur</option>
+            <option longitude={-84.40458} latitude={33.797919} zoom={14} >West Midtown</option>
           </NativeSelect>
         </FormControl>
 
