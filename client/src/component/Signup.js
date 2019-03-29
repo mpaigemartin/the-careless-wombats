@@ -79,7 +79,7 @@ class Signup extends Component {
 					margin="normal"
 				/>
 				<Button variant="contained" color="secondary"
-				className={classes.button} type="submit">Submit</Button>
+				className={classes.button} type="submit" fullWidth>Signup</Button>
 			</form>
 		);
 	}
