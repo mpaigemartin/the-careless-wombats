@@ -28,8 +28,8 @@ class App extends Component {
             <ProtectedRoute exact path="/Search" component={SearchPage} />
             <Route exact path="/Home" component={Home} />
             {/* </UserContext.Provider> */}
-            <Route exact path="/login" component={Signup} />
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/" component={Signup} />
+            <Route exact path="/" component={Login} />
           </UserContext.Provider>
         </div>
       </Router>
