@@ -43,7 +43,7 @@
   animation: topToBottom 12.5s linear infinite 0s;
   -ms-animation: topToBottom 12.5s linear infinite 0s;
   -webkit-animation: topToBottom 12.5s linear infinite 0s;
-  color: #4d12f1;
+  color: darkslateblue;
   opacity: 0;
   overflow: hidden;
   position: absolute;
