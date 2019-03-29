@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import ProtectedRoute from './component/ProtectedRoute';
-import Login from './component/Login';
-import Signup from './component/Signup';
-import Home from './component/Home';
-import SearchPage from './component/SearchPage';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import ProtectedRoute from "./component/ProtectedRoute";
+import Login from "./component/Login";
+import Signup from "./component/Signup";
+import Home from "./component/Home";
+import SearchPage from "./component/SearchPage";
 // import UserContext from "./context/UserContext";
-import UserContext from './context/UserContext';
-import SearchBar from './component/SearchMapFilter/SearchBar';
+import UserContext from "./context/UserContext";
+import SearchBar from "./component/SearchMapFilter/SearchBar";
 
 class App extends Component {
   state = {
@@ -25,7 +25,7 @@ class App extends Component {
       <Router>
         <div>
           <UserContext.Provider value={{ setUser, user }}>
-            <ProtectedRoute exact path="/" component={SearchBar} />
+            <ProtectedRoute exact path="/" component={SearchPage} />
 
             <Route exact path="/Search" component={SearchPage} />
             <Route exact path="/Home" component={Home} />
