@@ -8,16 +8,16 @@
 
 .sentence {
   color: #222222;
-  font-size: 40;
-  text-align: left;
-  /* margin-left: 30%; */
- }
- 
- /* #2 {
   font-size: 30px;
-  margin-left: 50%;
+  text-align: left;
+  margin-left: 30%;
+}
+
+#two {
+  font-size: 30px;
+  margin-left: 48%;
   margin-top: -5%;
- } */
+}
 
 .wrapper {
   background-color: #f5f5f5;
@@ -29,15 +29,15 @@
   width: 70%;
 }
 
-
 .slidingVertical {
   text-indent: 8px;
 }
-.trivia,
-.drinks,
-.tacos,
-.bingo {
- margin-left: 1%;
+.type {
+  margin-left: 1%;
+}
+
+#neighborhood {
+  margin-left: 2%;
 }
 .slidingVertical span {
   animation: topToBottom 12.5s linear infinite 0s;
@@ -47,8 +47,8 @@
   opacity: 0;
   overflow: hidden;
   position: absolute;
-  transition-timing-function: ease-in;
-  transition: 0.2s;
+  margin-left: 5%;
+  margin-top: -2.75%;
 }
 .slidingVertical span:nth-child(2) {
   animation-delay: 2.5s;
