@@ -14,6 +14,29 @@ import Typography from "@material-ui/core/Typography";
 import Modal from "@material-ui/core/Modal";
 import "../../../src/App.css";
 
+const styles = theme => ({
+  root: {
+    flexGrow: 1
+  },
+  paper: {
+    position: "absolute",
+    width: theme.spacing.unit * 50,
+    backgroundColor: theme.palette.background.paper,
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing.unit * 4,
+    outline: "none"
+  },
+  control: {
+    padding: theme.spacing.unit * 2
+  },
+    suggestionsContainerOpen: {
+    position: "absolute",
+    zIndex: 1,
+    marginTop: theme.spacing.unit,
+    left: 0,
+    right: 0
+  }
+});
 function getModalStyle() {
   const top = 50;
   const left = 50;
@@ -103,34 +126,6 @@ function getSuggestionValue(suggestion) {
   return suggestion.label;
 }
 
-const styles = theme => ({
-  root: {
-    height: 250,
-    flexGrow: 1
-  },
-  container: {
-    position: "relative"
-  },
-  suggestionsContainerOpen: {
-    position: "absolute",
-    zIndex: 1,
-    marginTop: theme.spacing.unit,
-    left: 0,
-    right: 0
-  },
-  suggestion: {
-    display: "block"
-  },
-  suggestionsList: {
-    margin: 0,
-    padding: 0,
-    listStyleType: "none"
-  },
-  divider: {
-    height: theme.spacing.unit * 2
-  }
-});
-
 class SearchBar extends React.Component {
   state = {
     single: "",
@@ -179,7 +174,21 @@ class SearchBar extends React.Component {
       result: this.state.single
     });
     console.log(this.state.single);
-    this.queryRestaurant();
+        this.setState({open: true});
+    axios
+    .get(
+      `/api/restaurant/${this.state.single}`
+    )
+    .then(res => {
+      const result = res.data[0];
+      console.log(result);
+      this.setState({ place: result.name });
+      this.setState({ address: result.address });
+      this.setState({ url: result.url });
+      this.setState({ tagline: result.tagline });
+      console.log(this.state.name + "at" + this.state.address + "www." + this.state.url + "    " + this.state.tagline);
+    });
+    // this.queryRestaurant();
   };
 
   render() {
@@ -235,18 +244,18 @@ class SearchBar extends React.Component {
                   >
                     <div style={getModalStyle()} className={classes.paper} id="modal">
                       <Typography variant="h6" id="modal-title">
-                        The Fuzzy Mule
+                        {this.state.place}
                       </Typography>
                       <Typography
                         variant="subtitle1"
                         id="simple-modal-description"
                       >
-                        Drunk is when you feel sophisticated, but can't pronounce it.
+                        {this.state.tagline}
                       </Typography>
                       <Button 
-                      id="modalLink" href="https://www.finestcall.com/vodka/fuzzy-mule/"></Button>
+                      id="modalLink" href={this.state.url}>check us out</Button>
                       <Typography variant="subtitle2">
-                        NasCar trivia every Monday from 4:30 to 9:00.  Half-price Pabst all weekend. Strip show/nacho bar every Thursday - kids eat free.
+                      ........events go here........
                       </Typography>
                     </div>
                   </Modal>
