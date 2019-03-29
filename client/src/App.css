@@ -6,19 +6,18 @@
   grid-area: header;
 }
 
-.sentence {
+sentence {
   color: #222;
   font-size: 30px;
   text-align: left;
-  margin-left: 33%;
-}
-
-.nearYou {
-  color: #222;
+  margin-left: 30%;
+ }
+ 
+ #2 {
+  font-size: 30px;
   margin-left: 50%;
   margin-top: -5%;
-  font-size: 30px;
-}
+ }
 
 .wrapper {
   background-color: #f5f5f5;

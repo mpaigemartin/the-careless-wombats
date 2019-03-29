@@ -8,20 +8,27 @@ class SearchPage extends Component {
     return (
       <div>
         <Header />
-        <section class="wrapper">
-          <h1 class="sentence">
-            Find
-            <div class="slidingVertical">
-              <span href="">Trivia</span>
-              <span>Karaoke</span>
-              <span>Drinks</span>
-              <span>Tacos</span>
-              <span>Bingo</span>
-            </div>
-          </h1>
-          <h1 class="nearYou">Near You</h1>
-        </section>
-        <SearchBar />
+       <section class="wrapper">
+         <h1 class="sentence">
+           Find
+           <div class="slidingVertical">
+             <span href="">Trivia</span>
+             <span>Karaoke</span>
+             <span>Drinks</span>
+             <span>Tacos</span>
+             <span>Bingo</span>
+           </div>
+         </h1>
+         <h1 class="sectence" id="2">
+           In
+           <div class="slidingVertical">
+             <span href="">Midtown</span>
+             <span>West Midtown</span>
+             <span>Decatur</span>
+           </div>
+         </h1>
+       </section>
+       <SearchBar />
       </div>
     );
   }
