@@ -12,7 +12,7 @@ import axios from "axios";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Modal from "@material-ui/core/Modal";
-import "../../../src/App.css";
+import "../../../src/CSS/App.css";
 
 const styles = theme => ({
   root: {
