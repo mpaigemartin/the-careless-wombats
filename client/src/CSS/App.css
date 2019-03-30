@@ -1,0 +1,119 @@
+
+.App {
+  text-align: center;
+}
+
+#header {
+  grid-area: header;
+}
+
+#title {
+  margin: 0 auto;
+}
+
+#businessList {
+  grid-area: sidebar;
+}
+
+.businessPaper {
+  width: 100%;
+}
+
+.BusinessDirectory-root-152 {
+  /* position: relative; */
+  overflow: hidden;
+  padding: 0.5em;
+  text-align: center;
+}
+
+#search {
+  grid-area: search;
+  max-height: 40px;
+}
+
+#searchBtn {
+  max-height: 40px;
+}
+
+#filter {
+  grid-area: filter;
+}
+
+#locationOption,
+#dayOption,
+#typeOption {
+  margin-right: 2%;
+  float: left;
+}
+
+#mapEmbed {
+  grid-area: map;
+  /* width: 100%; */
+  margin-bottom: 2em;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#modal {
+  width: 30%;
+  min-height: 11em;
+}
+
+#modal::after {
+  content: "";
+  background: url("../images/nightOwl.png");
+  object-fit: fill;
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 25% 1fr 50% 10% 1fr;
+  grid-template-rows: 65px 25px auto auto auto;
+  grid-template-areas:
+    "header header header header header header"
+    "...... ...... ...... ...... ...... ......"
+    "...... sidebar ..... search search ......"
+    "...... sidebar ..... filter ...... ......"
+    "...... sidebar ..... map map ............";
+}
+
+@media only screen and (max-width: 980px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 82% 8% 1fr;
+    grid-template-rows: 65px 25px auto auto auto auto;
+    grid-template-areas:
+      "header header header header"
+      "...... ...... ...... ......"
+      "...... search search ......"
+      "...... filter filter ......"
+      "...... map map ............"
+      "...... sidebar sidebar ....";
+  }
+
+  #barWrapper {
+    width: 100%;
+  }
+
+  #search {
+    justify-self: center;
+    width: 75%;
+  }
+
+  #filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
