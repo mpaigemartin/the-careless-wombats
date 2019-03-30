@@ -1,0 +1,200 @@
+Grindhouse Killer Burgers = {
+Location: 33.772593,-84.296396
+}
+
+Victory Sandwich Bar = {
+  Location: 33.763958,-84.357743 
+}
+
+The Iberian Pig ={
+  Location: 33.77438,-84.296
+}
+
+My Parent's Basement = {
+  Location: 33.775667,-84.27236
+}
+
+Trackside Tavern = {
+  Location: 33.771096,-84.292013
+}
+
+Kimball House ={
+  Location: 33.771624,-84.292186
+}
+
+The Square Pub ={
+  Location: 33.774482,-84.296109
+}
+
+The Corner Pub= {
+  Location: 38.605193,-90.583312
+}
+
+Mellow Mushroom = {
+  Location: 36.121689,-94.138508
+}
+
+Raging Burrito= {
+  Location: 33.774361,-84.295414
+}
+
+Twains Brewpub & Billiards ={
+  Location: 33.7723,-84.294598
+}
+
+The Pinewood={
+  Location: 33.775323,-84.2999
+}
+Taiyo Ramen={
+  Location: 33.776653,-84.296824
+}
+Calle Latina={
+  Location: 33.774919,-84.295143
+}
+Parkers on Ponce={
+  Location: 33.775778,-84.295882
+}
+Thinking Man Tavern={
+  Location: 33.767876,-84.304584
+}
+Matador Mexican Cantina={
+  Location: 33.760516,-84.303375
+}
+Mojo Pizza N' Pub={
+  Location: 33.759372,-84.303514 
+}
+The Imperial={
+  Location: 33.76609,-84.306381
+}
+Wild Heaven Beer={
+  Location: 33.776471,-84.275717
+}
+Atlanta Brewing Company={
+  Location: 33.818361,-84.43479
+}
+Verde Taqueria={
+  Location: 33.860968,-84.330841
+}
+O-Ku={
+  Location: 33.784543,-84.411231
+}
+The Optimist={
+  Location: 33.779811,-84.410439
+}
+Pijiu Belly={
+  Location: 33.781325,-84.409632
+}
+Donetto={
+  Location: 33.781457,-84.413496
+}
+Monday Night Brewing={
+  Location: 33.794919,-84.40989
+}
+Barcelona Wine Bar={
+  Location: 33.784515,-84.411386
+}
+Cooks & Soliders={
+  Location: 33.785973,-84.411472
+}
+FLIP Burger Boutique ={
+  Location: 33.798343,-84.415749 
+}
+Bocado={
+  Location: 33.7795,-84.409896
+}
+JCT Bar={
+  Location: 33.786553,-84.412431
+}
+Bone Lick BBQ={
+  Location: 33.754151,-84.376912
+}
+Twisted Soul Cookhouse & Pours={
+  Location: 33.789818,-84.424898
+}
+Little Trouble={
+  Location: 33.785834,-84.41216
+}
+Marcel={
+  Location: 33.785745,-84.412541
+}
+Tin Tin={
+  Location: 33.780947,-84.413409
+}
+Second Self Beer Company={
+  Location: 33.80562,-84.430079
+}
+Cypress Street Pint & Plate={
+  Location: 33.77731,-84.38612
+}
+Eleventh Street Pub={
+  33.783148,-84.38769
+}
+The Highlander={
+  Location: 33.779427,-84.367584
+}
+MidCity Cafe={
+  Location: 33.777916,-84.387432
+}
+Senor Patron={
+  Location: 33.778306,-84.385203
+}
+Torched Hop={
+  Location: 33.772418,-84.379281
+}
+Henry's Midtown Tavern={
+  Location: 33.781869,-84.382896
+}
+The Nook on Piedmont Park={
+  Location: 33.786039,-84.378531
+}
+5Church Atlanta={
+  Location: 33.787205,-84.382964
+}
+Establishment={
+  Location: 33.786764,-84.381289
+}
+Ri Ra Irish Pub={
+  Location: 38.905389,-77.061914
+}
+10th & Piedmont={
+  Location: 33.781678,-84.380394
+}
+Zocalo Mexican Kitchen & Cantina={
+  Location: 33.781512,-84.381042
+}
+Park Tavern={
+  Location: 33.7822,-84.369286
+}
+The Canteen={
+  Location: 33.77701,-84.389255
+}
+Fado Irish Pub={
+  Location: 47.603304,-122.335179
+}
+Hudson Grille={
+  Location: 33.757432,-84.393376
+}
+Smith's Olde Bar={
+  Location: 33.797612,-84.368852
+}
+Takorea={
+  Location: 33.776895,-84.383159
+}
+HobNob Neighborhood Tavern={
+  Location: 33.796724,-84.368993
+}
+Publik Draft House={
+  Location: 33.772352,-84.385058
+}
+Deep End={
+  Location: 33.770882,-84.366971
+}
+The Hideaway={
+  Location: 38.048885,-97.34832
+}
+Midtown Tavern={
+  Location: 33.769723,-84.382345
+}
+City Winery={
+  Location: 40.726232,-74.006008
+}
