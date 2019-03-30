@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import {withRouter} from "react-router-dom";
 import PropTypes from "prop-types";
-import UserContext from "../context/UserContext"
-import Auth from '../utils/Auth';
+import UserContext from "../../context/UserContext"
+import Auth from "../../utils/Auth";
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -22,6 +22,10 @@ const styles = theme => ({
 	button: {
 		margin: theme.spacing.unit
 	},
+	
+	input: {
+		display: 'none',
+	},
 	dense: {
 		marginTop: 19
 	},
@@ -29,8 +33,7 @@ const styles = theme => ({
 		width: 200
 	}
 });
-
-class Signup extends Component {
+class Login extends Component {
 	static contextType = UserContext;
 
 	state = {
@@ -46,10 +49,11 @@ class Signup extends Component {
 	submitHandler = (e) => {
     e.preventDefault();
 		const {username, password} = this.state;
-		if(username && password) {
-			Auth.signUp(username, password, (response) =>{
-				console.log(response);
-			})
+		if (username && password) {
+			Auth.logIn(username, password, (response) => {
+				this.context.setUser(response);
+				this.props.history.push("/Search");
+			});
 		}
 	}
 
@@ -59,7 +63,7 @@ class Signup extends Component {
 		return (
 			<form className={classes.container} onSubmit={this.submitHandler}>
 				<TextField
-					id="usernameSignup"
+					id="usernameLogin" 
 					label="username"
 					type="text"
 					name="username"
@@ -78,14 +82,15 @@ class Signup extends Component {
 					onChange={this.changeHandler}
 					margin="normal"
 				/>
-				<Button variant="contained" color="secondary"
-				className={classes.button} type="submit" fullWidth>Signup</Button>
+				<Button variant="contained" color="secondary" type="submit"
+				className={classes.button} fullWidth>Login</Button>
 			</form>
 		);
 	}
 }
-Signup.propTypes = {
-	classes: PropTypes.object.isRequired
+
+	Login.propTypes = {
+		classes: PropTypes.object.isRequired
 };
 
-export default withRouter(withStyles(styles)(Signup))
+export default withRouter(withStyles(styles)(Login))
