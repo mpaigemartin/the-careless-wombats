@@ -169,7 +169,7 @@ The Canteen={
   Location: 33.77701,-84.389255
 }
 Fado Irish Pub={
-  Location: 47.603304,-122.335179
+  Location: 33.779673,-84.384035
 }
 Hudson Grille={
   Location: 33.757432,-84.393376
@@ -190,11 +190,11 @@ Deep End={
   Location: 33.770882,-84.366971
 }
 The Hideaway={
-  Location: 38.048885,-97.34832
+  33.797908,-84.371684
 }
 Midtown Tavern={
   Location: 33.769723,-84.382345
 }
 City Winery={
-  Location: 40.726232,-74.006008
+  Location: 33.77159,-84.367337
 }
