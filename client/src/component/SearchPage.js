@@ -10,15 +10,15 @@ class SearchPage extends Component {
     neighborhood: ""
   };
 
-  typeClickHandler = event => {
+  typeClickHandler = (event) => {
     event.preventDefault();
-    this.setState({ type: event.currentTarget.value });
+    this.setState({ type: event.currentTarget.dataset.id });
     console.log(this.state.type);
   };
 
   neighborhoodClickHandler = event => {
     event.preventDefault();
-    this.setState({ neighborhood: event.currentTarget.value });
+    this.setState({ neighborhood: event.currentTarget.dataset.id });
     console.log(this.state.neighborhood);
   }
 
@@ -32,35 +32,35 @@ class SearchPage extends Component {
             <span
               className="type"
               onClick={this.typeClickHandler}
-              value="Trivia"
-            >
+              data-id="Trivia"
+              >            
               Trivia
             </span>
             <span
               className="type"
               onClick={this.typeClickHandler}
-              value="Karaoke"
+              data-id="Karaoke"
             >
               Karaoke
             </span>
             <span
               className="type"
               onClick={this.typeClickHandler}
-              value="Drink Specials"
+              data-id="Drink Specials"
             >
               Drinks
             </span>
             <span
               className="type"
               onClick={this.typeClickHandler}
-              value="Food Specials"
+              data-id="Food Specials"
             >
               Food
             </span>
             <span
               className="type"
               onClick={this.typeClickHandler}
-              value="Bingo"
+              data-id="Bingo"
             >
               Bingo
             </span>
@@ -71,28 +71,28 @@ class SearchPage extends Component {
             <span
               className="neighborhood"
               onClick={this.neighborhoodClickHandler}
-              value="Midtown"
+              data-id="Midtown"
             >
               Midtown
             </span>
             <span
               className="neighborhood"
               onClick={this.neighborhoodClickHandler}
-              value="West Midtown"
+              data-id="West Midtown"
             >
               West Midtown
             </span>
             <span
               className="neighborhood"
               onClick={this.neighborhoodClickHandler}
-              value="Decatur"
+              data-id="Decatur"
             >
               Decatur
             </span>
             <span
               className="neighborhood"
               onClick={this.neighborhoodClickHandler}
-              value="All Atlanta"
+              data-id="All Atlanta"
             >
               Atlanta
             </span>
