@@ -20,6 +20,7 @@ class Home extends Component {
     address: "",
     tagline: "",
     url: "",
+    events: [],
     open: false
   };
 
@@ -32,7 +33,8 @@ class Home extends Component {
       neighborhood: results.neighborhood,
       tagline: results.tagline,
       address: results.address,
-      url: results.url
+      url: results.url,
+      events: results.events
     })
     console.log(val.data[0])
     console.log(this.state.single);
@@ -117,6 +119,7 @@ class Home extends Component {
           address={this.state.address}
           url={this.state.url}
           tagline={this.state.tagline}
+          events={this.state.events}
           handleClose={ this.handleClose} 
           handleOpen={this.handleOpen} 
           open={this.state.open}
