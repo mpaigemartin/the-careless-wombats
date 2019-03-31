@@ -6,6 +6,8 @@ import FormControl from "@material-ui/core/FormControl";
 import NativeSelect from "@material-ui/core/NativeSelect";
 import InputBase from "@material-ui/core/InputBase";
 import AtlantaMap from "./Maps/AtlantaMap";
+import axios from "axios";
+import { get } from "http";
 
 const BootstrapInput = withStyles(theme => ({
   root: {
@@ -69,6 +71,8 @@ class FilterButtonRow extends React.Component {
   state = {
     day: "",
     type: "",
+    neighborhood: "",
+    businessDirectory: [],
     decaturMap: false,
     center: {
       lat: 0,
@@ -93,14 +97,21 @@ class FilterButtonRow extends React.Component {
     const czoom = parseInt(selectedOption.getAttribute("zoom"));
     
 
-    console.log(cLat + "  " + clng );
     this.setState({       
       currentLat: cLat,
       currentLon: clng,
-      currentZoom: czoom
+      currentZoom: czoom,
+      neighborhood: event.target.value
     });
-    // console.log("from FilterButtonRow: ", this.state.whichMap);
+    axios
+    .get(
+      `api/restaurant/${event.target.value}`
+      ).then(result => {
+        this.setState({ businessDirectory: result.data })
+        console.log(result.data)
+      });
   };
+   
 
   handleDayChange = event => {
     this.setState({ day: event.target.value });
@@ -131,10 +142,10 @@ class FilterButtonRow extends React.Component {
               />
             }
           >
-            <option longitude={-84.36098} latitude={33.77463} zoom={11}>Atlanta</option>
-            <option longitude={-84.375387} latitude={33.789295} zoom={14}>Midtown</option>
-            <option longitude={-84.299458} latitude={33.774231} zoom={14}>Decatur</option>
-            <option longitude={-84.40458} latitude={33.797919} zoom={14} >West Midtown</option>
+            <option longitude={-84.36098} latitude={33.77463} zoom={11} value="">Atlanta</option>
+            <option longitude={-84.375387} latitude={33.789295} zoom={14} value="area/Midtown">Midtown</option>
+            <option longitude={-84.299458} latitude={33.774231} zoom={14} value="area/Decatur">Decatur</option>
+            <option longitude={-84.40458} latitude={33.797919} zoom={14}  value="area/West Midtown">West Midtown</option>
           </NativeSelect>
         </FormControl>
 

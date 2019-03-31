@@ -34,6 +34,18 @@ module.exports = function(app) {
       });
   });
 
+  app.get("/api/restaurant/area/:neighborhood", function(req, res) {
+    Restaurant.find({ neighborhood: req.params.neighborhood })
+      .populate("Event")
+      .then(function(dbRestaurant) {
+        res.send(dbRestaurant);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
+
+
   app.post('/api/restaurant/:id', function(req, res) {
     Restaurant.create(req.body)
       .then(function(dbRestaurant) {
@@ -43,7 +55,6 @@ module.exports = function(app) {
         res.json(err);
       });
   });
-
 
   // Event Model Route
   // Get Route for viewing the Events

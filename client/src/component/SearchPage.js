@@ -7,7 +7,7 @@ import "../../src/CSS/VerticalScrollingMenu.css";
 class SearchPage extends Component {
   state = {
     type: "",
-    neighborhood: ""
+    neighborhood: "",
   };
 
   typeClickHandler = (event) => {

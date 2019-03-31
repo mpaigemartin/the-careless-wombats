@@ -10,8 +10,6 @@ import MenuItem from "@material-ui/core/MenuItem";
 import { withStyles } from "@material-ui/core/styles";
 import axios from "axios";
 import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import Modal from "@material-ui/core/Modal";
 import "../../../src/CSS/App.css";
 
 const styles = theme => ({
@@ -37,16 +35,6 @@ const styles = theme => ({
     right: 0
   }
 });
-function getModalStyle() {
-  const top = 50;
-  const left = 50;
-
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`
-  };
-}
 
 let suggestions = [];
 
@@ -60,25 +48,6 @@ axios.get("api/restaurant").then(result => {
   });
 });
 
-function renderInputComponent(inputProps) {
-  const { classes, inputRef = () => {}, ref, ...other } = inputProps;
-  return (
-    <TextField
-      fullWidth
-      onChange={inputProps.searchChangeHandler}
-      InputProps={{
-        inputRef: node => {
-          ref(node);
-          inputRef(node);
-        },
-        classes: {
-          input: classes.input
-        }
-      }}
-      {...other}
-    />
-  );
-}
 
 function renderSuggestion(suggestion, { query, isHighlighted }) {
   const matches = match(suggestion.label, query);
@@ -127,42 +96,32 @@ function getSuggestionValue(suggestion) {
   return suggestion.label;
 }
 
+function renderInputComponent(inputProps) {
+  const { classes, inputRef = () => {}, ref, ...other } = inputProps;
+  return (
+    <TextField
+      fullWidth
+      onChange={inputProps.searchChangeHandler}
+      InputProps={{
+        inputRef: node => {
+          ref(node);
+          inputRef(node);
+        },
+        classes: {
+          input: classes.input
+        }
+      }}
+      {...other}
+    />
+  );
+}
+
 class SearchBar extends React.Component {
   state = {
-    single: "",
+    single: '',
     suggestions: [],
-    place: "",
-    address: "",
-    tagline: "",
-    url: "",
-    open: false
   };
 
-  handleOpen = () => {
-    this.setState({ open: true });
-  };
-
-  handleClose = () => {
-    this.setState({ open: false });
-  };
-
-  queryRestaurant = event => {
-    axios.get(`https:///api/restaurant/${this.state.single}`).then(result => {
-      this.setState({ place: result.name });
-      this.setState({ address: result.address });
-      this.setState({ url: result.url });
-      this.setState({ tagline: result.tagline });
-      console.log(
-        this.state.name +
-          "at" +
-          this.state.address +
-          "www." +
-          this.state.url +
-          "    " +
-          this.state.tagline
-      );
-    });
-  };
 
   handleSuggestionsFetchRequested = ({ value }) => {
     this.setState({
@@ -179,33 +138,20 @@ class SearchBar extends React.Component {
   handleChange = name => (event, { newValue }) => {
     this.setState({
       [name]: newValue
+
     });
   };
 
   handleClick = () => {
-    this.setState({
-      result: this.state.single
-    });
-    console.log(this.state.single);
-    this.setState({ open: true });
-    axios.get(`/api/restaurant/${this.state.single}`).then(res => {
-      const result = res.data[0];
-      console.log(result);
-      this.setState({ place: result.name });
-      this.setState({ address: result.address });
-      this.setState({ url: result.url });
-      this.setState({ tagline: result.tagline });
-      console.log(
-        this.state.name +
-          "at" +
-          this.state.address +
-          "www." +
-          this.state.url +
-          "    " +
-          this.state.tagline
-      );
-    });
-    // this.queryRestaurant();
+    axios
+    .get( `/api/restaurant/${this.state.single}`
+    ).then(
+      result => {
+        // this.props.place = result.data.name;
+        // this.props.
+      }
+    )
+    this.props.handleClick();
   };
 
   render() {
@@ -253,28 +199,6 @@ class SearchBar extends React.Component {
         >
           view info
         </Button>
-        <Modal
-          aria-labelledby="simple-modal-title"
-          aria-describedby="simple-modal-description"
-          open={this.state.open}
-          onClose={this.handleClose}
-        >
-          <div style={getModalStyle()} className={classes.paper} id="modal">
-            <Typography variant="h6" id="modal-title">
-              {this.state.place}
-            </Typography>
-            <Typography variant="subtitle1" id="simple-modal-description">
-              {this.state.tagline}
-            </Typography>
-            <Button href={this.state.url} target="_blank" id="modalLink">
-              check us out
-            </Button>
-            <Typography variant="subtitle2">
-              ........events go here........
-            </Typography>
-            <Button variant="secondary" onClick={this.handleClose} >close</Button>
-          </div>
-        </Modal>
       </div>
     );
   }
