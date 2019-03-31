@@ -13,7 +13,7 @@ module.exports = function(app) {
 
   app.get("/api/restaurant", function(req, res) {
     Restaurant.find({})
-      .populate("Event")
+      .populate("events")
       .then(function(dbRestaurant) {
         res.json(dbRestaurant);
       })
