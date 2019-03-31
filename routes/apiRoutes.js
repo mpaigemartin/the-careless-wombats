@@ -69,6 +69,17 @@ module.exports = function(app) {
       });
   });
 
+  app.get("/api/event/:type", function(req, res) {
+    const type = req.params.type;
+    Restaurant.find({ category: {contains( type )}})
+    .then(function(data) {
+      res.json(data);
+    })
+    .catch(function(err) {
+      res.json(err);
+    });
+});
+
   app.post("/api/restaurant/:restaurantId/events", function(req, res) {
     Event.create(req.body)
       .then(function(dbEvent) {
