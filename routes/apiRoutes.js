@@ -71,7 +71,7 @@ module.exports = function(app) {
 
   app.get("/api/event/:type", function(req, res) {
     const type = req.params.type;
-    Restaurant.find({ category: {contains( type )}})
+    Restaurant.find({ category: req.params.type})
     .then(function(data) {
       res.json(data);
     })
