@@ -148,6 +148,7 @@ const restaurants = [
     tagline: '',
     lat: 33.767876,
     lng: -84.304584
+  },
   {
     name: 'Matador Mexican Cantina',
     neighborhood: 'Decatur',
