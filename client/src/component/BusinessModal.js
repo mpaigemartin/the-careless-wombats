@@ -71,7 +71,9 @@ class BusinessModal extends React.Component {
                 <Typography variant="subtitle1" id="simple-modal-description">
                 {this.props.tagline}
                 </Typography>
-                <Typography variant="subtitle2">........events go here........</Typography>
+                <Typography variant="subtitle2">
+                {this.props.eventName}
+                </Typography>
                 <Button href={this.props.url} target="_blank" id="modalLink">
                 check us out
                 </Button>
