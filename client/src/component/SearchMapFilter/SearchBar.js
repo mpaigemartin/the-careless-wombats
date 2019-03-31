@@ -118,7 +118,7 @@ function renderInputComponent(inputProps) {
 
 class SearchBar extends React.Component {
   state = {
-    // single: '',
+    single: '',
     suggestions: [],
   };
 
@@ -135,16 +135,23 @@ class SearchBar extends React.Component {
     });
   };
 
-  handleChange = () => ( { newValue }) => {
-    this.props.handleChange( { newValue});
-    // this.setState({
-    //   [name]: newValue
-    };
+  handleChange = name => (event, { newValue }) => {
+    this.setState({
+      [name]: newValue
 
+    });
+  };
 
   handleClick = () => {
-    const place = this.props.single;
-    this.props.handleClick(place);
+    axios
+    .get( `/api/restaurant/${this.state.single}`
+    ).then(
+      result => {
+        // this.props.place = result.data.name;
+        // this.props.
+      }
+    )
+    this.props.handleClick();
   };
 
   render() {
@@ -167,7 +174,7 @@ class SearchBar extends React.Component {
           inputProps={{
             classes,
             placeholder: "Search a Local Resturant",
-            value: this.props.single,
+            value: this.state.single,
             onChange: this.handleChange("single")
           }}
           theme={{
