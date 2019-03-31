@@ -1,5 +1,4 @@
-
-.wrapper {
+  .wrapper {
     background-color: #f5f5f5;
     font-family: "Raleway", sans-serif;
     margin: 10% auto;
@@ -48,10 +47,7 @@
     -webkit-animation: topToBottom 12.5s linear infinite 0s;
     color: darkslateblue;
     opacity: 0;
-    /* overflow: hidden;
-    position: absolute; */
-    /* margin-left: 5%;
-    margin-top: -2.75%; */
+
   }
   .slidingVertical span:nth-child(2) {
     animation-delay: 2.5s;
@@ -80,10 +76,7 @@
     -webkit-animation: bottomToTop 10s linear infinite 0s;
     color: darkslateblue;
     opacity: 0;
-    /* overflow: hidden;
-    position: absolute; */
-    /* margin-left: 5%;
-    margin-top: -2.75%; */
+
   }
   .slidingVertical2 span:nth-child(2) {
     animation-delay: 2.5s;
@@ -272,8 +265,12 @@
       opacity: 0;
     }
   }
-  
-  #barWrapper {
-    width: 75%;
-    margin: 12%;
+
+
+@media only screen and (max-width: 980px) {
+  .wrapper {
+    width: 90%;
   }
+
+
+} 
