@@ -22,6 +22,12 @@ var RestaurantSchema = new Schema({
     type: String,
     trim: true
   },
+  lat: {
+    type: Number
+  },
+  lng: {
+    type: Number
+  },
   events: [
     {
       type: Schema.Types.ObjectId,

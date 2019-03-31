@@ -1,13 +1,8 @@
 import React, {Component} from "react";
 import {withRouter} from "react-router-dom";
 import PropTypes from "prop-types";
-import UserContext from "../context/UserContext"
-import Auth from "../utils/Auth";
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
-import MenuItem from "@material-ui/core/MenuItem";
-import TextField from "@material-ui/core/TextField";
-import Button from '@material-ui/core/Button';
 import Login from './Login';
 import Signup from './Signup';
 import Grid from '@material-ui/core/Grid';
@@ -39,31 +34,21 @@ class LoginAndRegister extends Component {
 		return (
 
       <div className={classes.root}>
-      <Grid container>
+      <Grid container className="Login">
         <div className={classes.section1}>
-          
           <Typography gutterBottom variant="h5">
               Login
             </Typography>
             <Login/>
-        
-          
         </div>
         <div className={classes.section2}>
-          
           <Typography gutterBottom variant="h5">
               Signup
             </Typography>
             <Signup/>
-          
-          
         </div>
         </Grid>
-      
-
       </div>
-      
-			
 		);
 	}
 }
