@@ -52,6 +52,8 @@ class BusinessModal extends React.Component {
     this.props.handleClose()
   };
 
+
+
     render () {
         const { classes } = this.props;
 
@@ -64,7 +66,7 @@ class BusinessModal extends React.Component {
             >
             <div style={getModalStyle()} className={classes.paper} id="modal">
                 <Typography variant="h6" id="modal-title">
-                {this.props.place}
+                {this.props.name}
                 </Typography>
                 <Typography variant="subtitle1" id="simple-modal-description">
                 {this.props.tagline}

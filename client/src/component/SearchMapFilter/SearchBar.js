@@ -48,7 +48,6 @@ axios.get("api/restaurant").then(result => {
   });
 });
 
-
 function renderSuggestion(suggestion, { query, isHighlighted }) {
   const matches = match(suggestion.label, query);
   const parts = parse(suggestion.label, matches);
@@ -146,7 +145,7 @@ class SearchBar extends React.Component {
     axios
     .get( `/api/restaurant/${this.state.single}`
     ).then(
-      result => {
+      result => { this.props.sendData(result)
         // this.props.place = result.data.name;
         // this.props.
       }
