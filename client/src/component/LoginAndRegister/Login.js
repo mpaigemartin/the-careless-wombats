@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import {withRouter} from "react-router-dom";
 import PropTypes from "prop-types";
-import UserContext from "../context/UserContext"
-import Auth from "../utils/Auth";
+import UserContext from "../../context/UserContext"
+import Auth from "../../utils/Auth";
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -83,7 +83,7 @@ class Login extends Component {
 					margin="normal"
 				/>
 				<Button variant="contained" color="secondary" type="submit"
-				className={classes.button}>Submit</Button>
+				className={classes.button} fullWidth>Login</Button>
 			</form>
 		);
 	}

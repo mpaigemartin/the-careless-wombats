@@ -5,7 +5,7 @@ import BusinessDirectory from '../component/BusinessDirectory';
 import SearchBar from './SearchMapFilter/SearchBar';
 import FilterButtonRow from './SearchMapFilter/FilterButtonRow';
 import AllAtlanta from './SearchMapFilter/Maps/AtlantaMap';
-import '../../src/App.css';
+import '../../src/CSS/App.css';
 
 class Home extends Component {
   state = {

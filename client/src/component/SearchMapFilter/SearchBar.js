@@ -12,8 +12,31 @@ import axios from "axios";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Modal from "@material-ui/core/Modal";
-import "../../../src/App.css";
+import "../../../src/CSS/App.css";
 
+const styles = theme => ({
+  root: {
+    flexGrow: 1
+  },
+  paper: {
+    position: "absolute",
+    width: theme.spacing.unit * 50,
+    backgroundColor: theme.palette.background.paper,
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing.unit * 4,
+    outline: "none"
+  },
+  control: {
+    padding: theme.spacing.unit * 2
+  },
+  suggestionsContainerOpen: {
+    position: "absolute",
+    zIndex: 1,
+    marginTop: theme.spacing.unit,
+    left: 0,
+    right: 0
+  }
+});
 function getModalStyle() {
   const top = 50;
   const left = 50;
@@ -27,7 +50,8 @@ function getModalStyle() {
 
 let suggestions = [];
 
-axios.get("api/restaurant").then(result => { //creates a list of restaurants as an array of objects [{labe: <name>}, {label: <name>} etc...]
+axios.get("api/restaurant").then(result => {
+  //creates a list of restaurants as an array of objects [{labe: <name>}, {label: <name>} etc...]
   const places = result.data;
   suggestions = places.map(item => {
     const container = {};
@@ -103,57 +127,41 @@ function getSuggestionValue(suggestion) {
   return suggestion.label;
 }
 
-const styles = theme => ({
-  root: {
-    height: 250,
-    flexGrow: 1
-  },
-  container: {
-    position: "relative"
-  },
-  suggestionsContainerOpen: {
-    position: "absolute",
-    zIndex: 1,
-    marginTop: theme.spacing.unit,
-    left: 0,
-    right: 0
-  },
-  suggestion: {
-    display: "block"
-  },
-  suggestionsList: {
-    margin: 0,
-    padding: 0,
-    listStyleType: "none"
-  },
-  divider: {
-    height: theme.spacing.unit * 2
-  }
-});
-
 class SearchBar extends React.Component {
   state = {
     single: "",
     suggestions: [],
-    place: '',
-    address: '',
-    tagline: '',
-    url: '',
+    place: "",
+    address: "",
+    tagline: "",
+    url: "",
     open: false
   };
 
+  handleOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
   queryRestaurant = event => {
-    axios
-      .get(
-        `https:///api/restaurant/${this.state.single}`
-      )
-      .then(result => {
-        this.setState({ place: result.name });
-        this.setState({ address: result.address });
-        this.setState({ url: result.url });
-        this.setState({ tagline: result.tagline });
-        console.log(this.state.name + "at" + this.state.address + "www." + this.state.url + "    " + this.state.tagline);
-      });
+    axios.get(`https:///api/restaurant/${this.state.single}`).then(result => {
+      this.setState({ place: result.name });
+      this.setState({ address: result.address });
+      this.setState({ url: result.url });
+      this.setState({ tagline: result.tagline });
+      console.log(
+        this.state.name +
+          "at" +
+          this.state.address +
+          "www." +
+          this.state.url +
+          "    " +
+          this.state.tagline
+      );
+    });
   };
 
   handleSuggestionsFetchRequested = ({ value }) => {
@@ -179,7 +187,25 @@ class SearchBar extends React.Component {
       result: this.state.single
     });
     console.log(this.state.single);
-    this.queryRestaurant();
+    this.setState({ open: true });
+    axios.get(`/api/restaurant/${this.state.single}`).then(res => {
+      const result = res.data[0];
+      console.log(result);
+      this.setState({ place: result.name });
+      this.setState({ address: result.address });
+      this.setState({ url: result.url });
+      this.setState({ tagline: result.tagline });
+      console.log(
+        this.state.name +
+          "at" +
+          this.state.address +
+          "www." +
+          this.state.url +
+          "    " +
+          this.state.tagline
+      );
+    });
+    // this.queryRestaurant();
   };
 
   render() {
@@ -228,28 +254,27 @@ class SearchBar extends React.Component {
           view info
         </Button>
         <Modal
-                    aria-labelledby="simple-modal-title"
-                    aria-describedby="simple-modal-description"
-                    open={this.state.open}
-                    onClose={this.handleClose}
-                  >
-                    <div style={getModalStyle()} className={classes.paper} id="modal">
-                      <Typography variant="h6" id="modal-title">
-                        The Fuzzy Mule
-                      </Typography>
-                      <Typography
-                        variant="subtitle1"
-                        id="simple-modal-description"
-                      >
-                        Drunk is when you feel sophisticated, but can't pronounce it.
-                      </Typography>
-                      <Button 
-                      id="modalLink" href="https://www.finestcall.com/vodka/fuzzy-mule/"></Button>
-                      <Typography variant="subtitle2">
-                        NasCar trivia every Monday from 4:30 to 9:00.  Half-price Pabst all weekend. Strip show/nacho bar every Thursday - kids eat free.
-                      </Typography>
-                    </div>
-                  </Modal>
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+          open={this.state.open}
+          onClose={this.handleClose}
+        >
+          <div style={getModalStyle()} className={classes.paper} id="modal">
+            <Typography variant="h6" id="modal-title">
+              {this.state.place}
+            </Typography>
+            <Typography variant="subtitle1" id="simple-modal-description">
+              {this.state.tagline}
+            </Typography>
+            <Button href={this.state.url} target="_blank" id="modalLink">
+              check us out
+            </Button>
+            <Typography variant="subtitle2">
+              ........events go here........
+            </Typography>
+            <Button variant="secondary" onClick={this.handleClose} >close</Button>
+          </div>
+        </Modal>
       </div>
     );
   }
