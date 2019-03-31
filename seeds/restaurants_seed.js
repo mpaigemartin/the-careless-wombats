@@ -9,10 +9,8 @@ const restaurants = [
     name: 'Grindhouse Killer Burgers',
     neighborhood: 'Decatur',
     address: '433 N McDonough St, Decatur, GA 30030',
-    
-      lat: 33.772593,
-      lng: -84.296396,
-    
+    lat: 33.772593,
+    lng: -84.296396,
     url: 'http://www.grindhouseburgers.com/',
     tagline: 'Local chain serving burgers, chili & shakes in a hip space with B-movies projected on the walls'
   },
@@ -22,10 +20,8 @@ const restaurants = [
     address: '340 Church St, Decatur, GA 30030',
     url: 'http://www.vicsandwich.com/',
     tagline: 'Buzzy, industrial-chic tavern featuring inventive sandwiches & cocktails, plus a patio.',
-    
-      lat: 33.763958,
-      lng: -84.357743
-    
+    lat: 33.763958,
+    lng: -84.357743
   },
   {
     name: 'The Iberian Pig',
@@ -33,10 +29,8 @@ const restaurants = [
     address: '121 Sycamore St, Decatur, GA 30030',
     url: 'https://www.theiberianpigatl.com/#contemporary-spanish-tapas',
     tagline: 'Eatery serves all things pig via tapas & entrees, plus cocktails & wine in a modern setting.',
-    
-      lat: 33.77438,
-      lng: -84.296
-    
+    lat: 33.77438,
+    lng: -84.296
   },
   {
     name: "My Parent's Basement",
@@ -44,10 +38,8 @@ const restaurants = [
     address: '22 N Avondale Rd, Avondale Estates, GA 30002',
     url: 'www.myparentsbasementcbcb.com/',
     tagline: 'Combination comic-book store & taproom serving up local craft beer & creative bar food.',
-    
-      lat: 33.775667,
-      lng: -84.27236
-    
+    lat: 33.775667,
+    lng: -84.27236
   },
   {
     name: 'Trackside Tavern',
@@ -55,10 +47,8 @@ const restaurants = [
     address: '313 E College Ave, Decatur, GA 30030',
     url: 'https://www.facebook.com/Trackside-Tavern-229206620473232/',
     tagline: 'A longtime neighborhood joint serving up drink specials & pub grub, with billiards & darts.',
-    
-      lat: 33.771096,
-      lng: -84.292013
-    
+    lat: 33.771096,
+    lng: -84.292013
   },
   {
     name: 'Kimball House',
@@ -66,10 +56,8 @@ const restaurants = [
     address: '303 E Howard Ave, Decatur, GA 30030',
     url: 'http://www.kimball-house.com/',
     tagline: 'Once a railroad station, this sleek eatery & raw bar serves farm-to-table entrees with French flair.',
-    
-      lat: 33.771624,
-      lng: -84.292186
-    
+    lat: 33.771624,
+    lng: -84.292186
   },
   {
     name: 'The Square Pub',
@@ -77,10 +65,8 @@ const restaurants = [
     address: '115 Sycamore St, Decatur, GA 30030',
     url: 'http://www.squarepubdecatur.com/',
     tagline: 'Southwest-inspired dishes, plus cocktails & brews in a large, laid-back environment.',
-    
-      lat: 33.774482,
-      lng: -84.296109
-    
+    lat: 33.774482,
+    lng: -84.296109
   },
   {
     name: 'The Corner Pub',
@@ -88,10 +74,8 @@ const restaurants = [
     address: '627 E College Ave D, Decatur, GA 300330',
     url: 'https://www.pubalicious.com/',
     tagline: 'Neighborhood watering hole serving specialty beers & updated pub fare in a cozy, wood-filled space.',
-    
-      lat: 38.605193,
-      lng: -90.583312
-    
+    lat: 38.605193,
+    lng: -90.583312
   },
   {
     name: 'Mellow Mushroom',
@@ -99,10 +83,8 @@ const restaurants = [
     address: '340 W Ponce de Leon Ave, Decatur, GA 30030',
     url:'https://mellowmushroom.com/location/ga-decatur-340-west-ponce-de-leon-avenue-30030/',
     tagline: 'Funky, art-filled chain pizzeria featuring craft beer, calzones & creative stone-baked pizzas.',
-    
-      lat: 36.121689,
-      lng: -94.138508
-    
+    lat: 36.121689,
+    lng: -94.138508
   },
   {
     name: 'Raging Burrito',
@@ -110,10 +92,8 @@ const restaurants = [
     address: '141 Sycamore St, Decatur, GA 30030',
     url: 'http://ragingburrito.com/',
     tagline: 'Laid-back eatery offers updated Tex-Mex classics, a full lineup of craft beers & 50+ tequilas.',
-    
-      lat: 33.774361,
-      lng: -84.295414
-    
+    lat: 33.774361,
+    lng: -84.295414
   },
   {
     name: 'Twains Brewpub & Billiards',
@@ -121,10 +101,8 @@ const restaurants = [
     address: '211 E Trinity Pl, Decatur, GA 30030',
     url: 'http://www.twains.net/',
     tagline: 'Gastropub with house-brewed tap beers, shuffleboard, pool & darts, plus trivia on Mondays.',
-    
-      lat: 33.7723,
-      lng: -84.294598
-    
+    lat: 33.7723,
+    lng: -84.294598
   },
   {
     name: 'The Pinewood',
@@ -132,10 +110,8 @@ const restaurants = [
     address: '254 W Ponce de Leon Ave, Decatur, GA 30030',
     url: 'https://www.pinewoodtr.com/',
     tagline: 'Hip, urban-rustic gastropub featuring elevated comfort food, modern cocktails & liquor flights.',
-    
-      lat: 33.775323,
-      lng: -84.2999
-    
+    lat: 33.775323,
+    lng: -84.2999
   },
   {
     name: 'Taiyo Ramen',
@@ -143,10 +119,8 @@ const restaurants = [
     address: '130 Clairemont Ave Suite 100, Decatur, GA 30030',
     url: 'https://www.koreanwives.com/taiyo-ramen/',
     tagline: 'Contemporary Japanese noodle soups & Asian small plates plus cocktails served in a hotel setting.',
-    
-      lat: 33.776653,
-      lng: -84.296824
-    
+    lat: 33.776653,
+    lng: -84.296824
   },
   {
     name: 'Calle Latina',
@@ -154,10 +128,8 @@ const restaurants = [
     address: '406 Church St, Decatur, GA 30030',
     url: 'http://callelatinadecatur.com/',
     tagline: 'Brightly painted venue with patio seating offering typical Latin American street-food eats.',
-    
-      lat: 33.774919,
-      lng: -84.295143
-    
+    lat: 33.774919,
+    lng: -84.295143
   },
   {
     name: 'Parkers on Ponce',
@@ -165,10 +137,8 @@ const restaurants = [
     address: '116 E Ponce de Leon Ave, Decatur, GA 30030',
     url: 'https://www.parkersonponce.com/',
     tagline: 'Pub fare & craft beers provide fuel for board games, trivia, darts & more in a low-key hangout.',
-    
-      lat: 33.775778,
-      lng: -84.295882
-    
+    lat: 33.775778,
+    lng: -84.295882
   },
   {
     name: 'Thinking Man Tavern',
@@ -176,11 +146,8 @@ const restaurants = [
     address: '537 W Howard Ave, Decatur, GA 30030',
     url: 'http://www.thinkingmantavern.com/',
     tagline: '',
-    
-      lat: 33.767876,
-      lng: -84.304584
-    
-  },
+    lat: 33.767876,
+    lng: -84.304584
   {
     name: 'Matador Mexican Cantina',
     neighborhood: 'Decatur',
