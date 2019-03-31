@@ -24,6 +24,19 @@ class Home extends Component {
   };
 
   //for BusinessModal
+  getData = (val) =>{
+    const results = val.data[0];
+    this.setState({
+      single: val.data[0],
+      place: results.name,
+      neighborhood: results.neighborhood,
+      tagline: results.tagline,
+      address: results.address,
+      url: results.url
+    })
+    console.log(val.data[0])
+    console.log(this.state.single);
+  }
   handleOpen = () => {
     this.setState({ open: true });
   }
@@ -39,13 +52,9 @@ class Home extends Component {
     axios.get(`/api/restaurant/${this.state.single}`).then(res => {
       const result = res.data[0];
       console.log(result);
-      this.setState({ place: result.name });
-      this.setState({ address: result.address });
-      this.setState({ url: result.url });
-      this.setState({ tagline: result.tagline });
+ 
     });
   }
-  
 
   createRestaurantList = () => {
     axios
@@ -55,7 +64,7 @@ class Home extends Component {
         // this.setState({ restaurantList: places.map(({ name }) => name)})
         this.setState({restaurantList: result.data}) // this line returns an array of objects
         console.log(this.state.restaurantList
-          );
+        );
       })
   };
 
@@ -94,6 +103,7 @@ class Home extends Component {
       <div className="container">
         <Header />
         <SearchBar
+          sendData={this.getData}
           single={this.state.single}
           searchChangeHandler={this.searchChangeHandler}
           handleChange={this.handleBusinessChange}
@@ -103,12 +113,15 @@ class Home extends Component {
         <FilterButtonRow onClick={this.handleMap}/>
         <BusinessDirectory />
         <BusinessModal 
-        handleClose={ this.handleClose} 
-        handleOpen={this.handleOpen} 
-        open={this.state.open}
-        place={this.state.place}
-        tagline={this.state.tagline}
-        url={this.state.url}
+          name={this.state.place}
+          address={this.state.address}
+          url={this.state.url}
+          tagline={this.state.tagline}
+          handleClose={ this.handleClose} 
+          handleOpen={this.handleOpen} 
+          open={this.state.open}
+        
+       
         />
       </div>
     );
