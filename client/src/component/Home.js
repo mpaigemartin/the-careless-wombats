@@ -43,6 +43,11 @@ class Home extends Component {
     console.log(this.state.keywordSearch);
   };
 
+  searchClickHandler = event => {
+    event.preventDefault();
+    this.searchResults();
+  }
+
   handleMap = event => {
     event.preventDefault();
     const mapMe = `<${event.target.value} />`;
@@ -51,7 +56,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    // this.searchResults();
+    this.searchResults();
   }
 
   render() {
@@ -61,6 +66,7 @@ class Home extends Component {
         <SearchBar
           searchChangeHandler={this.searchChangeHandler}
           searchClickHandler={this.searchClickHandler}
+          searchResults={this.state.searchResults}
         />
         <FilterButtonRow onClick={this.handleMap}/>
         {/* {this.state.whichMap} */}
