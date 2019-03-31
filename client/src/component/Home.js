@@ -30,15 +30,10 @@ class Home extends Component {
   handleClose = () => {
     this.setState({ open: false });
   };
-  handleBusinessChange = () => {
-    this.setState({
-      [name]: newValue
-    });
-  };
+  handleBusinessChange = (newValue) => {
+    this.setState({ single: newValue })
+  }
   handleBusinessClick = () => {
-    this.setState({
-      result: this.state.single
-    });
     console.log(this.state.single);
     this.setState({ open: true });
     axios.get(`/api/restaurant/${this.state.single}`).then(res => {
@@ -96,13 +91,11 @@ class Home extends Component {
         <SearchBar
           single={this.state.single}
           searchChangeHandler={this.searchChangeHandler}
-          searchClickHandler={this.searchClickHandler}
           handleChange={this.handleBusinessChange}
           handleClick={this.handleBusinessClick}
           handleClose={this.handleClose}
         />
         <FilterButtonRow onClick={this.handleMap}/>
-        {/* {this.state.whichMap} */}
         <BusinessDirectory />
         <BusinessModal 
         handleClose={ this.handleClose} 

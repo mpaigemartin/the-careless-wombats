@@ -118,22 +118,10 @@ function renderInputComponent(inputProps) {
 
 class SearchBar extends React.Component {
   state = {
-    single: "",
+    // single: '',
     suggestions: [],
-    place: "",
-    address: "",
-    tagline: "",
-    url: "",
-    open: false
   };
 
-  // handleOpen = () => {
-  //   this.setState({ open: true });
-  // };
-
-  handleClose = () => {
-    this.props.handleClose();
-  };
 
   handleSuggestionsFetchRequested = ({ value }) => {
     this.setState({
@@ -147,15 +135,16 @@ class SearchBar extends React.Component {
     });
   };
 
-  handleChange = name => (event, { newValue }) => {
-    this.props.handleChange;
-  //   this.setState({
-  //     [name]: newValue
-  //   });
-  };
+  handleChange = () => ( { newValue }) => {
+    this.props.handleChange( { newValue});
+    // this.setState({
+    //   [name]: newValue
+    };
+
 
   handleClick = () => {
-    this.props.handleClick();
+    const place = this.props.single;
+    this.props.handleClick(place);
   };
 
   render() {
@@ -179,7 +168,7 @@ class SearchBar extends React.Component {
             classes,
             placeholder: "Search a Local Resturant",
             value: this.props.single,
-            onChange: this.handleChange()
+            onChange: this.handleChange("single")
           }}
           theme={{
             container: classes.container,
@@ -203,29 +192,6 @@ class SearchBar extends React.Component {
         >
           view info
         </Button>
-        {/* <Modal
-          aria-labelledby="simple-modal-title"
-          aria-describedby="simple-modal-description"
-          open={this.state.open}
-          onClose={this.handleClose}
-        >
-          <div style={getModalStyle()} className={classes.paper} id="modal">
-            <Typography variant="h6" id="modal-title">
-              {this.state.place}
-            </Typography>
-            <Typography variant="subtitle1" id="simple-modal-description">
-              {this.state.tagline}
-            </Typography>
-                        <Typography variant="subtitle2">
-              ........events go here........
-            </Typography>
-            <Button href={this.state.url} target="_blank" id="modalLink">
-              check us out
-            </Button>
-
-            <Button variant="secondary" onClick={this.handleClose} >close</Button>
-          </div>
-        </Modal> */}
       </div>
     );
   }
