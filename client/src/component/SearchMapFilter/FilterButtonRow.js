@@ -8,7 +8,6 @@ import InputBase from "@material-ui/core/InputBase";
 import AtlantaMap from "./Maps/AtlantaMap";
 import axios from "axios";
 import Button from '@material-ui/core/Button';
-import { get } from "http";
 
 const BootstrapInput = withStyles(theme => ({
   root: {
@@ -115,15 +114,14 @@ class FilterButtonRow extends React.Component {
   };
    
   handleClick = () => {
-    let result="Nathan who rocks";
     let filter=  {
       day: this.state.day,
       neighborhood: this.state.neighborhood,
-      type: this.state.type
+      category: this.state.category
     }
     Object.keys(filter).forEach((key) => (filter[key] == null || filter[key] == "") && delete filter[key]);
     console.log(filter)
-    this.props.sendFilter(filter)
+    this.props.sendFilter(filter);
   }
 
   handleDayChange = event => {
@@ -131,8 +129,8 @@ class FilterButtonRow extends React.Component {
     console.log(event.target.value);
   };
 
-  handleTypeChange = event => {
-    this.setState({ type: event.target.value });
+  handleCategoryChange = event => {
+    this.setState({ category: event.target.value });
     console.log(event.target.value);
   };
 
@@ -173,11 +171,11 @@ class FilterButtonRow extends React.Component {
             
           </InputLabel>
           <NativeSelect
-            value={this.state.type}
-            onChange={this.handleTypeChange}
+            value={this.state.category}
+            onChange={this.handleCategoryChange}
             input={
               <BootstrapInput
-                name="type"
+                name="category"
                 className="option"
                 id="type-customized-native-simple"
               />

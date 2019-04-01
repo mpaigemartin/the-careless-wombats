@@ -3,7 +3,6 @@ import Header from "../component/Header";
 import SearchBar from "../component/SearchMapFilter/SearchBar";
 import "../../src/CSS/App.css";
 import "../../src/CSS/VerticalScrollingMenu.css";
-import { Redirect } from "react-router-dom";
 
 class SearchPage extends Component {
   state = {
