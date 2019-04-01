@@ -87,11 +87,11 @@ class BusinessModal extends React.Component {
                 )
                 }
                 </Typography>
-                <Button href={this.props.url} target="_blank" id="modalLink">
+                <Button href={this.props.url} variant="extendedFab" target="_blank" id="modalLink">
                 check us out
                 </Button>
         
-                <Button variant="secondary" onClick={this.handleClose}>
+                <Button variant="fab" onClick={this.handleClose}>
                 close
                 </Button>
             </div>

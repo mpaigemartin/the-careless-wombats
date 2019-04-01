@@ -12,7 +12,12 @@ class Home extends Component {
   state = {
     restaurantList: [],
     keywordSearch: '',
-    searchResults: [],
+    searchResults: [{
+      name: "Cypress Street Pint & Plate",
+      address: "817 W Peachtree St Northwest E-125, Atlanta, GA  30308",
+      url: "http://cypressbar.com/",
+      tagline: "A rotating lineup of beers on tap pairs with hearty American grub at a relaxed tavern with a patio."
+    }],
     single: '',
     restaurantQuery: '',
     whichMap: <AllAtlanta />,
@@ -21,7 +26,8 @@ class Home extends Component {
     tagline: "",
     url: "",
     events: [],
-    open: false
+    open: false,
+    arriveData: false
   };
 
   //for BusinessModal
@@ -39,6 +45,9 @@ class Home extends Component {
     console.log(val.data[0])
     console.log(this.state.single);
   }
+
+
+
   handleOpen = () => {
     this.setState({ open: true });
   }
@@ -60,10 +69,9 @@ class Home extends Component {
 
   createRestaurantList = () => {
     axios
-      .get('api/restaurant')
+      .get('/api/restaurant')
       .then(result => {
-        // const places = result.data; //these two lines return an array of strings=restaurant names only
-        // this.setState({ restaurantList: places.map(({ name }) => name)})
+        console.log(result)
         this.setState({restaurantList: result.data}) // this line returns an array of objects
         console.log(this.state.restaurantList
         );
@@ -97,10 +105,12 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.searchResults();
+    // this.searchResults();
+    this.createRestaurantList();
   }
 
   render() {
+    const arriveData = this.state.arriveData
     return (
       <div className="container">
         <Header />
@@ -112,8 +122,10 @@ class Home extends Component {
           handleClick={this.handleBusinessClick}
           handleClose={this.handleClose}
         />
-        <FilterButtonRow onClick={this.handleMap}/>
-        <BusinessDirectory />
+        {arriveData ? <FilterButtonRow 
+        onClick={this.handleMap}
+        restaurantList={this.state.restaurantList}/> : null}
+        <BusinessDirectory searchResults={this.state.searchResults}/>
         <BusinessModal 
           name={this.state.place}
           address={this.state.address}
@@ -123,9 +135,7 @@ class Home extends Component {
           handleClose={ this.handleClose} 
           handleOpen={this.handleOpen} 
           open={this.state.open}
-        
-       
-        />
+          />
       </div>
     );
   }

@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import "../../src/CSS/App.css";
 import Modal from "@material-ui/core/Modal";
+import Header from "./Header";
 
 const styles = theme => ({
   root: {
@@ -117,8 +118,14 @@ class BusinessDirectory extends React.Component {
                       {d.tagline}
                     </Typography>
                     <Button 
-                      id="modalLink" href={d.url}>
+                      id="modalLink" href={d.url}
+                      variant="extendedFab">
                       check us out
+                    </Button>
+                    <Button 
+                    variant="fab" 
+                    onClick={this.handleClose}>
+                      close
                     </Button>
                     <Typography variant="subtitle2">
                     {d.address}
@@ -127,7 +134,7 @@ class BusinessDirectory extends React.Component {
                 </Modal>
               </Paper>
 
-            ))};
+            ))}
             </Grid>
           </Grid>
         </Grid>

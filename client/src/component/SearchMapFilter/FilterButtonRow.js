@@ -209,7 +209,11 @@ class FilterButtonRow extends React.Component {
             <option value="sunday">Sunday</option>
           </NativeSelect>
         </FormControl>
-        <AtlantaMap latitude={this.state.currentLat} longitude={this.state.currentLon} zoom={this.state.currentZoom} />
+        <AtlantaMap 
+        latitude={this.state.currentLat} 
+        longitude={this.state.currentLon} 
+        zoom={this.state.currentZoom} 
+        restaurantList={this.props.restaurantList}/>
       </form>
     );
   }
