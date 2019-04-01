@@ -54,7 +54,6 @@ class Home extends Component {
     axios.get(`/api/restaurant/${this.state.single}`).then(res => {
       const result = res.data[0];
       console.log(result);
- 
     });
   }
 
@@ -123,8 +122,6 @@ class Home extends Component {
           handleClose={ this.handleClose} 
           handleOpen={this.handleOpen} 
           open={this.state.open}
-        
-       
         />
       </div>
     );

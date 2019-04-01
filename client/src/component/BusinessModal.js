@@ -77,19 +77,14 @@ class BusinessModal extends React.Component {
                       <span>{day}s </span>))}
                     </p>
                     <p>{event.describes}</p>
-                    
-                    
                     <p>{event.tagline}</p>
-
                   </div>
                 )
-                )
-                }
+                )}
                 </Typography>
                 <Button href={this.props.url} target="_blank" id="modalLink">
                 check us out
                 </Button>
-        
                 <Button variant="secondary" onClick={this.handleClose}>
                 close
                 </Button>
@@ -97,11 +92,9 @@ class BusinessModal extends React.Component {
             </Modal>
         );
     }
-
 }
 
 BusinessModal.propTypes = {
     classes: PropTypes.object.isRequired
-  };
-  
+  };  
   export default withStyles(styles)(BusinessModal);

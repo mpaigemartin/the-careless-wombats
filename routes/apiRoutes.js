@@ -58,7 +58,6 @@ module.exports = function(app) {
 
   // Event Model Route
   // Get Route for viewing the Events
-
   app.get("/api/event", function(req, res) {
     Event.find({})
       .then(function(data) {
@@ -68,6 +67,19 @@ module.exports = function(app) {
         res.json(err);
       });
   });
+
+  //Route for finding events in restaurant
+  app.get("/api/:event", function(req, res) {
+    Restaurant.find({
+      "events:category[0]": req.params.event
+    })
+    .then(data=> {
+      res.json(data);
+    })
+    .catch(err=> {
+      res.json(err)
+    })
+  })
 
   app.post("/api/restaurant/:restaurantId/events", function(req, res) {
     Event.create(req.body)

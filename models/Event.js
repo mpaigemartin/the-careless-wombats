@@ -10,22 +10,22 @@ var EventSchema = new Schema({
     type: String,
     trim: true
   },
-  category: [
+  category: 
     {
       type: Array,
       trim: true
     }
-  ],
+  ,
   describes: {
     type: String,
     trim: true
   },
-  day: [
+  day: 
     {
       type: Array,
       trim: true
     }
-  ],
+  ,
   isRecurring: {
     type: Boolean
   },
