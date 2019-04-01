@@ -10,7 +10,7 @@ import '../../src/CSS/App.css';
 
 class Home extends Component {
   state = {
-    restaurantList: [],
+    restaurantList: null,
     keywordSearch: '',
     searchResults: [{
       name: "Cypress Street Pint & Plate",
@@ -63,7 +63,6 @@ class Home extends Component {
     axios.get(`/api/restaurant/${this.state.single}`).then(res => {
       const result = res.data[0];
       console.log(result);
- 
     });
   }
 
@@ -95,6 +94,7 @@ class Home extends Component {
   searchClickHandler = event => {
     event.preventDefault();
     this.searchResults();
+    console.log(this.state.searchResults)
   }
 
   handleMap = event => {
@@ -104,9 +104,20 @@ class Home extends Component {
     console.log(this.whichMap);
   }
 
+
+
+  grabRestaurants = () => {
+    axios.get('/api/restaurant').then(
+      result => {
+        this.setState({restaurantList: result});
+        console.log(this.state.restaurantList);
+      }
+    )
+  }
+
   componentDidMount() {
-    // this.searchResults();
-    this.createRestaurantList();
+    //this.searchResults();
+    this.grabRestaurants();
   }
 
   render() {
@@ -122,10 +133,11 @@ class Home extends Component {
           handleClick={this.handleBusinessClick}
           handleClose={this.handleClose}
         />
-        {arriveData ? <FilterButtonRow 
-        onClick={this.handleMap}
-        restaurantList={this.state.restaurantList}/> : null}
-        <BusinessDirectory searchResults={this.state.searchResults}/>
+        <FilterButtonRow onClick={this.handleMap}/>
+        {this.state.restaurantList ? (<BusinessDirectory restaurantList={this.state.restaurantList}/>
+        ) : (
+          null
+        )}
         <BusinessModal 
           name={this.state.place}
           address={this.state.address}
@@ -135,7 +147,7 @@ class Home extends Component {
           handleClose={ this.handleClose} 
           handleOpen={this.handleOpen} 
           open={this.state.open}
-          />
+        />
       </div>
     );
   }

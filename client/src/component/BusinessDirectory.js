@@ -59,6 +59,12 @@ function getModalStyle() {
 }
 
 class BusinessDirectory extends React.Component {
+  constructor(props){
+    super(props);
+    this.state ={
+
+    }
+  }
   state = {
     open: false
   };
@@ -71,7 +77,13 @@ class BusinessDirectory extends React.Component {
     this.setState({ open: false });
   };
 
-  render() {
+  componentDidMount() {
+    console.log(this.props.restaurantList)
+    console.log('sup')
+    console.log(this.props.restaurantList);
+  }
+
+  render(props) {
     const { classes } = this.props;
 
     return (
@@ -85,7 +97,7 @@ class BusinessDirectory extends React.Component {
             justify="center"
           >
             <Grid item className="businessPaper clearfix">
-            {this.props.searchResults.map(d => (
+            {this.props.restaurantList.map(d => (
               <Paper className={classes.root} elevation={1}>
                 <Typography variant="h5" component="h3">
                   {d.name}
