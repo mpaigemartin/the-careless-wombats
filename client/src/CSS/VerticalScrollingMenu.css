@@ -41,6 +41,11 @@
 .neighborhood {
   display: inline-block;
 }
+
+span:hover {
+  background-color: rgb(42, 3, 94);
+}
+
 .slidingVertical span {
   animation: topToBottom 12.5s linear infinite 0s;
   -ms-animation: topToBottom 12.5s linear infinite 0s;

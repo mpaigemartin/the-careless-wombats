@@ -1,4 +1,3 @@
-
 .App {
   text-align: center;
 }
@@ -17,6 +16,10 @@
 
 .businessPaper {
   width: 100%;
+}
+
+.type {
+  cursor: pointer;
 }
 
 .BusinessDirectory-root-152 {
