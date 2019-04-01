@@ -3,26 +3,34 @@ import Header from "../component/Header";
 import SearchBar from "../component/SearchMapFilter/SearchBar";
 import "../../src/CSS/App.css";
 import "../../src/CSS/VerticalScrollingMenu.css";
+import { Redirect } from "react-router-dom";
 
 class SearchPage extends Component {
   state = {
     type: "",
-    neighborhood: "",
+    neighborhood: ""
   };
 
-  typeClickHandler = (event) => {
+  typeClickHandler = event => {
     event.preventDefault();
-    this.setState({ type: event.currentTarget.dataset.id });
-    console.log(this.state.type);
+
+    this.setState({ category: event.currentTarget.dataset.id });
+    this.props.history.push("/Home");
+
+    console.log(this.state.category);
   };
 
   neighborhoodClickHandler = event => {
     event.preventDefault();
     this.setState({ neighborhood: event.currentTarget.dataset.id });
+    this.props.history.push("/Home");
     console.log(this.state.neighborhood);
-  }
+  };
 
   render() {
+    // if (this.setState === true) {
+    //   return <Redirect to="/Search" />;
+    // }
     return (
       <div>
         <Header />
@@ -33,7 +41,7 @@ class SearchPage extends Component {
               className="type"
               onClick={this.typeClickHandler}
               data-id="Trivia"
-              >            
+            >
               Trivia
             </span>
             <span
