@@ -50,6 +50,8 @@
   grid-area: map;
   /* width: 100%; */
   margin-bottom: 2em;
+  height: 380px;
+  width: 980px;
 }
 
 .clearfix::after {

@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import "../../src/CSS/App.css";
 import Modal from "@material-ui/core/Modal";
+import Header from "./Header";
 
 const styles = theme => ({
   root: {
@@ -96,70 +97,56 @@ class BusinessDirectory extends React.Component {
             justify="center"
           >
             <Grid item className="businessPaper clearfix">
-              <Paper className={classes.root} elevation={1}>
+            {this.props.restaurantList.map(d => (
+              <Paper key={d._id} className={classes.root} elevation={1}>
                 <Typography variant="h5" component="h3">
-                  The Fuzzy Mule
-                </Typography>
+                  {d.name}
+                </Typography>  
                 <Typography variant="h6" component="h3">
-                  Tuesday NasCar Trivia Night
-                </Typography>
-                <Typography component="p">
-                Drunk is when you feel sophisticated, but can't pronounce it.
-                  <Button
-                    onClick={this.handleOpen}
-                    // variant="contained"
-                    color="secondary"
-                    className={classes.button}
-                  >
-                    check us out
-                  </Button>
-                  <Modal
-                    aria-labelledby="simple-modal-title"
-                    aria-describedby="simple-modal-description"
-                    open={this.state.open}
-                    onClose={this.handleClose}
-                  >
-                    <div style={getModalStyle()} className={classes.paper} id="modal">
-                      <Typography variant="h6" id="modal-title">
-                        The Fuzzy Mule
-                      </Typography>
-                      <Typography
-                        variant="subtitle1"
-                        id="simple-modal-description"
-                      >
-                        Drunk is when you feel sophisticated, but can't pronounce it.
-                      </Typography>
-                      <Button 
-                      id="modalLink" href="https://www.finestcall.com/vodka/fuzzy-mule/"></Button>
-                      <Typography variant="subtitle2">
-                        NasCar trivia every Monday from 4:30 to 9:00.  Half-price Pabst all weekend. Strip show/nacho bar every Thursday - kids eat free.
-                      </Typography>
-                    </div>
-                  </Modal>
-                </Typography>
+                  {d.tagline}
+                </Typography>              
+                <Button
+                onClick={this.handleOpen}
+                // variant="contained"
+                color="secondary"
+                className={classes.button}
+                >
+                  check us out
+                </Button>
+                <Modal
+                aria-labelledby="simple-modal-title"
+                aria-describedby="simple-modal-description"
+                open={this.state.open}
+                onClose={this.handleClose}
+                >
+                  <div style={getModalStyle()} className={classes.paper} id="modal">
+                    <Typography variant="h6" id="modal-title">
+                      {d.name}
+                    </Typography>
+                    <Typography
+                      variant="subtitle1"
+                      id="simple-modal-description"
+                    >
+                      {d.tagline}
+                    </Typography>
+                    <Button 
+                      id="modalLink" href={d.url}
+                      variant="extendedFab">
+                      check us out
+                    </Button>
+                    <Button 
+                    variant="fab" 
+                    onClick={this.handleClose}>
+                      close
+                    </Button>
+                    <Typography variant="subtitle2">
+                    {d.address}
+                    </Typography>
+                  </div>
+                </Modal>
               </Paper>
-            </Grid>
-            <Grid item className="businessPaper">
-              <Paper className={classes.root} elevation={1}>
-                <Typography variant="h5" component="h3">
-                  Mabel's Bar & Chainsaw Repair
-                </Typography>
-                <Typography component="p">
-                  Whatever you do... tear it up
-                </Typography>
-              </Paper>{" "}
-            </Grid>
 
-            <Grid item className="businessPaper">
-              <Paper className={classes.root} elevation={1}>
-                <Typography variant="h5" component="h3">
-                  The Duke and Duck
-                </Typography>
-                <Typography variant="h6" component="h3">
-                  Get pissed the English way
-                </Typography>
-                <Typography component="p">Bip Bip Cheerio</Typography>
-              </Paper>{" "}
+            ))}
             </Grid>
           </Grid>
         </Grid>
