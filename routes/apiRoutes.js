@@ -71,7 +71,7 @@ module.exports = function(app) {
   //Route for finding events in restaurant
   app.get("/api/:event", function(req, res) {
     Restaurant.find({
-      "events:category[0]": req.params.event
+      "events.category": req.params.event
     })
     .then(data=> {
       res.json(data);

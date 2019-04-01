@@ -86,6 +86,7 @@ class Home extends Component {
   searchClickHandler = event => {
     event.preventDefault();
     this.searchResults();
+    console.log(this.state.searchResults)
   }
 
   handleMap = event => {
@@ -95,8 +96,20 @@ class Home extends Component {
     console.log(this.whichMap);
   }
 
+  
+
+  grabRestaurants = () => {
+    axios.get('/api/restaurant').then(
+      result => {
+        this.setState({restaurantList: result});
+        console.log(this.state.restaurantList);
+      }
+    )
+  }
+
   componentDidMount() {
-    this.searchResults();
+    //this.searchResults();
+    this.grabRestaurants();
   }
 
   render() {
