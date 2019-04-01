@@ -58,6 +58,12 @@ function getModalStyle() {
 }
 
 class BusinessDirectory extends React.Component {
+  constructor(props){
+    super(props);
+    this.state ={
+
+    }
+  }
   state = {
     open: false
   };
@@ -70,7 +76,13 @@ class BusinessDirectory extends React.Component {
     this.setState({ open: false });
   };
 
-  render() {
+  componentDidMount() {
+    console.log(this.props.restaurantList)
+    console.log('sup')
+    console.log(this.props.restaurantList);
+  }
+
+  render(props) {
     const { classes } = this.props;
 
     return (

@@ -10,7 +10,7 @@ import '../../src/CSS/App.css';
 
 class Home extends Component {
   state = {
-    restaurantList: [],
+    restaurantList: null,
     keywordSearch: '',
     searchResults: [],
     single: '',
@@ -96,7 +96,7 @@ class Home extends Component {
     console.log(this.whichMap);
   }
 
-  
+
 
   grabRestaurants = () => {
     axios.get('/api/restaurant').then(
@@ -125,7 +125,10 @@ class Home extends Component {
           handleClose={this.handleClose}
         />
         <FilterButtonRow onClick={this.handleMap}/>
-        <BusinessDirectory />
+        {this.state.restaurantList ? (<BusinessDirectory restaurantList={this.state.restaurantList}/>
+        ) : (
+          null
+        )}
         <BusinessModal 
           name={this.state.place}
           address={this.state.address}
