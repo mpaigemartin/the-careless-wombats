@@ -7,7 +7,7 @@ import NativeSelect from "@material-ui/core/NativeSelect";
 import InputBase from "@material-ui/core/InputBase";
 import AtlantaMap from "./Maps/AtlantaMap";
 import axios from "axios";
-import { get } from "http";
+import Button from '@material-ui/core/Button';
 
 const BootstrapInput = withStyles(theme => ({
   root: {
@@ -72,6 +72,7 @@ class FilterButtonRow extends React.Component {
     day: "",
     type: "",
     neighborhood: "",
+    neighborhoodName: "",
     businessDirectory: [],
     decaturMap: false,
     center: {
@@ -101,7 +102,7 @@ class FilterButtonRow extends React.Component {
       currentLat: cLat,
       currentLon: clng,
       currentZoom: czoom,
-      neighborhood: event.target.value
+      neighborhood: event.target.value,
     });
     axios
     .get(
@@ -112,13 +113,25 @@ class FilterButtonRow extends React.Component {
       });
   };
    
+  handleClick = () => {
+    let filter=  {
+      day: this.state.day,
+      neighborhood: this.state.neighborhood,
+      category: this.state.category
+    }
+    Object.keys(filter).forEach((key) => (filter[key] == null || filter[key] == "") && delete filter[key]);
+    console.log(filter)
+    this.props.sendFilter(filter);
+  }
 
   handleDayChange = event => {
     this.setState({ day: event.target.value });
+    console.log(event.target.value);
   };
 
-  handleTypeChange = event => {
-    this.setState({ type: event.target.value });
+  handleCategoryChange = event => {
+    this.setState({ category: event.target.value });
+    console.log(event.target.value);
   };
 
   render() {
@@ -143,9 +156,9 @@ class FilterButtonRow extends React.Component {
             }
           >
             <option longitude={-84.36098} latitude={33.77463} zoom={11} value="">Atlanta</option>
-            <option longitude={-84.375387} latitude={33.789295} zoom={14} value="area/Midtown">Midtown</option>
-            <option longitude={-84.299458} latitude={33.774231} zoom={14} value="area/Decatur">Decatur</option>
-            <option longitude={-84.40458} latitude={33.797919} zoom={14}  value="area/West Midtown">West Midtown</option>
+            <option longitude={-84.375387} latitude={33.789295} zoom={14} value="Midtown">Midtown</option>
+            <option longitude={-84.299458} latitude={33.774231} zoom={14} value="Decatur">Decatur</option>
+            <option longitude={-84.40458} latitude={33.797919} zoom={14}  value="West Midtown">West Midtown</option>
           </NativeSelect>
         </FormControl>
 
@@ -158,11 +171,11 @@ class FilterButtonRow extends React.Component {
             
           </InputLabel>
           <NativeSelect
-            value={this.state.type}
-            onChange={this.handleTypeChange}
+            value={this.state.category}
+            onChange={this.handleCategoryChange}
             input={
               <BootstrapInput
-                name="type"
+                name="category"
                 className="option"
                 id="type-customized-native-simple"
               />
@@ -177,7 +190,6 @@ class FilterButtonRow extends React.Component {
             <option value="Food Specials">Food Specials</option>
             <option value="Drink Specials">Drink Specials</option>
             <option value="Brunch">Brunch</option>
-
             <option value="Unique">Unique</option>
           </NativeSelect>
         </FormControl>
@@ -200,15 +212,22 @@ class FilterButtonRow extends React.Component {
             }
           >
             <option className="option" defaultValue="" label="all days" />
-            <option value="monday">Monday</option>
-            <option value="tuesday">Tuesday</option>
-            <option value="wednesday">Wednesday</option>
-            <option value="thursday">Thursday</option>
-            <option value="friday">Friday</option>
-            <option value="saturday">Saturday</option>
-            <option value="sunday">Sunday</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
           </NativeSelect>
         </FormControl>
+        <Button 
+          variant="contained" 
+          color="secondary"
+          onClick={this.handleClick}
+          >
+          Search
+          </Button>
         <AtlantaMap 
         latitude={this.state.currentLat} 
         longitude={this.state.currentLon} 
