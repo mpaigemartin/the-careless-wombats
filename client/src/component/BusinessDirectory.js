@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import "../../src/CSS/App.css";
 import Modal from "@material-ui/core/Modal";
+import Header from "./Header";
 
 const styles = theme => ({
   root: {
@@ -96,8 +97,8 @@ class BusinessDirectory extends React.Component {
             justify="center"
           >
             <Grid item className="businessPaper clearfix">
-            {this.props.searchResults.map(d => (
-              <Paper className={classes.root} elevation={1}>
+            {this.props.restaurantList.map(d => (
+              <Paper key={d._id} className={classes.root} elevation={1}>
                 <Typography variant="h5" component="h3">
                   {d.name}
                 </Typography>  

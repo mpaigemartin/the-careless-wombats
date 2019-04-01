@@ -137,7 +137,7 @@ class SearchBar extends React.Component {
   handleChange = name => (event, { newValue }) => {
     this.setState({
       [name]: newValue
-
+ 
     });
   };
 
