@@ -71,8 +71,21 @@ class BusinessModal extends React.Component {
                 <Typography variant="subtitle1" id="simple-modal-description">
                 {this.props.tagline}
                 </Typography>
-                <Typography variant="subtitle2">
-                {this.props.eventName}
+                <Typography variant="subtitle2">{this.props.events.map(event => (
+                  <div className="eventsDiv" key={event.publishedAt}>
+                    <p>{event.name}  |  {event.day.map(day => (
+                      <span>{day}s </span>))}
+                    </p>
+                    <p>{event.describes}</p>
+                    
+                    
+                    <p>{event.tagline}</p>
+
+                  </div>
+                  
+                )
+                )
+                }
                 </Typography>
                 <Button href={this.props.url} target="_blank" id="modalLink">
                 check us out

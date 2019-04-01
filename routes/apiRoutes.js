@@ -69,9 +69,8 @@ module.exports = function(app) {
       });
   });
 
-  app.get("/api/event/:type", function(req, res) {
-    const type = req.params.type;
-    Restaurant.find({ category: req.params.type})
+  app.get("/api/event/:category", function(req, res) {
+    Restaurant.find({ category: req.params.category})
     .then(function(data) {
       res.json(data);
     })
