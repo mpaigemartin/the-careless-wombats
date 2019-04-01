@@ -155,7 +155,7 @@ class FilterButtonRow extends React.Component {
             className={classes.bootstrapFormLabel}
             id="typeOption"
           >
-            type
+            
           </InputLabel>
           <NativeSelect
             value={this.state.type}
@@ -169,11 +169,16 @@ class FilterButtonRow extends React.Component {
             }
           >
             <option value="" label="all events" />
-            <option value="karaoke">Karaoke</option>
-            <option value="trivia">Trivia</option>
-            <option value="happyHour">Happy Hour</option>
-            <option value="liveMusic">Live Music</option>
-            <option value="specialEvent">Special Event</option>
+            <option value="Karaoke">Karaoke</option>
+            <option value="Trivia">Trivia</option>
+            <option value="Happy Hour">Happy Hour</option>
+            <option value="Live Music">Live Music</option>
+            <option value="Bingo">Bingo</option>
+            <option value="Food Specials">Food Specials</option>
+            <option value="Drink Specials">Drink Specials</option>
+            <option value="Brunch">Brunch</option>
+
+            <option value="Unique">Unique</option>
           </NativeSelect>
         </FormControl>
 
@@ -202,10 +207,13 @@ class FilterButtonRow extends React.Component {
             <option value="friday">Friday</option>
             <option value="saturday">Saturday</option>
             <option value="sunday">Sunday</option>
-            <option>choose date</option>
           </NativeSelect>
         </FormControl>
-        <AtlantaMap latitude={this.state.currentLat} longitude={this.state.currentLon} zoom={this.state.currentZoom} />
+        <AtlantaMap 
+        latitude={this.state.currentLat} 
+        longitude={this.state.currentLon} 
+        zoom={this.state.currentZoom} 
+        restaurantList={this.props.restaurantList}/>
       </form>
     );
   }

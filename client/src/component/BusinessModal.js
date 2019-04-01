@@ -79,10 +79,11 @@ class BusinessModal extends React.Component {
                     <p>{event.describes}</p>
                     <p>{event.tagline}</p>
                   </div>
+                  
                 )
                 )}
                 </Typography>
-                <Button href={this.props.url} target="_blank" id="modalLink">
+                <Button href={this.props.url} variant="extendedFab" target="_blank" id="modalLink">
                 check us out
                 </Button>
                 <Button variant="secondary" onClick={this.handleClose}>
