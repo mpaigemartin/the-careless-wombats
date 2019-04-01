@@ -10,7 +10,7 @@ import '../../src/CSS/App.css';
 
 class Home extends Component {
   state = {
-    restaurantList: null,
+    restaurantList: [],
     keywordSearch: '',
     searchResults: [{
       name: "Cypress Street Pint & Plate",
@@ -109,7 +109,7 @@ class Home extends Component {
   grabRestaurants = () => {
     axios.get('/api/restaurant').then(
       result => {
-        this.setState({restaurantList: result});
+        this.setState({restaurantList: result.data});
         console.log(this.state.restaurantList);
       }
     )
@@ -133,8 +133,8 @@ class Home extends Component {
           handleClick={this.handleBusinessClick}
           handleClose={this.handleClose}
         />
-        <FilterButtonRow onClick={this.handleMap}/>
-        {this.state.restaurantList ? (<BusinessDirectory restaurantList={this.state.restaurantList}/>
+        <FilterButtonRow restaurantList={this.state.restaurantList} onClick={this.handleMap}/>
+        {this.state.restaurantList.length ? (<BusinessDirectory restaurantList={this.state.restaurantList}/>
         ) : (
           null
         )}

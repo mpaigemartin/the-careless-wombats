@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
-import RestaurantPins from './RestaurantPins';
- 
- 
+import React, { Component } from "react";
+import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
+import RestaurantPins from "./RestaurantPins";
+import { relative } from "path";
+
 class AtlantaMap extends Component {
   state = {
     center: {
-      lat: 33.774630,
+      lat: 33.77463,
       lng: -84.36098
     },
     zoom: 12,
@@ -15,34 +15,34 @@ class AtlantaMap extends Component {
       { lat: 42.03, lng: -77.02 },
       { lat: 41.03, lng: -77.04 },
       { lat: 42.05, lng: -77.02 }
-  ]
-  }
-  
-
-
-  
-
+    ]
+  };
 
   render() {
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '24em', width: '100%' }} id="mapEmbed">
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyDSI6lWAGiM5M4WzNSJB55KLUYzjwqX05k' }}
+      <div style={{ height: "380px", width: "930px", position: "relative" }} id="mapEmbed">
+        <Map
+          google={this.props.google}
           defaultCenter={this.props.center}
-          center={{lat: parseFloat(this.props.latitude), lng: parseFloat(this.props.longitude)}}
+          center={{
+            lat: parseFloat(this.props.latitude),
+            lng: parseFloat(this.props.longitude)
+          }}
           zoom={this.props.zoom}
           onChildMouseEnter={this.onChildMouseEnter}
           onChildMouseLeave={this.onChildMouseLeave}
           bounds={this.points}
         >
-        </GoogleMapReact>
-        {/* <RestaurantPins
-        restaurantList={this.props.restaurantList} /> */}
-        
+          {this.props.restaurantList.map(restaurant => (
+            <Marker position={{ lat: restaurant.lat, lng: restaurant.lng }} />
+          ))}
+        </Map>
       </div>
     );
   }
 }
- 
-export default AtlantaMap;
+
+export default GoogleApiWrapper({
+  apiKey: "AIzaSyDSI6lWAGiM5M4WzNSJB55KLUYzjwqX05k"
+})(AtlantaMap);

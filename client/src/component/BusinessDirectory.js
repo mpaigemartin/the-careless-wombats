@@ -98,7 +98,7 @@ class BusinessDirectory extends React.Component {
           >
             <Grid item className="businessPaper clearfix">
             {this.props.restaurantList.map(d => (
-              <Paper className={classes.root} elevation={1}>
+              <Paper key={d._id} className={classes.root} elevation={1}>
                 <Typography variant="h5" component="h3">
                   {d.name}
                 </Typography>  
