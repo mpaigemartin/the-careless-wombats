@@ -7,17 +7,20 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
 
-<<<<<<< HEAD
-mongoose.connect('mongodb://localhost/nightOwl', { useNewUrlParser: true });
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static('client/build'));
+}
 
-require('./routes/apiRoutes')(app);
-=======
-mongoose.connect("mongodb://localhost/nightOwl", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nightOwl", { useNewUrlParser: true });
 
 require("./routes/apiRoutes")(app);
->>>>>>> master
+
+if (process.env.NODE_ENV === "production") {
+  app.get("*", function (req, res) {
+    res.sendFile(__dirname + './client/build/index.html');
+  });
+}
 
 app.listen(PORT, function() {
   console.log(

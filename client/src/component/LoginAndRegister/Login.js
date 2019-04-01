@@ -1,12 +1,13 @@
 import React, {Component} from "react";
 import {withRouter} from "react-router-dom";
 import PropTypes from "prop-types";
-import UserContext from "../context/UserContext"
-import Auth from "../utils/Auth";
+import UserContext from "../../context/UserContext"
+import Auth from "../../utils/Auth";
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
 	container: {
@@ -17,6 +18,13 @@ const styles = theme => ({
 		marginLeft: theme.spacing.unit,
 		marginRight: theme.spacing.unit,
 		width: 200
+	},
+	button: {
+		margin: theme.spacing.unit
+	},
+	
+	input: {
+		display: 'none',
 	},
 	dense: {
 		marginTop: 19
@@ -44,14 +52,14 @@ class Login extends Component {
 		if (username && password) {
 			Auth.logIn(username, password, (response) => {
 				this.context.setUser(response);
-				this.props.history.push("/");
+				this.props.history.push("/Search");
 			});
 		}
 	}
 
 	render () {
 		const { classes } = this.props;
-		
+
 		return (
 			<form className={classes.container} onSubmit={this.submitHandler}>
 				<TextField
@@ -74,7 +82,8 @@ class Login extends Component {
 					onChange={this.changeHandler}
 					margin="normal"
 				/>
-				<button type="submit">Submit</button>
+				<Button variant="contained" color="secondary" type="submit"
+				className={classes.button} fullWidth>Login</Button>
 			</form>
 		);
 	}

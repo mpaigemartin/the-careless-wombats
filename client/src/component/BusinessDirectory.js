@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import "../../src/App.css";
+import "../../src/CSS/App.css";
 import Modal from "@material-ui/core/Modal";
 
 const styles = theme => ({
@@ -22,16 +22,33 @@ const styles = theme => ({
   },
   control: {
     padding: theme.spacing.unit * 2
+  },
+    container: {
+    position: "relative"
+  },
+  suggestionsContainerOpen: {
+    position: "absolute",
+    zIndex: 1,
+    marginTop: theme.spacing.unit,
+    left: 0,
+    right: 0
+  },
+  suggestion: {
+    display: "block"
+  },
+  suggestionsList: {
+    margin: 0,
+    padding: 0,
+    listStyleType: "none"
+  },
+  divider: {
+    height: theme.spacing.unit * 2
   }
 });
 
-function rand() {
-  return Math.round(Math.random() * 20) - 10;
-}
-
 function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
+  const top = 50;
+  const left = 50;
 
   return {
     top: `${top}%`,
@@ -41,6 +58,12 @@ function getModalStyle() {
 }
 
 class BusinessDirectory extends React.Component {
+  constructor(props){
+    super(props);
+    this.state ={
+
+    }
+  }
   state = {
     open: false
   };
@@ -53,7 +76,13 @@ class BusinessDirectory extends React.Component {
     this.setState({ open: false });
   };
 
-  render() {
+  componentDidMount() {
+    console.log(this.props.restaurantList)
+    console.log('sup')
+    console.log(this.props.restaurantList);
+  }
+
+  render(props) {
     const { classes } = this.props;
 
     return (

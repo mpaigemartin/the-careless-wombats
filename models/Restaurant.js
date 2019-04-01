@@ -22,6 +22,12 @@ var RestaurantSchema = new Schema({
     type: String,
     trim: true
   },
+  lat: {
+    type: Number
+  },
+  lng: {
+    type: Number
+  },
   events: [
     {
       type: Schema.Types.ObjectId,
@@ -29,6 +35,6 @@ var RestaurantSchema = new Schema({
     }
   ]
 });
-const Restaurant = mongoose.model("Restaurants", RestaurantSchema);
+const Restaurant = mongoose.model("Restaurant", RestaurantSchema);
 
 module.exports = Restaurant;

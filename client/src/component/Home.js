@@ -5,20 +5,57 @@ import BusinessDirectory from '../component/BusinessDirectory';
 import SearchBar from './SearchMapFilter/SearchBar';
 import FilterButtonRow from './SearchMapFilter/FilterButtonRow';
 import AllAtlanta from './SearchMapFilter/Maps/AtlantaMap';
-import DecaturMap from './SearchMapFilter/Maps/DecaturMap';
-import MidtownMap from './SearchMapFilter/Maps/MidtownMap';
-import WestMidtownMap from './SearchMapFilter/Maps/WestMidtownMap';
-import '../../src/App.css';
+import BusinessModal from '../component/BusinessModal';
+import '../../src/CSS/App.css';
 
 class Home extends Component {
   state = {
-    restaurantList: [],
+    restaurantList: null,
     keywordSearch: '',
     searchResults: [],
     single: '',
     restaurantQuery: '',
-    whichMap: <AllAtlanta />
+    whichMap: <AllAtlanta />,
+    place: "",
+    address: "",
+    tagline: "",
+    url: "",
+    events: [],
+    open: false
   };
+
+  //for BusinessModal
+  getData = (val) =>{
+    const results = val.data[0];
+    this.setState({
+      single: val.data[0],
+      place: results.name,
+      neighborhood: results.neighborhood,
+      tagline: results.tagline,
+      address: results.address,
+      url: results.url,
+      events: results.events
+    })
+    console.log(val.data[0])
+    console.log(this.state.single);
+  }
+  handleOpen = () => {
+    this.setState({ open: true });
+  }
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+  handleBusinessChange = (newValue) => {
+    this.setState({ single: newValue })
+  }
+  handleBusinessClick = () => {
+    console.log(this.state.single);
+    this.setState({ open: true });
+    axios.get(`/api/restaurant/${this.state.single}`).then(res => {
+      const result = res.data[0];
+      console.log(result);
+    });
+  }
 
   createRestaurantList = () => {
     axios
@@ -28,7 +65,7 @@ class Home extends Component {
         // this.setState({ restaurantList: places.map(({ name }) => name)})
         this.setState({restaurantList: result.data}) // this line returns an array of objects
         console.log(this.state.restaurantList
-          );
+        );
       })
   };
 
@@ -46,6 +83,12 @@ class Home extends Component {
     console.log(this.state.keywordSearch);
   };
 
+  searchClickHandler = event => {
+    event.preventDefault();
+    this.searchResults();
+    console.log(this.state.searchResults)
+  }
+
   handleMap = event => {
     event.preventDefault();
     const mapMe = `<${event.target.value} />`;
@@ -53,8 +96,20 @@ class Home extends Component {
     console.log(this.whichMap);
   }
 
+
+
+  grabRestaurants = () => {
+    axios.get('/api/restaurant').then(
+      result => {
+        this.setState({restaurantList: result});
+        console.log(this.state.restaurantList);
+      }
+    )
+  }
+
   componentDidMount() {
-    // this.searchResults();
+    //this.searchResults();
+    this.grabRestaurants();
   }
 
   render() {
@@ -62,12 +117,28 @@ class Home extends Component {
       <div className="container">
         <Header />
         <SearchBar
+          sendData={this.getData}
+          single={this.state.single}
           searchChangeHandler={this.searchChangeHandler}
-          searchClickHandler={this.searchClickHandler}
+          handleChange={this.handleBusinessChange}
+          handleClick={this.handleBusinessClick}
+          handleClose={this.handleClose}
         />
         <FilterButtonRow onClick={this.handleMap}/>
-        {/* {this.state.whichMap} */}
-        <BusinessDirectory />
+        {this.state.restaurantList ? (<BusinessDirectory restaurantList={this.state.restaurantList}/>
+        ) : (
+          null
+        )}
+        <BusinessModal 
+          name={this.state.place}
+          address={this.state.address}
+          url={this.state.url}
+          tagline={this.state.tagline}
+          events={this.state.events}
+          handleClose={ this.handleClose} 
+          handleOpen={this.handleOpen} 
+          open={this.state.open}
+        />
       </div>
     );
   }

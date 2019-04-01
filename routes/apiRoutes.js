@@ -7,14 +7,13 @@ module.exports = function(app) {
   // Restaurant Model Routes
   // Get Route for viewing the restaurants
 
-  app.get('/test', function(req, req) {
-    console.log('test');
+  app.get("/test", function(req, req) {
+    console.log("test");
   });
 
-  app.get('/api/restaurant', function(req, res) {
+  app.get("/api/restaurant", function(req, res) {
     Restaurant.find({})
-      .populate("Event")
-
+      .populate("events")
       .then(function(dbRestaurant) {
         res.json(dbRestaurant);
       })
@@ -24,7 +23,19 @@ module.exports = function(app) {
   });
 
   app.get("/api/restaurant/:name", function(req, res) {
-    Restaurant.find({ name: req.params.name })
+    Restaurant.find(
+      { name: req.params.name })
+      .populate("events")
+      .then(function(dbRestaurant) {
+        res.send(dbRestaurant);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
+
+  app.get("/api/restaurant/area/:neighborhood", function(req, res) {
+    Restaurant.find({ neighborhood: req.params.neighborhood })
       .populate("Event")
       .then(function(dbRestaurant) {
         res.send(dbRestaurant);
@@ -34,13 +45,51 @@ module.exports = function(app) {
       });
   });
 
+
+  app.post('/api/restaurant/:id', function(req, res) {
+    Restaurant.create(req.body)
+      .then(function(dbRestaurant) {
+        res.json(dbRestaurant);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
+
   // Event Model Route
   // Get Route for viewing the Events
-
-  app.get('/api/event', function(req, res) {
+  app.get("/api/event", function(req, res) {
     Event.find({})
       .then(function(data) {
         res.json(data);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
+
+  //Route for finding events in restaurant
+  app.get("/api/:event", function(req, res) {
+    Restaurant.find({
+      "events.category": req.params.event
+    })
+    .then(data=> {
+      res.json(data);
+    })
+    .catch(err=> {
+      res.json(err)
+    })
+  })
+
+  app.post("/api/restaurant/:restaurantId/events", function(req, res) {
+    Event.create(req.body)
+      .then(function(dbEvent) {
+        console.log(dbEvent);
+        return Restaurant.findOneAndUpdate({ _id: req.params.restaurantId }, { $push: { events: dbEvent._id } }, { new: true });
+      })
+      .then(function (restaurant) {
+        console.log("test restaurant", restaurant);
+        res.json({ success: true });
       })
       .catch(function(err) {
         res.json(err);
@@ -51,7 +100,7 @@ module.exports = function(app) {
   // Get Route to get user information (temporarily so that we can test)
   // and which restaurants they are saving
 
-  app.get('/api/user', function(req, res) {
+  app.get("/api/user", function(req, res) {
     User.find({})
       .populate("Event")
       .then(function(data) {
@@ -62,9 +111,6 @@ module.exports = function(app) {
       });
   });
 
-<<<<<<< HEAD
-  app.post('/api/user/:id', function(req, res) {
-=======
   app.get("/api/user/:id", function(req, res) {
     User.find(req.body.id)
       .populate("Event")
@@ -77,7 +123,6 @@ module.exports = function(app) {
   });
 
   app.post("/api/user/:id", function(req, res) {
->>>>>>> master
     User.findOneAndUpdate(
       { _id: req.params.id },
       { $push: { favorites: req.body } },
@@ -131,7 +176,7 @@ module.exports = function(app) {
     });
   });
 
-  app.post('/api/user', function(req, res) {
+  app.post("/api/user", function(req, res) {
     const newUser = {
       email: req.body.email,
       password: req.body.password

@@ -10,10 +10,36 @@ import MenuItem from "@material-ui/core/MenuItem";
 import { withStyles } from "@material-ui/core/styles";
 import axios from "axios";
 import Button from "@material-ui/core/Button";
+import "../../../src/CSS/App.css";
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1
+  },
+  paper: {
+    position: "absolute",
+    width: theme.spacing.unit * 50,
+    backgroundColor: theme.palette.background.paper,
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing.unit * 4,
+    outline: "none"
+  },
+  control: {
+    padding: theme.spacing.unit * 2
+  },
+  suggestionsContainerOpen: {
+    position: "absolute",
+    zIndex: 1,
+    marginTop: theme.spacing.unit,
+    left: 0,
+    right: 0
+  }
+});
 
 let suggestions = [];
 
-axios.get("api/restaurant").then(result => { //creates a list of restaurants as an array of objects [{labe: <name>}, {label: <name>} etc...]
+axios.get("api/restaurant").then(result => {
+  //creates a list of restaurants as an array of objects [{labe: <name>}, {label: <name>} etc...]
   const places = result.data;
   suggestions = places.map(item => {
     const container = {};
@@ -21,26 +47,6 @@ axios.get("api/restaurant").then(result => { //creates a list of restaurants as 
     return container;
   });
 });
-
-function renderInputComponent(inputProps) {
-  const { classes, inputRef = () => {}, ref, ...other } = inputProps;
-  return (
-    <TextField
-      fullWidth
-      onChange={inputProps.searchChangeHandler}
-      InputProps={{
-        inputRef: node => {
-          ref(node);
-          inputRef(node);
-        },
-        classes: {
-          input: classes.input
-        }
-      }}
-      {...other}
-    />
-  );
-}
 
 function renderSuggestion(suggestion, { query, isHighlighted }) {
   const matches = match(suggestion.label, query);
@@ -89,57 +95,32 @@ function getSuggestionValue(suggestion) {
   return suggestion.label;
 }
 
-const styles = theme => ({
-  root: {
-    height: 250,
-    flexGrow: 1
-  },
-  container: {
-    position: "relative"
-  },
-  suggestionsContainerOpen: {
-    position: "absolute",
-    zIndex: 1,
-    marginTop: theme.spacing.unit,
-    left: 0,
-    right: 0
-  },
-  suggestion: {
-    display: "block"
-  },
-  suggestionsList: {
-    margin: 0,
-    padding: 0,
-    listStyleType: "none"
-  },
-  divider: {
-    height: theme.spacing.unit * 2
-  }
-});
+function renderInputComponent(inputProps) {
+  const { classes, inputRef = () => {}, ref, ...other } = inputProps;
+  return (
+    <TextField
+      fullWidth
+      onChange={inputProps.searchChangeHandler}
+      InputProps={{
+        inputRef: node => {
+          ref(node);
+          inputRef(node);
+        },
+        classes: {
+          input: classes.input
+        }
+      }}
+      {...other}
+    />
+  );
+}
 
 class SearchBar extends React.Component {
   state = {
-    single: "",
+    single: '',
     suggestions: [],
-    place: '',
-    address: '',
-    tagline: '',
-    url: '',
   };
 
-  queryRestaurant = event => {
-    axios
-      .get(
-        `https:///api/restaurant/${this.state.single}`
-      )
-      .then(result => {
-        this.setState({ place: result.name });
-        this.setState({ address: result.address });
-        this.setState({ url: result.url });
-        this.setState({ tagline: result.tagline });
-        console.log(this.state.name + "at" + this.state.address + "www." + this.state.url + "    " + this.state.tagline);
-      });
-  };
 
   handleSuggestionsFetchRequested = ({ value }) => {
     this.setState({
@@ -156,15 +137,20 @@ class SearchBar extends React.Component {
   handleChange = name => (event, { newValue }) => {
     this.setState({
       [name]: newValue
+
     });
   };
 
   handleClick = () => {
-    this.setState({
-      result: this.state.single
-    });
-    console.log(this.state.single);
-    this.queryRestaurant();
+    axios
+    .get( `/api/restaurant/${this.state.single}`
+    ).then(
+      result => { this.props.sendData(result)
+        // this.props.place = result.data.name;
+        // this.props.
+      }
+    )
+    this.props.handleClick();
   };
 
   render() {
