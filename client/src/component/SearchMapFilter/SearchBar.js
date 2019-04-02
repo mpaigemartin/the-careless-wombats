@@ -153,6 +153,13 @@ class SearchBar extends React.Component {
     this.props.handleClick();
   };
 
+  enterPressed = (event) => {
+    const code = event.keyCode || event.which;
+    if(code === 13) { //13 is the enter keycode
+      this.handleClick();
+    }
+  }
+
   render() {
     const { classes } = this.props;
 
@@ -176,6 +183,7 @@ class SearchBar extends React.Component {
             value: this.state.single,
             onChange: this.handleChange("single")
           }}
+          onKeyPress={this.enterPressed}
           theme={{
             container: classes.container,
             suggestionsContainerOpen: classes.suggestionsContainerOpen,
@@ -193,7 +201,6 @@ class SearchBar extends React.Component {
           color="secondary"
           className={classes.button}
           onClick={this.handleClick}
-          style={{ display: "inline" }}
           id="searchBtn"
         >
           view info

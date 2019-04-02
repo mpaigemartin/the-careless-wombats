@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+body {
+  background-color: rgba(63, 81, 181, 0.03)
+}
 
 #header {
   grid-area: header;
@@ -16,7 +19,8 @@
 
 .businessPaper {
   width: 100%;
-
+  margin-bottom: 5px;
+  box-shadow: 3px;
 }
 
 .BusinessDirectory-root-198 {
@@ -30,17 +34,23 @@
 }
 
 #search {
-  width: 100%;
+  width: 54%;
   display: inline-block;
+  box-lines: none;
 }
 #searchText {
-  width: 70%;
+  width: 100%;
 }
 #search,
 #searchBtn {
   grid-area: search;
-  /* display: inline; */
   max-height: 40px;
+}
+#searchBtn {
+  width: 100%;
+}
+#searchBtn:hover {
+  background-color: rgba(245, 0, 87, 0.1);
 }
 
 #filter {
@@ -48,14 +58,11 @@
   margin-top: 8px;
   display: inline-block;
   position: relative;
-
 }
 #filterBtn,
-/* #locationOption, */
 #dayOption,
 #typeOption {
   margin-left: 10px;
-  /* float: left; */
   max-height: 40px;
   width: 23%;
 }
@@ -80,14 +87,12 @@
   background-color: white;
   color: #f50057;
   border: none;
-
 }
 #bizModalBtn:hover {
   background-color: #3f51b5;
   color: white;
   border: none;
 }
-
 
 #modal {
   width: 30%;
@@ -110,7 +115,7 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 25% 1fr 50% 10% 1fr;
-  grid-template-rows: 65px 25px 25px auto auto;
+  grid-template-rows: 65px 25px 55px auto auto;
   grid-template-areas:
     "header header header header header header"
     "...... ...... ...... ...... ...... ......"
@@ -130,7 +135,7 @@
       "...... search search ......"
       "...... filter filter ......"
       "...... filter filter ......"
-      "...... sidebar sidebar ...."
+      "...... sidebar sidebar ....";
   }
 
   #barWrapper {
@@ -143,14 +148,12 @@
   }
 
   #filterBtn,
-/* #locationOption, */
-#dayOption,
-#typeOption {
-  margin-left: 10px;
-  /* float: left; */
-  max-height: 40px;
-  width: 35%;
-}
+  #dayOption,
+  #typeOption {
+    margin-left: 10px;
+    max-height: 40px;
+    width: 35%;
+  }
   #mapEmbed {
     margin-top: 38px;
     max-width: 90vw;
@@ -159,17 +162,7 @@
   #modal {
     width: 70vw;
   }
-  
-  /* .BusinessDirectory-root-198 {
-    position: relative;
-    overflow: hidden;
-    padding: 0.8em;
-    text-align: center;
-    padding: 4px;
-    margin-bottom: 5px;
-    box-shadow: 3px;
-  } */
- 
+
 }
 
 @media only screen and (max-width: 760px) {
@@ -183,7 +176,7 @@
       "...... search search ......"
       "...... filter filter ......"
       "...... filter filter ......"
-      "...... sidebar sidebar ...."
+      "...... sidebar sidebar ....";
   }
 
   #barWrapper {
