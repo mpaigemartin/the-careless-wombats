@@ -1,6 +1,8 @@
-
 .App {
   text-align: center;
+}
+body {
+  background-color: rgba(63, 81, 181, 0.03)
 }
 
 #header {
@@ -17,47 +19,86 @@
 
 .businessPaper {
   width: 100%;
+  margin-bottom: 6px;
+  box-shadow: 3px;
 }
 
-.BusinessDirectory-root-152 {
-  /* position: relative; */
+.BusinessDirectory-root-198 {
+  position: relative;
   overflow: hidden;
-  padding: 0.5em;
+  padding: 0.8em;
   text-align: center;
+  padding: 4px;
+  margin-bottom: 5px;
+  box-shadow: 3px;
 }
 
 #search {
+  width: 54%;
+  display: inline-block;
+  box-lines: none;
+}
+#searchText {
+  width: 100%;
+  text-align: center;
+}
+#search,
+#searchBtn {
   grid-area: search;
   max-height: 40px;
 }
-
 #searchBtn {
-  max-height: 40px;
+  width: 100%;
+}
+#searchBtn:hover {
+  background-color: rgba(245, 0, 87, 0.1);
+}
+
+#suggestionBox{
+  width: 32vw;
+  margin: auto;
+  transform: translateX(1vw);
 }
 
 #filter {
   grid-area: filter;
+  margin-top: 8px;
+  display: inline-block;
+  position: relative;
 }
-
-#locationOption,
+#filterBtn,
 #dayOption,
 #typeOption {
-  margin-right: 2%;
-  float: left;
+  margin-left: 10px;
+  max-height: 40px;
+  width: 23%;
+}
+
+#filterBtn {
+  transform: translateY(32px);
 }
 
 #mapEmbed {
   grid-area: map;
-  /* width: 100%; */
   margin-bottom: 2em;
-  height: 380px;
-  width: 980px;
+  max-width: 60vw;
 }
 
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
+}
+
+#bizModalBtn {
+  background-color: white;
+  color: #f50057;
+  border: none;
+}
+#bizModalBtn:hover {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
 }
 
 #modal {
@@ -81,13 +122,13 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 25% 1fr 50% 10% 1fr;
-  grid-template-rows: 65px 25px auto auto auto;
+  grid-template-rows: 65px 25px 55px auto auto;
   grid-template-areas:
     "header header header header header header"
     "...... ...... ...... ...... ...... ......"
     "...... sidebar ..... search search ......"
-    "...... sidebar ..... filter ...... ......"
-    "...... sidebar ..... map map ............";
+    "...... sidebar ..... filter filter ......"
+    "...... sidebar ..... filter filter ......";
 }
 
 @media only screen and (max-width: 980px) {
@@ -100,7 +141,7 @@
       "...... ...... ...... ......"
       "...... search search ......"
       "...... filter filter ......"
-      "...... map map ............"
+      "...... filter filter ......"
       "...... sidebar sidebar ....";
   }
 
@@ -112,10 +153,58 @@
     justify-self: center;
     width: 90%;
   }
+  #suggestionBox{
+    width: 60vw;
+    margin: auto;
+    transform: none;
 
-  #filter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  }
+  #filterBtn,
+  #dayOption,
+  #typeOption {
+    margin-left: 10px;
+    max-height: 40px;
+    width: 35%;
+  }
+  #mapEmbed {
+    margin-top: 38px;
+    max-width: 90vw;
+  }
+
+  #modal {
+    width: 70vw;
+  }
+
+}
+
+@media only screen and (max-width: 760px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 82% 8% 1fr;
+    grid-template-rows: 65px 25px auto auto auto auto;
+    grid-template-areas:
+      "header header header header"
+      "...... ...... ...... ......"
+      "...... search search ......"
+      "...... filter filter ......"
+      "...... filter filter ......"
+      "...... sidebar sidebar ....";
+  }
+
+  #barWrapper {
+    width: 100%;
+  }
+
+  #search {
+    justify-self: center;
+    width: 90%;
+  }
+  #suggestionBox{
+    width: 75vw;
+    margin: auto;
+    transform: none;
+  }
+  #modal {
+    width: 80vw;
   }
 }
