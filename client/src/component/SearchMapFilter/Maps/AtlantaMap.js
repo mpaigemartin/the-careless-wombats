@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
-import RestaurantPins from "./RestaurantPins";
-import { relative } from "path";
 
 class AtlantaMap extends Component {
   state = {

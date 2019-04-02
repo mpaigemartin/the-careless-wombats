@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import ProtectedRoute from "./component/ProtectedRoute";
 import Home from "./component/Home";
 import SearchPage from "./component/SearchPage";
 // import UserContext from "./context/UserContext";
 import UserContext from "./context/UserContext";
-import SearchBar from "./component/SearchMapFilter/SearchBar";
 import LoginAndSignup from "./component/LoginAndRegister/LoginAndRegister";
 
 class App extends Component {
