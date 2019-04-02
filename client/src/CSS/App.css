@@ -19,7 +19,7 @@ body {
 
 .businessPaper {
   width: 100%;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   box-shadow: 3px;
 }
 
@@ -40,6 +40,7 @@ body {
 }
 #searchText {
   width: 100%;
+  text-align: center;
 }
 #search,
 #searchBtn {
@@ -51,6 +52,12 @@ body {
 }
 #searchBtn:hover {
   background-color: rgba(245, 0, 87, 0.1);
+}
+
+#suggestionBox{
+  width: 32vw;
+  margin: auto;
+  transform: translateX(1vw);
 }
 
 #filter {
@@ -146,7 +153,12 @@ body {
     justify-self: center;
     width: 90%;
   }
+  #suggestionBox{
+    width: 60vw;
+    margin: auto;
+    transform: none;
 
+  }
   #filterBtn,
   #dayOption,
   #typeOption {
@@ -187,7 +199,11 @@ body {
     justify-self: center;
     width: 90%;
   }
-
+  #suggestionBox{
+    width: 75vw;
+    margin: auto;
+    transform: none;
+  }
   #modal {
     width: 80vw;
   }

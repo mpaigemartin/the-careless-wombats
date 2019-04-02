@@ -191,7 +191,7 @@ class SearchBar extends React.Component {
             suggestion: classes.suggestion
           }}
           renderSuggestionsContainer={options => (
-            <Paper {...options.containerProps} square>
+            <Paper {...options.containerProps} square id="suggestionBox">
               {options.children}
             </Paper>
           )}

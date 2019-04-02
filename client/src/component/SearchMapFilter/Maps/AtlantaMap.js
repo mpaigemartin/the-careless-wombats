@@ -5,7 +5,10 @@ class AtlantaMap extends Component {
   state = {
     center: {
       lat: 33.77463,
-      lng: -84.36098
+      lng: -84.36098,
+      showingInfoWindow: false, //Hides or the shows the infoWindow
+      activeMarker: {}, //Shows the active marker upon click
+      selectedPlace: {}
     },
     zoom: 11,
     points: [
@@ -15,13 +18,22 @@ class AtlantaMap extends Component {
       { lat: 42.05, lng: -77.02 }
     ],
     showInfoWindow: false
-
   };
 
-  handleClick = e => {
+  onMarkerClick = (props, marker, e) =>
     this.setState({
-        showInfoWindow: true
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
     });
+
+  onMapClick = props => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      });
+    }
   };
 
   render() {
@@ -39,23 +51,27 @@ class AtlantaMap extends Component {
             lng: parseFloat(this.props.longitude)
           }}
           zoom={this.props.zoom}
-          onChildMouseEnter={this.onChildMouseEnter}
-          onChildMouseLeave={this.onChildMouseLeave}
           bounds={this.points}
+          onClick={this.onMapClick}
         >
           {this.props.restaurantList.map(restaurant => (
-            <Marker 
-            position={{ lat: restaurant.lat, lng: restaurant.lng }}
-            onClick={this.handleClick}
+            <Marker
+              position={{ lat: restaurant.lat, lng: restaurant.lng }}
+              onClick={this.onMarkerClick}
+              title={restaurant.name}
+              name={restaurant.name}
             >
-            {this.state.showInfoWindow && (
-              <InfoWindow>
-                  <h4>{restaurant.name}</h4>
+              <InfoWindow
+                marker={this.state.activeMarker}
+                visible={this.state.showingInfoWindow}
+              >
+                <div>
+                  <h4>IS this thin on?</h4>
+                </div>
               </InfoWindow>
-                )}
+              )}
             </Marker>
           ))}
-          
         </Map>
       </div>
     );
