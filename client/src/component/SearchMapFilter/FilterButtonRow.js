@@ -139,10 +139,11 @@ class FilterButtonRow extends React.Component {
 
     return (
       <form className={classes.root} id="filter" autoComplete="off">
-        <FormControl className={classes.margin} id="locationOption">
+        <FormControl className={classes.margin}>
           <InputLabel
             htmlFor="location-customized-select"
             className={classes.bootstrapFormLabel}
+            id="locationOption"
           />
           <NativeSelect
             value={this.state.location}

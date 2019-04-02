@@ -166,7 +166,7 @@ class SearchBar extends React.Component {
     };
 
     return (
-      <div className={classes.root} id="search">
+      <div className={classes.root} id="search" >
         <Autosuggest
           {...autosuggestProps}
           inputProps={{

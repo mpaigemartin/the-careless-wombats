@@ -16,35 +16,48 @@
 
 .businessPaper {
   width: 100%;
+
 }
 
-.BusinessDirectory-root-152 {
-  /* position: relative; */
+.BusinessDirectory-root-198 {
+  position: relative;
   overflow: hidden;
-  padding: 0.5em;
+  padding: 0.8em;
   text-align: center;
+  padding: 4px;
+  margin-bottom: 5px;
+  box-shadow: 3px;
 }
 
+#search {
+  width: 100%;
+  display: inline-block;
+}
 #searchText {
-  width: 30vw;
+  width: 70%;
 }
 #search,
 #searchBtn {
   grid-area: search;
-  display: flex;
+  /* display: inline; */
   max-height: 40px;
 }
 
 #filter {
   grid-area: filter;
+  margin-top: 8px;
+  display: inline-block;
+  position: relative;
+
 }
 #filterBtn,
-#locationOption,
+/* #locationOption, */
 #dayOption,
 #typeOption {
-  margin-right: 2%;
-  float: left;
+  margin-left: 10px;
+  /* float: left; */
   max-height: 40px;
+  width: 23%;
 }
 
 #filterBtn {
@@ -53,10 +66,8 @@
 
 #mapEmbed {
   grid-area: map;
-  /* width: 100%; */
   margin-bottom: 2em;
-  height: 380px;
-  width: 980px;
+  max-width: 60vw;
 }
 
 .clearfix::after {
@@ -64,6 +75,19 @@
   clear: both;
   display: table;
 }
+
+#bizModalBtn {
+  background-color: white;
+  color: #f50057;
+  border: none;
+
+}
+#bizModalBtn:hover {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+}
+
 
 #modal {
   width: 30%;
@@ -86,7 +110,7 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 25% 1fr 50% 10% 1fr;
-  grid-template-rows: 65px 25px auto auto auto;
+  grid-template-rows: 65px 25px 25px auto auto;
   grid-template-areas:
     "header header header header header header"
     "...... ...... ...... ...... ...... ......"
@@ -118,17 +142,60 @@
     width: 90%;
   }
 
-#filter {
-    display: flex;
-    /* align-items: center; */
-    /* justify-content: center; */
-    max-width: 20%;
-    max-height: 2vh;
-    float: left;
-
+  #filterBtn,
+/* #locationOption, */
+#dayOption,
+#typeOption {
+  margin-left: 10px;
+  /* float: left; */
+  max-height: 40px;
+  width: 35%;
+}
+  #mapEmbed {
+    margin-top: 38px;
+    max-width: 90vw;
   }
-  #filterBtn {
-    display: inline;
+
+  #modal {
+    width: 70vw;
+  }
+  
+  /* .BusinessDirectory-root-198 {
+    position: relative;
+    overflow: hidden;
+    padding: 0.8em;
+    text-align: center;
+    padding: 4px;
+    margin-bottom: 5px;
+    box-shadow: 3px;
+  } */
+ 
+}
+
+@media only screen and (max-width: 760px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 82% 8% 1fr;
+    grid-template-rows: 65px 25px auto auto auto auto;
+    grid-template-areas:
+      "header header header header"
+      "...... ...... ...... ......"
+      "...... search search ......"
+      "...... filter filter ......"
+      "...... filter filter ......"
+      "...... sidebar sidebar ...."
   }
 
+  #barWrapper {
+    width: 100%;
+  }
+
+  #search {
+    justify-self: center;
+    width: 90%;
+  }
+
+  #modal {
+    width: 80vw;
+  }
 }

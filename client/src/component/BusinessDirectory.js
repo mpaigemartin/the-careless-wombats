@@ -94,12 +94,12 @@ class BusinessDirectory extends React.Component {
                 <Typography variant="h5" component="h3">
                   {d.name}
                 </Typography>  
-                <Typography variant="h6" component="h3">
+                <Typography variant="body1" component="h3">
                   {d.tagline}
                 </Typography>              
                 <button
                 value={d.name}
-                id="bizModal"
+                id="bizModalBtn"
                 type="submit"
                 onClick={this.handleClick}
                 color="secondary"

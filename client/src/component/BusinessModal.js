@@ -30,13 +30,10 @@ const styles = theme => ({
     }
   });
 function getModalStyle() {
-  const top = 50;
-  const left = 50;
-
   return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`
+    top: `50%`,
+    left: `50%`,
+    transform: `translate(-50%, -50%)`
   };
 }
 
@@ -65,13 +62,13 @@ class BusinessModal extends React.Component {
             onClose={this.handleClose}
             >
             <div style={getModalStyle()} className={classes.paper} id="modal">
-                <Typography variant="h6" id="modal-title">
+                <Typography variant="h5" id="modal-title">
                 {this.props.name}
                 </Typography>
                 <Typography variant="subtitle1" id="simple-modal-description">
                 {this.props.tagline}
                 </Typography>
-                <Typography variant="subtitle2">{this.props.events.map(event => (
+                <Typography variant="body2">{this.props.events.map(event => (
                   <div className="eventsDiv" key={event.publishedAt}>
                     <p>{event.name}  |  {event.day.map(day => (
                       <span>{day}s </span>))}
@@ -84,7 +81,7 @@ class BusinessModal extends React.Component {
                 )}
                 </Typography>
                 <Button href={this.props.url} variant="extendedFab" target="_blank" id="modalLink">
-                check us out
+                our site
                 </Button>
                 <Button variant="secondary" onClick={this.handleClose}>
                 close
