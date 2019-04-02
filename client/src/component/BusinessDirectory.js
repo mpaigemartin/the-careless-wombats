@@ -4,9 +4,8 @@ import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 import "../../src/CSS/App.css";
-import Modal from "@material-ui/core/Modal";
+import axios from "axios";
 
 const styles = theme => ({
   root: {
@@ -46,16 +45,6 @@ const styles = theme => ({
   }
 });
 
-function getModalStyle() {
-  const top = 50;
-  const left = 50;
-
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`
-  };
-}
 
 class BusinessDirectory extends React.Component {
   constructor(props){
@@ -68,13 +57,18 @@ class BusinessDirectory extends React.Component {
     open: false
   };
 
-  handleOpen = () => {
-    this.setState({ open: true });
+  handleClick = (event) => {
+    this.setState({ sinle: event.target.value});
+    axios
+    .get(`/api/restaurant/${event.target.value}`
+    ).then(
+      result => {
+        this.props.sendData(result)
+      });
+    this.props.handleClick();
   };
 
-  handleClose = () => {
-    this.setState({ open: false });
-  };
+
 
   componentDidMount() {
     console.log(this.props.restaurantList)
@@ -104,45 +98,17 @@ class BusinessDirectory extends React.Component {
                 <Typography variant="h6" component="h3">
                   {d.tagline}
                 </Typography>              
-                <Button
-                onClick={this.handleOpen}
-                // variant="contained"
+                <button
+                value={d.name}
+                id="bizModal"
+                type="submit"
+                onClick={this.handleClick}
                 color="secondary"
                 className={classes.button}
                 >
                   check us out
-                </Button>
-                <Modal
-                aria-labelledby="simple-modal-title"
-                aria-describedby="simple-modal-description"
-                open={this.state.open}
-                onClose={this.handleClose}
-                >
-                  <div style={getModalStyle()} className={classes.paper} id="modal">
-                    <Typography variant="h6" id="modal-title">
-                      {d.name}
-                    </Typography>
-                    <Typography
-                      variant="subtitle1"
-                      id="simple-modal-description"
-                    >
-                      {d.tagline}
-                    </Typography>
-                    <Button 
-                      id="modalLink" href={d.url}
-                      variant="extendedFab">
-                      check us out
-                    </Button>
-                    <Button 
-                    variant="fab" 
-                    onClick={this.handleClose}>
-                      close
-                    </Button>
-                    <Typography variant="subtitle2">
-                    {d.address}
-                    </Typography>
-                  </div>
-                </Modal>
+                </button>
+               
               </Paper>
 
             ))}

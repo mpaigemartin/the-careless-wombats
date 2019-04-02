@@ -172,7 +172,13 @@ class Home extends Component {
           onClick={this.handleMap}
         />
         {this.state.restaurantResults.length ? (
-          <BusinessDirectory restaurantList={this.state.restaurantResults} />
+          <BusinessDirectory 
+          restaurantList={this.state.restaurantResults} 
+          sendData={this.getData}
+          single={this.state.single}
+          handleClick={this.handleBusinessClick}
+          handleClose={this.handleClose}
+          />
         ) : null}
         <BusinessModal
           name={this.state.place}
