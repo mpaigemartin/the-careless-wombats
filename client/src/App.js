@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import ProtectedRoute from "./component/ProtectedRoute";
 import Home from "./component/Home";
-import SearchPage from "./component/SearchPage";
 // import UserContext from "./context/UserContext";
 import UserContext from "./context/UserContext";
 import LoginAndSignup from "./component/LoginAndRegister/LoginAndRegister";
@@ -23,7 +22,13 @@ class App extends Component {
       <Router>
         <div>
           <UserContext.Provider value={{ setUser, user }}>
-            <ProtectedRoute exact path="/Search" component={SearchPage} />
+            <ProtectedRoute exact path="/Search" render={() => (
+              this.user ? (
+                <Redirect to="/Home"/>
+              ) : (
+                <Home/>
+              )
+            )} />
             <Route exact path="/Home" component={Home} />
             {/* </UserContext.Provider> */}
             <Route exact path="/" component={LoginAndSignup} />
