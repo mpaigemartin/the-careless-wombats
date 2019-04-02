@@ -58,7 +58,6 @@ class BusinessDirectory extends React.Component {
   };
 
   handleClick = (event) => {
-    this.setState({ sinle: event.target.value});
     axios
     .get(`/api/restaurant/${event.target.value}`
     ).then(

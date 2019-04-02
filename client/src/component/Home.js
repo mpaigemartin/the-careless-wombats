@@ -167,6 +167,7 @@ class Home extends Component {
           handleClose={this.handleClose}
         />
         <FilterButtonRow
+          id="filterRow"
           sendFilter={this.getFilteredResults}
           restaurantList={this.state.restaurantResults}
           onClick={this.handleMap}

@@ -225,6 +225,7 @@ class FilterButtonRow extends React.Component {
           variant="contained" 
           color="secondary"
           onClick={this.handleClick}
+          id="filterBtn"
           >
           Search
           </Button>

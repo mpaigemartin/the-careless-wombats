@@ -168,9 +168,9 @@ class SearchBar extends React.Component {
     return (
       <div className={classes.root} id="search">
         <Autosuggest
-          style={{ display: "inline" }}
           {...autosuggestProps}
           inputProps={{
+            id: "searchText",
             classes,
             placeholder: "Search a Local Resturant",
             value: this.state.single,

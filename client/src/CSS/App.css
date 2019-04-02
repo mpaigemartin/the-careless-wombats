@@ -1,4 +1,3 @@
-
 .App {
   text-align: center;
 }
@@ -26,24 +25,30 @@
   text-align: center;
 }
 
-#search {
-  grid-area: search;
-  max-height: 40px;
+#searchText {
+  width: 30vw;
 }
-
+#search,
 #searchBtn {
+  grid-area: search;
+  display: flex;
   max-height: 40px;
 }
 
 #filter {
   grid-area: filter;
 }
-
+#filterBtn,
 #locationOption,
 #dayOption,
 #typeOption {
   margin-right: 2%;
   float: left;
+  max-height: 40px;
+}
+
+#filterBtn {
+  transform: translateY(32px);
 }
 
 #mapEmbed {
@@ -86,8 +91,8 @@
     "header header header header header header"
     "...... ...... ...... ...... ...... ......"
     "...... sidebar ..... search search ......"
-    "...... sidebar ..... filter ...... ......"
-    "...... sidebar ..... map map ............";
+    "...... sidebar ..... filter filter ......"
+    "...... sidebar ..... filter filter ......";
 }
 
 @media only screen and (max-width: 980px) {
@@ -100,8 +105,8 @@
       "...... ...... ...... ......"
       "...... search search ......"
       "...... filter filter ......"
-      "...... map map ............"
-      "...... sidebar sidebar ....";
+      "...... filter filter ......"
+      "...... sidebar sidebar ...."
   }
 
   #barWrapper {
@@ -113,9 +118,17 @@
     width: 90%;
   }
 
-  #filter {
+#filter {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
+    max-width: 20%;
+    max-height: 2vh;
+    float: left;
+
   }
+  #filterBtn {
+    display: inline;
+  }
+
 }
