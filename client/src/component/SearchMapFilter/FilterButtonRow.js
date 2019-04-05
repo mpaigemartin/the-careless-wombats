@@ -81,10 +81,10 @@ class FilterButtonRow extends React.Component {
     },
     zoom: 12,
     //////////////lat-------lng------zoom
-    allAtlanta: [33.77463, -84.36098, 12],
-    midtown: [33.789295, -84.375387, 13],
-    decatur: [33.774231, -84.299458, 13],
-    westMidtown: [33.797919, -84.40458, 13],
+    // allAtlanta: [33.77463, -84.36098, 12],
+    // midtown: [33.789295, -84.375387, 13],
+    // decatur: [33.774231, -84.299458, 13],
+    // westMidtown: [33.95, -90, 15],
     currentLat:33.77463,
     currentLon:-84.36098,
     currentZoom: 11,
@@ -157,9 +157,9 @@ class FilterButtonRow extends React.Component {
             }
           >
             <option longitude={-84.36098} latitude={33.77463} zoom={11} value="">Atlanta</option>
-            <option longitude={-84.375387} latitude={33.789295} zoom={14} value="Midtown">Midtown</option>
-            <option longitude={-84.299458} latitude={33.774231} zoom={14} value="Decatur">Decatur</option>
-            <option longitude={-84.40458} latitude={33.797919} zoom={14}  value="West Midtown">West Midtown</option>
+            <option longitude={-84.374763} latitude={33.7812912} zoom={13} value="Midtown">Midtown</option>
+            <option longitude={-84.291918} latitude={33.7711966} zoom={14} value="Decatur">Decatur</option>
+            <option longitude={-84.4126599} latitude={33.7871341} zoom={12}  value="West Midtown">West Midtown</option>
           </NativeSelect>
         </FormControl>
 
