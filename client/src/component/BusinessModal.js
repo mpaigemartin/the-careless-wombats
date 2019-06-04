@@ -35,7 +35,8 @@ function getModalStyle() {
     left: `50%`,
     transform: `translate(-50%, -50%)`,
     maxHeight: '80vh',
-    overflow: `scroll`
+    overflow: `auto`,
+    borderRadius: "5px"
   };
 }
 

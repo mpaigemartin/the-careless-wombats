@@ -5,7 +5,8 @@ import BusinessDirectory from "../component/BusinessDirectory";
 import SearchBar from "./SearchMapFilter/SearchBar";
 import FilterButtonRow from "./SearchMapFilter/FilterButtonRow";
 import AllAtlanta from "./SearchMapFilter/Maps/AtlantaMap";
-import BusinessModal from "../component/BusinessModal";
+import BusinessModal from "./BusinessModal";
+import ScrollToTop from "./ScrollToTop";
 import "../../src/CSS/App.css";
 
 class Home extends Component {
@@ -158,6 +159,7 @@ class Home extends Component {
     return (
       <div className="container">
         <Header />
+        <ScrollToTop/>
         <SearchBar
           sendData={this.getData}
           single={this.state.single}
