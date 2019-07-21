@@ -17,11 +17,10 @@ body {
   grid-area: sidebar;
 }
 
-.businessPaper {
+/* .businessPaper {
   width: 100%;
-  margin-bottom: 6px;
   box-shadow: 3px;
-}
+} */
 
 .BusinessDirectory-root-198 {
   position: relative;

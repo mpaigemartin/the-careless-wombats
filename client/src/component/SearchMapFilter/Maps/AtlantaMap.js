@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { GoogleApiWrapper, Map, Marker, InfoWindow } from "google-maps-react";
+import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
 
 class AtlantaMap extends Component {
   state = {
     center: {
-      lat: 33.77463,
-      lng: -84.36098,
+      lat: 39.956613,
+      lng: -75.189944,
       showingInfoWindow: false, //Hides or the shows the infoWindow
       activeMarker: {}, //Shows the active marker upon click
       selectedPlace: {}
