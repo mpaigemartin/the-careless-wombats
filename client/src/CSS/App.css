@@ -2,7 +2,8 @@
   text-align: center;
 }
 body {
-  background-color: rgba(63, 81, 181, 0.03)
+  background-image: url(../images/starrySky.png);
+  background-color: rgba(63, 81, 181, 0.03);
 }
 
 #header {
@@ -17,19 +18,17 @@ body {
   grid-area: sidebar;
 }
 
-/* .businessPaper {
-  width: 100%;
+.businessPaper {
+  width: 90%;
   box-shadow: 3px;
-} */
+}
 
 .BusinessDirectory-root-198 {
   position: relative;
   overflow: hidden;
-  padding: 0.8em;
   text-align: center;
-  padding: 4px;
-  margin-bottom: 5px;
-  box-shadow: 3px;
+  padding: 2vh;
+  margin-bottom: 2vh;
 }
 
 #search {
@@ -40,6 +39,7 @@ body {
 #searchText {
   width: 100%;
   text-align: center;
+  background-color: #ffffff;
 }
 #search,
 #searchBtn {
@@ -65,6 +65,7 @@ body {
   display: inline-block;
   position: relative;
 }
+
 #filterBtn,
 #dayOption,
 #typeOption {
@@ -75,6 +76,11 @@ body {
 
 #filterBtn {
   transform: translateY(32px);
+}
+
+select {
+  background-color: #c4c4c4;
+
 }
 
 #mapEmbed {
@@ -103,6 +109,7 @@ body {
 #modal {
   width: 30%;
   min-height: 11em;
+  overflow-x: auto;
 }
 
 #modal::after {
@@ -116,6 +123,17 @@ body {
   right: 0;
   position: absolute;
   z-index: -1;
+}
+
+#scrollBtn {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #f50057;
+  color: #ffffff;
+  border-radius: 2px;
+  margin: 5.5vh .4vw;
+  z-index: 3;
 }
 
 .container {

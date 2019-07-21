@@ -12,7 +12,8 @@ import Button from '@material-ui/core/Button';
 const BootstrapInput = withStyles(theme => ({
   root: {
     "label + &": {
-      marginTop: theme.spacing.unit * 3
+      marginTop: theme.spacing.unit * 3,
+      backgroundColor: "#c4c4c4"
     }
   },
   input: {
@@ -71,20 +72,15 @@ class FilterButtonRow extends React.Component {
   state = {
     day: "",
     type: "",
-    neighborhood: "",
-    neighborhoodName: "",
+    neighborhood: "Atlanta",
+    neighborhoodName: "Atlanta",
     businessDirectory: [],
     decaturMap: false,
     center: {
-      lat: 0,
-      lng: 0
+      lat: 33.748,
+      lng: -84.3879
     },
     zoom: 12,
-    //////////////lat-------lng------zoom
-    // allAtlanta: [33.77463, -84.36098, 12],
-    // midtown: [33.789295, -84.375387, 13],
-    // decatur: [33.774231, -84.299458, 13],
-    // westMidtown: [33.95, -90, 15],
     currentLat:33.77463,
     currentLon:-84.36098,
     currentZoom: 11,
@@ -119,7 +115,7 @@ class FilterButtonRow extends React.Component {
       neighborhood: this.state.neighborhood,
       category: this.state.category
     }
-    Object.keys(filter).forEach((key) => (filter[key] == null || filter[key] == "") && delete filter[key]);
+    Object.keys(filter).forEach((key) => (filter[key] === null || filter[key] === "") && delete filter[key]);
     console.log(filter)
     this.props.sendFilter(filter);
   }
@@ -153,10 +149,12 @@ class FilterButtonRow extends React.Component {
                 name="location"
                 className="option"
                 id="location-customized-native-simple"
+                style={{ backgroundColor: "#c4c4c4 !important" }}
+
               />
             }
           >
-            <option longitude={-84.36098} latitude={33.77463} zoom={11} value="">Atlanta</option>
+            <option longitude={-84.36098} latitude={33.77463} zoom={11} value="" selected="selected">Atlanta</option>
             <option longitude={-84.374763} latitude={33.7812912} zoom={13} value="Midtown">Midtown</option>
             <option longitude={-84.291918} latitude={33.7711966} zoom={14} value="Decatur">Decatur</option>
             <option longitude={-84.4126599} latitude={33.7871341} zoom={12}  value="West Midtown">West Midtown</option>
@@ -182,7 +180,7 @@ class FilterButtonRow extends React.Component {
               />
             }
           >
-            <option value="" label="all events" />
+            <option value="" label="all events" selected="selected" />
             <option value="Karaoke">Karaoke</option>
             <option value="Trivia">Trivia</option>
             <option value="Happy Hour">Happy Hour</option>
@@ -212,7 +210,7 @@ class FilterButtonRow extends React.Component {
               />
             }
           >
-            <option className="option" defaultValue="" label="all days" />
+            <option className="option" defaultValue="" label="all days" selected="selected" />
             <option value="Monday">Monday</option>
             <option value="Tuesday">Tuesday</option>
             <option value="Wednesday">Wednesday</option>
