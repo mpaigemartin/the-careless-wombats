@@ -13,15 +13,7 @@ class Home extends Component {
   state = {
     restaurantList: [],
     keywordSearch: "",
-    searchResults: [
-      {
-        name: "Cypress Street Pint & Plate",
-        address: "817 W Peachtree St Northwest E-125, Atlanta, GA  30308",
-        url: "http://cypressbar.com/",
-        tagline:
-          "A rotating lineup of beers on tap pairs with hearty American grub at a relaxed tavern with a patio."
-      }
-    ],
+    searchResults: [],
     single: "",
     restaurantQuery: "",
     whichMap: <AllAtlanta />,
@@ -59,7 +51,6 @@ class Home extends Component {
       },
       this.filterRestaurantList
     );
-    // console.log(val);
   };
 
   filterRestaurantList = () => {

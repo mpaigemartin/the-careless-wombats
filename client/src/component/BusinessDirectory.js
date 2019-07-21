@@ -68,13 +68,6 @@ class BusinessDirectory extends React.Component {
   };
 
 
-
-  componentDidMount() {
-    console.log(this.props.restaurantList)
-    console.log('sup')
-    console.log(this.props.restaurantList);
-  }
-
   render(props) {
     const { classes } = this.props;
 
@@ -108,11 +101,10 @@ class BusinessDirectory extends React.Component {
                 </Typography>              
                 <button
                 value={d.name}
-                id="bizModalBtn"
+                className="bizModalBtn"
                 type="submit"
                 onClick={this.handleClick}
                 color="secondary"
-                className={classes.button}
                 >
                   check us out
                 </button>
