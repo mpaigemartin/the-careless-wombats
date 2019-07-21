@@ -12,12 +12,11 @@ const styles = theme => ({
   root: {
     width: "100%",
     maxWidth: 550,
-    backgroundImage: `url(${Background})`
   },
   container: {
     display: "grid",
     gridTemplateColumns: "repeat(1, 1fr)",
-    gridGap: `${theme.spacing.unit * 3}px`
+    gridGap: `${theme.spacing.unit * 3}px`,
   },
   section1: {
     margin: `${theme.spacing.unit * 3}px ${theme.spacing.unit * 2}px`
@@ -46,6 +45,14 @@ class LoginAndRegister extends Component {
             <Signup />
           </div>
         </Grid>
+        <img src={Background} alt='' style={{
+          width: "50vw",
+          position: "fixed",
+          right: "-25vw",
+          bottom: 0,
+          opacity: "0.6",
+          zIndex: "-1"
+        }} />
       </div>
     );
   }

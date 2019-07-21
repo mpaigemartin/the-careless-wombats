@@ -183,7 +183,6 @@ class SearchBar extends React.Component {
             value: this.state.single,
             onChange: this.handleChange("single")
           }}
-          onKeyPress={this.enterPressed}
           theme={{
             container: classes.container,
             suggestionsContainerOpen: classes.suggestionsContainerOpen,
@@ -191,7 +190,8 @@ class SearchBar extends React.Component {
             suggestion: classes.suggestion
           }}
           renderSuggestionsContainer={options => (
-            <Paper {...options.containerProps} square id="suggestionBox">
+            <Paper {...options.containerProps} square id="suggestionBox" onKeyPress={this.enterPressed}
+            >
               {options.children}
             </Paper>
           )}
